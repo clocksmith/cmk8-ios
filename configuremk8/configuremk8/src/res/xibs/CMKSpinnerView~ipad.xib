@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKSpinnerView">
+            <connections>
+                <outlet property="bottomBar" destination="KXw-oZ-nVr" id="FIw-ec-mrb"/>
+                <outlet property="pullDownTriangle" destination="dks-Ag-6SK" id="V4Z-Cq-8PF"/>
+                <outlet property="selectedItemIcon" destination="uqq-I0-zsC" id="vuh-Xx-U4X"/>
+                <outlet property="selectedItemlabel" destination="87h-Wk-wFH" id="O4K-ly-SJZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6wo-5P-ehx" customClass="CMKSpinnerView">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-I0-zsC" userLabel="Selected Item Icon">
+                    <rect key="frame" x="6" y="6" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uqq-I0-zsC" secondAttribute="height" multiplier="1:1" id="kMO-oD-S29"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87h-Wk-wFH" userLabel="Selected Item Label">
+                    <rect key="frame" x="68" y="6" width="675" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="spinner_corner_triangle_30.png" translatesAutoresizingMaskIntoConstraints="NO" id="dks-Ag-6SK" userLabel="Triangle">
+                    <rect key="frame" x="743" y="12" width="25" height="50"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="02u-ud-3tI"/>
+                        <constraint firstAttribute="height" constant="50" id="yfW-jZ-jvi"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXw-oZ-nVr" userLabel="Bottom Bar">
+                    <rect key="frame" x="0.0" y="62" width="768" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="NAu-Eo-dxj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dks-Ag-6SK" secondAttribute="trailing" id="1hL-aN-UM3"/>
+                <constraint firstAttribute="trailing" secondItem="KXw-oZ-nVr" secondAttribute="trailing" id="4N6-vr-2qO"/>
+                <constraint firstItem="87h-Wk-wFH" firstAttribute="top" secondItem="6wo-5P-ehx" secondAttribute="top" constant="6" id="5dZ-eN-Hje"/>
+                <constraint firstItem="uqq-I0-zsC" firstAttribute="leading" secondItem="6wo-5P-ehx" secondAttribute="leading" constant="6" id="H2r-xL-CaW"/>
+                <constraint firstItem="KXw-oZ-nVr" firstAttribute="leading" secondItem="6wo-5P-ehx" secondAttribute="leading" id="Nnm-R9-D9J"/>
+                <constraint firstItem="KXw-oZ-nVr" firstAttribute="top" secondItem="87h-Wk-wFH" secondAttribute="bottom" constant="6" id="VsM-Qn-k8m"/>
+                <constraint firstAttribute="bottom" secondItem="KXw-oZ-nVr" secondAttribute="bottom" constant="3" id="W3H-t3-VF7"/>
+                <constraint firstItem="KXw-oZ-nVr" firstAttribute="top" secondItem="dks-Ag-6SK" secondAttribute="bottom" id="acK-ZX-cn0"/>
+                <constraint firstItem="uqq-I0-zsC" firstAttribute="top" secondItem="6wo-5P-ehx" secondAttribute="top" constant="6" id="cnV-Ye-jiz"/>
+                <constraint firstAttribute="bottom" secondItem="uqq-I0-zsC" secondAttribute="bottom" constant="6" id="fVz-PU-24b"/>
+                <constraint firstItem="dks-Ag-6SK" firstAttribute="leading" secondItem="87h-Wk-wFH" secondAttribute="trailing" id="lfa-gl-mfl"/>
+                <constraint firstItem="87h-Wk-wFH" firstAttribute="leading" secondItem="uqq-I0-zsC" secondAttribute="trailing" constant="12" id="u4P-Qc-z2u"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomBar" destination="KXw-oZ-nVr" id="95r-iM-upl"/>
+                <outlet property="pullDownTriangle" destination="dks-Ag-6SK" id="5yp-8S-hgY"/>
+                <outlet property="selectedItemIcon" destination="uqq-I0-zsC" id="jYA-ew-d30"/>
+                <outlet property="selectedItemlabel" destination="87h-Wk-wFH" id="aGS-K2-cQo"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="spinner_corner_triangle_30.png" width="15" height="30"/>
+    </resources>
+</document>

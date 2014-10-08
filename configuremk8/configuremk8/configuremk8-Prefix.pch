@@ -1,0 +1,24 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    #define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+    #define PART_GROUP_VIEW_TITLE_HEIGHT (IS_IPAD ? PART_GROUP_VIEW_TITLE_HEIGHT_IPAD : \
+      PART_GROUP_VIEW_TITLE_HEIGHT_IPHONE)
+    #define DEFAULT_SPINNER_FONT_SIZE (IS_IPAD ? DEFAULT_SPINNER_FONT_SIZE_IPAD : \
+      DEFAULT_SPINNER_FONT_SIZE_IPHONE)
+    #define COMPARE_SPINNER_FONT_SIZE (IS_IPAD ? COMPARE_SPINNER_FONT_SIZE_IPAD : \
+      COMPARE_SPINNER_FONT_SIZE_IPHONE)
+#endif

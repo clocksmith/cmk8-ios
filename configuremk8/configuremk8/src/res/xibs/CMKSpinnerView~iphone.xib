@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKSpinnerView">
+            <connections>
+                <outlet property="bottomBar" destination="Jsu-fc-u5D" id="H3b-3Z-wmQ"/>
+                <outlet property="pullDownTriangle" destination="xfV-IS-ROW" id="aZq-7c-kdb"/>
+                <outlet property="selectedItemIcon" destination="nBM-Pf-IVS" id="mOE-Ko-s7E"/>
+                <outlet property="selectedItemlabel" destination="NUG-cL-sSw" id="d8U-Uf-kI8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="jOj-kX-Pfq" customClass="CMKSpinnerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nBM-Pf-IVS" userLabel="Selected Item Icon">
+                    <rect key="frame" x="4" y="4" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nBM-Pf-IVS" secondAttribute="height" multiplier="1:1" id="W56-vR-d0x"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUG-cL-sSw" userLabel="Selected Item Label">
+                    <rect key="frame" x="44" y="4" width="261" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="spinner_corner_triangle_30.png" translatesAutoresizingMaskIntoConstraints="NO" id="xfV-IS-ROW" userLabel="Triangle">
+                    <rect key="frame" x="305" y="10" width="15" height="30"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="4Xa-6R-rAX"/>
+                        <constraint firstAttribute="height" constant="30" id="gaE-bz-flU"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsu-fc-u5D" userLabel="Bottom Bar">
+                    <rect key="frame" x="0.0" y="40" width="320" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Dmz-tk-RS1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NUG-cL-sSw" firstAttribute="leading" secondItem="nBM-Pf-IVS" secondAttribute="trailing" constant="8" id="5iI-wQ-Pss"/>
+                <constraint firstAttribute="trailing" secondItem="Jsu-fc-u5D" secondAttribute="trailing" id="AUW-H8-5ma"/>
+                <constraint firstItem="NUG-cL-sSw" firstAttribute="top" secondItem="jOj-kX-Pfq" secondAttribute="top" constant="4" id="Bg6-Sc-fle"/>
+                <constraint firstAttribute="trailing" secondItem="xfV-IS-ROW" secondAttribute="trailing" id="P8I-lg-r88"/>
+                <constraint firstItem="xfV-IS-ROW" firstAttribute="leading" secondItem="NUG-cL-sSw" secondAttribute="trailing" id="Qer-S0-buE"/>
+                <constraint firstItem="nBM-Pf-IVS" firstAttribute="top" secondItem="jOj-kX-Pfq" secondAttribute="top" constant="4" id="SBX-26-6Rk"/>
+                <constraint firstItem="nBM-Pf-IVS" firstAttribute="leading" secondItem="jOj-kX-Pfq" secondAttribute="leading" constant="4" id="Udh-Mx-1za"/>
+                <constraint firstItem="Jsu-fc-u5D" firstAttribute="top" secondItem="nBM-Pf-IVS" secondAttribute="bottom" constant="4" id="eRn-fw-6tZ"/>
+                <constraint firstAttribute="bottom" secondItem="Jsu-fc-u5D" secondAttribute="bottom" constant="3" id="h2u-bf-xOp"/>
+                <constraint firstItem="Jsu-fc-u5D" firstAttribute="top" secondItem="NUG-cL-sSw" secondAttribute="bottom" constant="4" id="i01-RF-y7h"/>
+                <constraint firstItem="Jsu-fc-u5D" firstAttribute="top" secondItem="xfV-IS-ROW" secondAttribute="bottom" id="sEw-sh-rtH"/>
+                <constraint firstItem="Jsu-fc-u5D" firstAttribute="leading" secondItem="jOj-kX-Pfq" secondAttribute="leading" id="xuC-eT-EIM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomBar" destination="Jsu-fc-u5D" id="jEO-sv-5GT"/>
+                <outlet property="pullDownTriangle" destination="xfV-IS-ROW" id="kLR-6L-d2i"/>
+                <outlet property="selectedItemIcon" destination="nBM-Pf-IVS" id="J4Z-jl-LxB"/>
+                <outlet property="selectedItemlabel" destination="NUG-cL-sSw" id="KWl-Eo-i4L"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="spinner_corner_triangle_30.png" width="15" height="30"/>
+    </resources>
+</document>

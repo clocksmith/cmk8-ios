@@ -1,0 +1,18 @@
+body {
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+.question {
+  font-family: "HelveticaNeue-CondensedBold";
+  font-size: 24px;
+}
+
+.attribute {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+}

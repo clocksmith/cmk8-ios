@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="5056"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKCompareViewController">
+            <connections>
+                <outlet property="leftKartConfigurationView" destination="z6L-cl-xbS" id="zRb-u2-L7L"/>
+                <outlet property="leftSpinnerView" destination="VqZ-cV-mh3" id="snp-yj-bhL"/>
+                <outlet property="rightKartConfigurationView" destination="B4Q-Ih-OP2" id="usb-Ij-Ujl"/>
+                <outlet property="rightSpinnerView" destination="Y2I-3f-TkF" id="kOc-k6-g8F"/>
+                <outlet property="statsView" destination="uhA-dI-R7H" id="SwJ-ZK-XlQ"/>
+                <outlet property="view" destination="SL9-rm-Wd5" id="GpC-yC-VXL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SL9-rm-Wd5">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VqZ-cV-mh3" userLabel="Left Spinner View" customClass="CMKSpinnerView">
+                    <rect key="frame" x="12" y="20" width="361" height="66"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="AfW-0x-2b7"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2I-3f-TkF" userLabel="Right Spinner View" customClass="CMKSpinnerView">
+                    <rect key="frame" x="397" y="20" width="361" height="66"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="caJ-rT-iTq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ho-NI-hdA" userLabel="Bottom Horiontal Separator">
+                    <rect key="frame" x="0.0" y="86" width="769" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Hqh-Xe-L8o"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6L-cl-xbS" userLabel="Left Kart Configuration View" customClass="CMKKartConfigurationView">
+                    <rect key="frame" x="0.0" y="65" width="384" height="225"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z6L-cl-xbS" secondAttribute="height" multiplier="53:75" id="Zkx-qX-Crl"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUq-Vi-vuP" userLabel="Vertical Separator">
+                    <rect key="frame" x="384" y="86" width="1" height="226"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="8qU-aT-tHv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-Ih-OP2" userLabel="Right Kart Configuration View" customClass="CMKKartConfigurationView">
+                    <rect key="frame" x="384" y="65" width="384" height="225"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="B4Q-Ih-OP2" secondAttribute="height" multiplier="53:75" id="6rd-Og-iw0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yM-kr-w6F" userLabel="Bottom Horiontal Separator">
+                    <rect key="frame" x="0.0" y="290" width="769" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="XFP-cU-xCh"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhA-dI-R7H" customClass="CMKCompareStatsScrollView">
+                    <rect key="frame" x="0.0" y="290" width="768" height="700"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Y2I-3f-TkF" firstAttribute="leading" secondItem="VqZ-cV-mh3" secondAttribute="trailing" constant="24" id="4qk-3y-IfK"/>
+                <constraint firstItem="1yM-kr-w6F" firstAttribute="leading" secondItem="SL9-rm-Wd5" secondAttribute="leading" id="7ON-GV-C5J"/>
+                <constraint firstItem="sUq-Vi-vuP" firstAttribute="height" secondItem="B4Q-Ih-OP2" secondAttribute="height" id="CM7-ak-H3h"/>
+                <constraint firstItem="0Ho-NI-hdA" firstAttribute="top" secondItem="Y2I-3f-TkF" secondAttribute="bottom" id="CyI-pK-ezp"/>
+                <constraint firstItem="B4Q-Ih-OP2" firstAttribute="width" secondItem="z6L-cl-xbS" secondAttribute="width" id="DIe-cl-ziQ"/>
+                <constraint firstItem="B4Q-Ih-OP2" firstAttribute="top" secondItem="0Ho-NI-hdA" secondAttribute="bottom" id="G4K-kU-WOl"/>
+                <constraint firstItem="uhA-dI-R7H" firstAttribute="leading" secondItem="SL9-rm-Wd5" secondAttribute="leading" id="IX7-fm-rUb"/>
+                <constraint firstItem="VqZ-cV-mh3" firstAttribute="leading" secondItem="SL9-rm-Wd5" secondAttribute="leading" constant="12" id="Mpl-qV-hnn"/>
+                <constraint firstAttribute="trailing" secondItem="B4Q-Ih-OP2" secondAttribute="trailing" id="NY9-jm-ui7"/>
+                <constraint firstItem="sUq-Vi-vuP" firstAttribute="top" secondItem="SL9-rm-Wd5" secondAttribute="top" constant="86" id="Nbt-N3-2Gc"/>
+                <constraint firstAttribute="trailing" secondItem="Y2I-3f-TkF" secondAttribute="trailing" constant="12" id="OHl-ci-PZB"/>
+                <constraint firstAttribute="trailing" secondItem="0Ho-NI-hdA" secondAttribute="trailing" id="Unp-bH-HT1"/>
+                <constraint firstItem="z6L-cl-xbS" firstAttribute="leading" secondItem="SL9-rm-Wd5" secondAttribute="leading" id="VLa-6n-SiN"/>
+                <constraint firstAttribute="bottom" secondItem="uhA-dI-R7H" secondAttribute="bottom" id="VVe-J8-uEO"/>
+                <constraint firstAttribute="trailing" secondItem="uhA-dI-R7H" secondAttribute="trailing" id="Z1U-Gg-jlq"/>
+                <constraint firstItem="Y2I-3f-TkF" firstAttribute="top" secondItem="SL9-rm-Wd5" secondAttribute="top" constant="20" id="ZfD-Sl-WI4"/>
+                <constraint firstItem="B4Q-Ih-OP2" firstAttribute="leading" secondItem="sUq-Vi-vuP" secondAttribute="trailing" id="bMt-GG-vql"/>
+                <constraint firstAttribute="trailing" secondItem="1yM-kr-w6F" secondAttribute="trailing" id="eg1-Px-Jb9"/>
+                <constraint firstItem="Y2I-3f-TkF" firstAttribute="width" secondItem="VqZ-cV-mh3" secondAttribute="width" id="epW-nH-VZx"/>
+                <constraint firstItem="0Ho-NI-hdA" firstAttribute="leading" secondItem="SL9-rm-Wd5" secondAttribute="leading" id="fu8-ZT-q7p"/>
+                <constraint firstItem="1yM-kr-w6F" firstAttribute="top" secondItem="B4Q-Ih-OP2" secondAttribute="bottom" id="hym-78-Zlg"/>
+                <constraint firstItem="uhA-dI-R7H" firstAttribute="top" secondItem="1yM-kr-w6F" secondAttribute="bottom" id="jDA-bJ-rGO"/>
+                <constraint firstItem="sUq-Vi-vuP" firstAttribute="leading" secondItem="z6L-cl-xbS" secondAttribute="trailing" id="oWx-1q-rdO"/>
+                <constraint firstItem="0Ho-NI-hdA" firstAttribute="top" secondItem="VqZ-cV-mh3" secondAttribute="bottom" id="s7L-tN-YdE"/>
+                <constraint firstItem="z6L-cl-xbS" firstAttribute="top" secondItem="0Ho-NI-hdA" secondAttribute="bottom" id="t6l-6o-v3p"/>
+                <constraint firstItem="VqZ-cV-mh3" firstAttribute="top" secondItem="SL9-rm-Wd5" secondAttribute="top" constant="20" id="xm9-ti-7du"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

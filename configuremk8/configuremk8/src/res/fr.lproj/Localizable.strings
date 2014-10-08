@@ -1,0 +1,216 @@
+/* 
+  Localizable.strings
+  configuremk8
+
+  Created by Anthony Robledo on 8/9/14.
+  Copyright (c) 2014 Blunka. All rights reserved.
+*/
+
+// Main tab bar titles.
+"Configure" = "Configuration";
+"Compare" = "Comparer";
+"F.A.Q." = "F.A.Q.";
+
+// General UI Strings.
+"OK" = "OK";
+"Cancel" = "Annuler";
+
+// Help wizard view.
+"Next" = "Suivant";
+"Done" = "Terminé";
+"PartGroupChooserHelpMessage" = "Glissez vers le haut et vers le bas pour modifier les groupes. Vous pouvez également sélectionner une partie individuelle pour voir ses stats .";
+"StarHelpMessage" = "Enregistrer des configurations de kart à être utilisé en mode comparer.";
+"SpinnerHelpMessage" = "Sélectionnez configurations enregistrées ou créer une configuration personnalisée.";
+
+// Adjust view.
+"Adjust" = "Adjust";
+"Custom" = "Custom";
+
+// Configure view.
+"Custom Configuration..." = "Configuration Personnalisée...";
+
+// Compare view.
+"ComparePlaceholderMessage" = "Pour comparer les caractéristiques, vous devez selectionner au minimun deux 2 configurations.";
+
+// F.A.Q. view.
+"RATE" = "Note";
+"DONATE" = "Donation";
+
+// Donations.
+"LikeThisAppMessage" = "Vous aimez cette application? \\n Aidez là en faisant une donation.";
+"via iTunes:" = "via iTunes:";
+"or via Bitcoin" = "ou via Bitcoin:";
+"Thank you!" = "Merci!";
+"BitcoinAddressCopied" = "Copier l'addresse du Bitcoin.";
+
+// Adjust Configurations.
+"Custom" = "Coutume";
+"Never Played Before" = "Vous n'avez jamais joué";
+"Novice" = "Novice";
+"Tractor" = "Tracteur";
+"Flash" = "Flash";
+"Expert" = "Expert";
+
+// Attributes.
+"Acceleration" = "Accélération";
+"Average Speed" = "Vitesse Moyenne";
+"Ground Speed" = "Vitesse au Sol";
+"Antigravity Speed" = "Vitesse Antigravité";
+"Air Speed" = "Vitesse dans les Air";
+"Water Speed" = "Vitesse dans l'Eau";
+"Average Handling" = "Contrôle Moyenne";
+"Ground Handling" = "Contrôle au Sol";
+"Antigravity Handling" = "Contrôle Antigravité";
+"Air Handling" = "Contrôle Aérien";
+"Water Handling" = "Contrôle Sous-marin";
+"Miniturbo" = "Miniturbo";
+"Traction" = "Traction";
+"Weight" = "Poids";
+
+// Parts.
+"Character" = "Personnage";
+"Vehicle" = "Véhicule";
+"Tire" = "Roues";
+"Glider" = "Planneur";
+
+// Weight classes.
+"Flyweight" = "Flyweight";
+"Featherweight" = "Featherweight";
+"Lightweight" = "Lightweight";
+"Middleweight" = "Middleweight";
+"Cruiserweight" = "Cruiserweight";
+"Metalweight" = "Metalweight";
+"Heavyweight" = "Heavyweight";
+
+// Flyweights.
+"Baby Mario" = "Bébé Mario";
+"Baby Luigi" = "Bébé Luigi";
+"Baby Peach" = "Bébé Peach";
+"Baby Daisy" = "Bébé Daisy";
+"Baby Rosalina" = "Bébé Harmonie";
+"Lemmy" = "Lemmy";
+
+// Featherweights.
+"Toad" = "Toad";
+"Koopa Troopa" = "Koopa";
+"Shy Guy" = "Maskass";
+"Lakitu" = "Lakitu";
+"Toadette" = "Toadette";
+"Larry" = "Larry";
+"Wendy" = "Wendy";
+
+// Lightweights.
+"Peach" = "Peach";
+"Daisy" = "Daisy";
+"Yoshi" = "Yoshi";
+
+// Middleweights.
+"Mario" = "Mario";
+"Luigi" = "Luigi";
+"Iggy" = "Iggy";
+"Ludwig" = "Ludwig";
+
+// Cruiserweights.
+"Donkey Kong" = "Donkey Kong";
+"Waluigi" = "Waluigi";
+"Rosalina" = "Harmonie";
+"Roy" = "Roy";
+
+// Metalweights.
+"Metal Mario" = "Metal Mario";
+"Pink Gold Peach" = "Pink Gold Peach";
+
+// Heavyweights.
+"Bowser" = "Bowser";
+"Wario" = "Wario";
+"Morton" = "Morton";
+
+// Vehicle class A.
+"Standard Kart" = "Standard Kart";
+"Cat Cruiser" = "Cat Cruiser";
+"Prancer" = "Prancer";
+"Sneeker" = "Sneeker";
+"The Duke" = "The Duke";
+"Teddy Buggy" = "Teddy Buggy";
+"300 SL Roadster";
+
+// Vehicle class B.
+"Pipe Frame" = "Pipe Frame";
+"Standard Bike" = "Standard Bike";
+"Flame Rider" = "Flame Rider";
+"Varmint" = "Varmint";
+"Wild Wiggler" = "Wild Wiggler";
+"W 25 Silver Arrow" = "W 25 Silver Arrow";
+
+// Vehicle class C.
+"Mach 8" = "Mach 8";
+"Circuit Special" = "Circuit Special";
+"Sports Coupe" = "Sports Coupe";
+"Gold Standard" = "Gold Standard";
+
+// Vehicle class D.
+"Steel Driver" = "Steel Driver";
+"Tri Speeder" = "Tri Speeder";
+"Badwagon" = "Badwagon";
+"Standard ATV" = "Standard ATV";
+"GLA" = "GLA";
+
+// Vehicle class E.
+"Biddybuggy" = "Biddybuggy";
+"Landship" = "Landship";
+"Mr. Scooty" = "Mr. Scooty";
+
+// Vehicle class F.
+"Comet" = "Comet";
+"Sports Bike" = "Sports Bike";
+"Jet Bike" = "Jet Bike";
+"Yoshi Bike" = "Yoshi Bike";
+
+// Tire class A.
+"Standard" = "Standard";
+"Off-Road" = "Off-Road";
+"Blue Standard" = "Blue Standard";
+"Retro Off-Road" = "Retro Off-Road";
+"GLA Tires" = "GLA Tires";
+
+// Tire class B.
+"Monster" = "Monster";
+"Hot Monster" = "Hot Monster";
+
+// Tire class C.
+"Roller" = "Roller";
+"Button" = "Button";
+"Azure Roller" = "Azure Roller";
+
+// Tire class D.
+"Slim" = "Slim";
+"Crimson Slim" = "Crimson Slim";
+
+// Tire class E.
+"Slick" = "Slick";
+"Cyber Slick" = "Cyber Slick";
+
+// Tire class F.
+"Metal" = "Metal";
+"Gold Tires" = "Gold Tires";
+
+// Tire class G.
+"Sponge" = "Sponge";
+"Wood" = "Wood";
+"Cushion" = "Cushion";
+
+// Glider class A.
+"Super Glider" = "Super Glider";
+"Wario Wing" = "Wario Wing";
+"Waddle Wing" = "Waddle Wing";
+"Plane Glider" = "Plane Glider";
+"Gold Glider" = "Gold Glider";
+
+// Glider class B.
+"Cloud Glider" = "Cloud Glider";
+"Peach Parasol" = "Peach Parasol";
+"Parachute" = "Parachute";
+"Parafoil" = "Parafoil";
+"Flower Glider" = "Flower Glider";
+"Bowser Kite" = "Bowser Kite";
+"MKTV Parafoil" = "MKTV Parafoil";

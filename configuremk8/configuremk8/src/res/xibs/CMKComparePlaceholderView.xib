@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZS1-YH-tMY" customClass="CMKComparePlaceholderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-KU-XwB" userLabel="Container">
+                    <rect key="frame" x="0.0" y="228" width="320" height="112"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hollow_star_b0b0b0" translatesAutoresizingMaskIntoConstraints="NO" id="v60-Fy-Gta">
+                            <rect key="frame" x="138" y="68" width="44" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="AMr-06-Dyj"/>
+                                <constraint firstAttribute="width" constant="44" id="D9x-gZ-pOY"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to use the compare feature, you must have saved/starred at least 2 configurations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-sT-rb6">
+                            <rect key="frame" x="8" y="0.0" width="304" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="UgX-PV-IX3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="112" id="1Af-CH-YK8"/>
+                        <constraint firstAttribute="bottom" secondItem="v60-Fy-Gta" secondAttribute="bottom" id="FU0-5E-r3l"/>
+                        <constraint firstItem="C9V-sT-rb6" firstAttribute="leading" secondItem="eGq-KU-XwB" secondAttribute="leading" constant="8" id="Fxr-1a-isn"/>
+                        <constraint firstAttribute="trailing" secondItem="C9V-sT-rb6" secondAttribute="trailing" constant="8" id="NQP-f3-yOd"/>
+                        <constraint firstItem="v60-Fy-Gta" firstAttribute="top" secondItem="C9V-sT-rb6" secondAttribute="bottom" constant="8" id="Xae-uW-Tai"/>
+                        <constraint firstAttribute="centerX" secondItem="v60-Fy-Gta" secondAttribute="centerX" id="r0z-zQ-ZGD"/>
+                    </constraints>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="eGq-KU-XwB" secondAttribute="centerY" id="6WX-WS-4Pr"/>
+                <constraint firstAttribute="trailing" secondItem="eGq-KU-XwB" secondAttribute="trailing" id="8QU-FD-R7L"/>
+                <constraint firstItem="eGq-KU-XwB" firstAttribute="leading" secondItem="ZS1-YH-tMY" secondAttribute="leading" id="lXg-Uo-fkk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hollow_star_b0b0b0" width="240" height="240"/>
+    </resources>
+</document>

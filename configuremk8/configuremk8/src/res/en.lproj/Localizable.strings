@@ -1,0 +1,277 @@
+/* 
+  Localizable.strings
+  configuremk8
+
+  Created by Anthony Robledo on 8/9/14.
+  Copyright (c) 2014 Blunka. All rights reserved.
+*/
+
+// Main tab bar titles.
+"Configure" = "Configure";
+"Compare" = "Compare";
+"F.A.Q." = "F.A.Q.";
+
+// General UI Strings.
+"OK" = "OK";
+"Cancel" = "Cancel";
+
+// Help wizard view.
+"Next" = "Next";
+"Done" = "Done";
+"PartGroupChooserHelpMessage" = "Swipe up and down to change groups. You can also select an individual part to view its stats.";
+"StarHelpMessage" = "Save kart configurations to be used in compare mode.";
+"SpinnerHelpMessage" = "Select saved configurations or create a custom configuration.";
+
+// Adjust view.
+"Adjust" = "Adjust";
+"Custom" = "Custom";
+
+// Configure view.
+"Custom Configuration..." = "Custom Configuration...";
+
+// Compare view.
+"ComparePlaceholderMessage" = "In order to use the compare feature, you must have saved/starred at least 2 configurations.";
+
+// F.A.Q. view.
+"RATE" = "RATE";
+"DONATE" = "DONATE";
+
+// Donations.
+"LikeThisAppMessage" = "Like this app? \\n Support it by sending a donation.";
+"via iTunes:" = "via iTunes:";
+"or via Bitcoin" = "or via Bitcoin";
+"Thank you!" = "Thank you!";
+"BitcoinAddressCopied" = "Bitcoin address copied to clipboard.";
+
+// Adjust Configurations.
+"Custom" = "Custom";
+"Never Played Before" = "Never Played Before";
+"Novice" = "Novice";
+"Tractor" = "Tractor";
+"Flash" = "Flash";
+"Expert" = "Expert";
+
+// Attributes.
+"Acceleration" = "Acceleration";
+"Average Speed" = "Average Speed";
+"Ground Speed" = "Ground Speed";
+"Antigravity Speed" = "Antigravity Speed";
+"Air Speed" = "Air Speed";
+"Water Speed" = "Water Speed";
+"Average Handling" = "Average Handling";
+"Ground Handling" = "Ground Handling";
+"Antigravity Handling" = "Antigravity Handling";
+"Air Handling" = "Air Handling";
+"Water Handling" = "Water Handling";
+"Miniturbo" = "Miniturbo";
+"Traction" = "Traction";
+"Weight" = "Weight";
+
+// Parts.
+"Character" = "Charcter";
+"Vehicle" = "Vehicle";
+"Tire" = "Tire";
+"Glider" = "Glider";
+
+// Weight classes.
+"Flyweight" = "Flyweight";
+"Featherweight" = "Featherweight";
+"Lightweight" = "Lightweight";
+"Middleweight" = "Middleweight";
+"Cruiserweight" = "Cruiserweight";
+"Metalweight" = "Metalweight";
+"Heavyweight" = "Heavyweight";
+
+// Flyweights.
+"Baby Mario" = "Baby Mario";
+"Baby Luigi" = "Baby Luigi";
+"Baby Peach" = "Baby Peach";
+"Baby Daisy" = "Baby Daisy";
+"Baby Rosalina" = "Baby Rosalina";
+"Lemmy" = "Lemmy";
+
+// Featherweights.
+"Toad" = "Toad";
+"Koopa Troopa" = "Koopa Troopa";
+"Shy Guy" = "Shy Guy";
+"Lakitu" = "Lakitu";
+"Toadette" = "Toadette";
+"Larry" = "Larry";
+"Wendy" = "Wendy";
+
+// Lightweights.
+"Peach" = "Peach";
+"Daisy" = "Daisy";
+"Yoshi" = "Yoshi";
+
+// Middleweights.
+"Mario" = "Mario";
+"Luigi" = "Luigi";
+"Iggy" = "Iggy";
+"Ludwig" = "Ludwig";
+
+// Cruiserweights.
+"Donkey Kong" = "Donkey Kong";
+"Waluigi" = "Waluigi";
+"Rosalina" = "Rosalina";
+"Roy" = "Roy";
+
+// Metalweights.
+"Metal Mario" = "Metal Mario";
+"Pink Gold Peach" = "Pink Gold Peach";
+
+// Heavyweights.
+"Bowser" = "Bowser";
+"Wario" = "Wario";
+"Morton" = "Morton";
+
+// Vehicle class A.
+"Standard Kart" = "Standard Kart";
+"Cat Cruiser" = "Cat Cruiser";
+"Prancer" = "Prancer";
+"Sneeker" = "Sneeker";
+"The Duke" = "The Duke";
+"Teddy Buggy" = "Teddy Buggy";
+"300 SL Roadster";
+
+// Vehicle class B.
+"Pipe Frame" = "Pipe Frame";
+"Standard Bike" = "Standard Bike";
+"Flame Rider" = "Flame Rider";
+"Varmint" = "Varmint";
+"Wild Wiggler" = "Wild Wiggler";
+"W 25 Silver Arrow" = "W 25 Silver Arrow";
+
+// Vehicle class C.
+"Mach 8" = "Mach 8";
+"Circuit Special" = "Circuit Special";
+"Sports Coupe" = "Sports Coupe";
+"Gold Standard" = "Gold Standard";
+
+// Vehicle class D.
+"Steel Driver" = "Steel Driver";
+"Tri Speeder" = "Tri Speeder";
+"Badwagon" = "Badwagon";
+"Standard ATV" = "Standard ATV";
+"GLA" = "GLA";
+
+// Vehicle class E.
+"Biddybuggy" = "Biddybuggy";
+"Landship" = "Landship";
+"Mr. Scooty" = "Mr. Scooty";
+
+// Vehicle class F.
+"Comet" = "Comet";
+"Sports Bike" = "Sports Bike";
+"Jet Bike" = "Jet Bike";
+"Yoshi Bike" = "Yoshi Bike";
+
+// Tire class A.
+"Standard" = "Standard";
+"Off-Road" = "Off-Road";
+"Blue Standard" = "Blue Standard";
+"Retro Off-Road" = "Retro Off-Road";
+"GLA Tires" = "GLA Tires";
+
+// Tire class B.
+"Monster" = "Monster";
+"Hot Monster" = "Hot Monster";
+
+// Tire class C.
+"Roller" = "Roller";
+"Button" = "Button";
+"Azure Roller" = "Azure Roller";
+
+// Tire class D.
+"Slim" = "Slim";
+"Crimson Slim" = "Crimson Slim";
+
+// Tire class E.
+"Slick" = "Slick";
+"Cyber Slick" = "Cyber Slick";
+
+// Tire class F.
+"Metal" = "Metal";
+"Gold Tires" = "Gold Tires";
+
+// Tire class G.
+"Sponge" = "Sponge";
+"Wood" = "Wood";
+"Cushion" = "Cushion";
+
+// Glider class A.
+"Super Glider" = "Super Glider";
+"Wario Wing" = "Wario Wing";
+"Waddle Wing" = "Waddle Wing";
+"Plane Glider" = "Plane Glider";
+"Gold Glider" = "Gold Glider";
+
+// Glider class B.
+"Cloud Glider" = "Cloud Glider";
+"Peach Parasol" = "Peach Parasol";
+"Parachute" = "Parachute";
+"Parafoil" = "Parafoil";
+"Flower Glider" = "Flower Glider";
+"Bowser Kite" = "Bowser Kite";
+"MKTV Parafoil" = "MKTV Parafoil";
+
+// Cups.
+"Mushroom Cup" = "Mushroom Cup";
+"Flower Cup" = "Flower Cup";
+"Star Cup" = "Star Cup";
+"Special Cup" = "Special Cup";
+"Shell Cup" = "Shell Cup";
+"Banana Cup" = "Banana Cup";
+"Leaf Cup" = "Leaf Cup";
+"Lightning Cup" = "Lightning Cup";
+
+// Courses.
+
+// Mushroom Cup.
+"Mario Kart Stadium" = "Mario Kart Stadium";
+"Water Park" = "Water Park";
+"Sweet Sweet Canyon" = "Sweet Sweet Canyon";
+"Thwomp Ruins" = "Thwomp Ruins";
+
+
+// Flower Cup.
+"Mario Circuit" = "Mario Circuit";
+"Toad Harbor" = "Toad Harbor";
+"Twisted Mansion" = "Twisted Mansion";
+"Shy Guy Falls" = "Shy Guy Falls";
+
+// Star Cup.
+"Sunshine Airport" = "Sunshine Airport";
+"Dolphin Shoals" = "Dolphin Shoals";
+"Electrodrome" = "Electrodrome";
+"Mount Wario" = "Mount Wario";
+
+// Special Cup.
+"Cloudtop Cruise" = "Cloudtop Cruise";
+"Bone-Dry Dunes" = "Bone-Dry Dunes";
+"Bowser's Castle" = "Bowser's Castle";
+"Rainbow Road" = "Rainbow Road";
+
+// Shell Cup.
+"Moo Moo Meadows" = "Moo Moo Meadows";
+"Mario Circuit (GBA)" = "Mario Circuit (GBA)";
+"Cheep Cheep Beach" = "Cheep Cheep Beach";
+"Toad's Turnpike" = "Toad's Turnpike";
+
+// Banana Cup.
+"Dry Dry Desert" = "Dry Dry Desert";
+"Donut Plains 3" = "Donut Plains 3";
+"Royal Raceway" = "Royal Raceway";
+"DK Jungle" = "DK Jungle";
+
+// Leaf Cup.
+"Wario Stadium" = "Wario Stadium";
+"Sherbert Land" = "Sherbert Land";
+"Music Park" = "Music Park";
+"Yoshi Valley" = "Yoshi Valley";
+
+// Lightning Cup.
+"Tick-Tock Clock" = "Tick-Tock Clock";
+"Piranha Plant Slide" = "Piranha Plant Slide";
+"Grumble Volcano" = "Grumble Volcano";
+"Rainbow Road (N64)" = "Rainbow Road (N64)";

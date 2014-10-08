@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKAdjustViewController">
+            <connections>
+                <outlet property="accelerationAttributeView" destination="2bz-JQ-mnB" id="Na7-us-SZf"/>
+                <outlet property="handlingAttributeView" destination="kLi-2F-sqT" id="WjJ-1U-8yq"/>
+                <outlet property="miniturboAttributeView" destination="olv-Gp-9qP" id="3gI-kY-iGd"/>
+                <outlet property="speedAttributeView" destination="1RN-um-ufq" id="St5-Oa-15q"/>
+                <outlet property="spinnerView" destination="ag8-kC-IBc" id="us1-4B-Boi"/>
+                <outlet property="tractionAttributeView" destination="Una-ki-tTF" id="Kb6-jV-o5l"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightAttributeView" destination="ETV-nj-rIa" id="Br6-0g-SWY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ag8-kC-IBc" customClass="CMKSpinnerView">
+                    <rect key="frame" x="12" y="20" width="296" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="VTf-PQ-i97"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bz-JQ-mnB" userLabel="Acceleration Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="64" width="320" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RN-um-ufq" userLabel="Speed Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="140" width="320" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kLi-2F-sqT" userLabel="Handling Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="215" width="320" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olv-Gp-9qP" userLabel="Miniturbo Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="290" width="320" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Una-ki-tTF" userLabel="Traction Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="367" width="320" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETV-nj-rIa" userLabel="Weight Attribute View" customClass="CMKAdjustAttributeView">
+                    <rect key="frame" x="0.0" y="443" width="320" height="75"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yac-Og-wrm" userLabel="Bottom Horizontal Separator">
+                    <rect key="frame" x="0.0" y="518" width="320" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="z0L-Sy-GoY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsW-KA-roK" userLabel="Button Vertical Separator">
+                    <rect key="frame" x="160" y="519" width="1" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="ZGn-84-Tyv"/>
+                        <constraint firstAttribute="width" constant="1" id="pZQ-pN-cdA"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdg-GM-07I" userLabel="Cancel Button">
+                    <rect key="frame" x="0.0" y="519" width="160" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="cI4-AL-Fzc"/>
+                    </constraints>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleCancelTapped:" destination="-1" eventType="touchUpInside" id="8ab-Tt-gRS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-UC-vo6" userLabel="OK Button">
+                    <rect key="frame" x="161" y="519" width="159" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="87H-f0-d7a"/>
+                    </constraints>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleOKTapped:" destination="-1" eventType="touchUpInside" id="2X4-Rg-iC2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2bz-JQ-mnB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0lQ-Oh-z8f"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="height" secondItem="Una-ki-tTF" secondAttribute="height" id="19p-We-pQU"/>
+                <constraint firstItem="2bz-JQ-mnB" firstAttribute="top" secondItem="ag8-kC-IBc" secondAttribute="bottom" id="4LN-Qa-Doq"/>
+                <constraint firstItem="Yac-Og-wrm" firstAttribute="top" secondItem="ETV-nj-rIa" secondAttribute="bottom" id="7Mc-PP-TE6"/>
+                <constraint firstItem="kLi-2F-sqT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7mL-Hj-5QV"/>
+                <constraint firstItem="WsW-KA-roK" firstAttribute="leading" secondItem="Tdg-GM-07I" secondAttribute="trailing" id="9wK-ch-jbY"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="height" secondItem="2bz-JQ-mnB" secondAttribute="height" id="AA5-7O-Gxf"/>
+                <constraint firstItem="Tdg-GM-07I" firstAttribute="top" secondItem="Yac-Og-wrm" secondAttribute="bottom" id="ADV-WL-45j"/>
+                <constraint firstItem="olv-Gp-9qP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C8R-US-erR"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="height" secondItem="1RN-um-ufq" secondAttribute="height" id="CNL-oX-CTq"/>
+                <constraint firstItem="kLi-2F-sqT" firstAttribute="top" secondItem="1RN-um-ufq" secondAttribute="bottom" id="Fa0-cq-mSd"/>
+                <constraint firstItem="kLi-2F-sqT" firstAttribute="top" secondItem="1RN-um-ufq" secondAttribute="bottom" id="FrZ-U1-psP"/>
+                <constraint firstItem="E8c-UC-vo6" firstAttribute="top" secondItem="Yac-Og-wrm" secondAttribute="bottom" id="HXY-Tv-vYT"/>
+                <constraint firstItem="olv-Gp-9qP" firstAttribute="top" secondItem="kLi-2F-sqT" secondAttribute="bottom" id="JgS-dt-RJP"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="top" secondItem="Una-ki-tTF" secondAttribute="bottom" id="KfX-Ba-tNC"/>
+                <constraint firstItem="WsW-KA-roK" firstAttribute="leading" secondItem="Tdg-GM-07I" secondAttribute="trailing" id="L51-W7-w8V"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="height" secondItem="ETV-nj-rIa" secondAttribute="height" id="L7n-Wp-Ee1"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="height" secondItem="kLi-2F-sqT" secondAttribute="height" id="RGS-MJ-2uA"/>
+                <constraint firstAttribute="bottom" secondItem="Tdg-GM-07I" secondAttribute="bottom" id="SRg-sP-6cp"/>
+                <constraint firstAttribute="trailing" secondItem="kLi-2F-sqT" secondAttribute="trailing" id="TgE-6h-9mK"/>
+                <constraint firstItem="1RN-um-ufq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tq0-IC-8oE"/>
+                <constraint firstItem="E8c-UC-vo6" firstAttribute="width" secondItem="Tdg-GM-07I" secondAttribute="width" id="UOM-59-r5i"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="top" secondItem="olv-Gp-9qP" secondAttribute="bottom" id="VVH-Ic-Res"/>
+                <constraint firstItem="E8c-UC-vo6" firstAttribute="leading" secondItem="WsW-KA-roK" secondAttribute="trailing" id="XFy-Xe-pnv"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="height" secondItem="2bz-JQ-mnB" secondAttribute="height" id="Xml-CP-QSr"/>
+                <constraint firstItem="Yac-Og-wrm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YFw-rf-Eyu"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="height" secondItem="kLi-2F-sqT" secondAttribute="height" id="Yzz-yY-rvy"/>
+                <constraint firstItem="Tdg-GM-07I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b7C-Dh-zce"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="height" secondItem="olv-Gp-9qP" secondAttribute="height" id="bwQ-r1-Mzx"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="height" secondItem="1RN-um-ufq" secondAttribute="height" id="c8W-Jm-9by"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="height" secondItem="olv-Gp-9qP" secondAttribute="height" id="e0K-18-juz"/>
+                <constraint firstItem="olv-Gp-9qP" firstAttribute="top" secondItem="kLi-2F-sqT" secondAttribute="bottom" id="e6q-Ew-mW9"/>
+                <constraint firstAttribute="trailing" secondItem="ETV-nj-rIa" secondAttribute="trailing" id="ekA-Nz-ieM"/>
+                <constraint firstItem="ag8-kC-IBc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="gfo-an-GVU"/>
+                <constraint firstAttribute="trailing" secondItem="ag8-kC-IBc" secondAttribute="trailing" constant="12" id="ibv-uL-tE1"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="top" secondItem="olv-Gp-9qP" secondAttribute="bottom" id="k6i-dB-edU"/>
+                <constraint firstAttribute="trailing" secondItem="Yac-Og-wrm" secondAttribute="trailing" id="kWZ-EI-sh7"/>
+                <constraint firstItem="Una-ki-tTF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kaX-Gw-xrf"/>
+                <constraint firstAttribute="bottom" secondItem="E8c-UC-vo6" secondAttribute="bottom" id="kxz-fF-rE8"/>
+                <constraint firstAttribute="trailing" secondItem="1RN-um-ufq" secondAttribute="trailing" id="nxl-Eo-yMZ"/>
+                <constraint firstAttribute="trailing" secondItem="olv-Gp-9qP" secondAttribute="trailing" id="uHm-Er-qRK"/>
+                <constraint firstItem="ETV-nj-rIa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uej-DG-nuz"/>
+                <constraint firstAttribute="trailing" secondItem="Una-ki-tTF" secondAttribute="trailing" id="uze-ln-GLZ"/>
+                <constraint firstAttribute="trailing" secondItem="E8c-UC-vo6" secondAttribute="trailing" id="vOy-Z7-cyG"/>
+                <constraint firstAttribute="bottom" secondItem="WsW-KA-roK" secondAttribute="bottom" id="y5I-f9-lYB"/>
+                <constraint firstItem="1RN-um-ufq" firstAttribute="top" secondItem="2bz-JQ-mnB" secondAttribute="bottom" id="yWn-3K-SHI"/>
+                <constraint firstAttribute="trailing" secondItem="2bz-JQ-mnB" secondAttribute="trailing" id="ycm-uZ-QC1"/>
+                <constraint firstItem="ag8-kC-IBc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="zxe-AB-38d"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

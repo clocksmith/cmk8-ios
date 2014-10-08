@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKAdjustAttributeView">
+            <connections>
+                <outlet property="attributeLabel" destination="17N-Py-YGo" id="CTQ-Eq-057"/>
+                <outlet property="decrementButton" destination="WXF-jm-ryq" id="dYo-DO-LjL"/>
+                <outlet property="incrementButton" destination="JZU-As-z94" id="gti-YX-eZu"/>
+                <outlet property="slider" destination="ms6-d5-Hv9" id="nvh-aj-BTV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2Gv-3E-bpz" customClass="CMKAdjustAttributeView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antigravity Handling" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17N-Py-YGo" userLabel="Attribute Label">
+                    <rect key="frame" x="12" y="2" width="296" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="cQe-ZG-Ftr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXF-jm-ryq" userLabel="Decrement Button" customClass="CMKCircleWithTextView">
+                    <rect key="frame" x="12" y="24" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="WXF-jm-ryq" secondAttribute="height" multiplier="1:1" id="utO-7d-hnF"/>
+                    </constraints>
+                    <connections>
+                        <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="gpQ-A7-cdn"/>
+                        <action selector="buttonTapped:" destination="2Gv-3E-bpz" eventType="touchUpInside" id="n0V-K5-Hok"/>
+                    </connections>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ms6-d5-Hv9">
+                    <rect key="frame" x="54" y="25" width="212" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="Cmh-sI-lxc"/>
+                        <action selector="sliderValueChanged:" destination="2Gv-3E-bpz" eventType="valueChanged" id="wrP-Si-EYd"/>
+                        <action selector="thumbPressed:" destination="-1" eventType="touchDown" id="SQB-HM-q2t"/>
+                        <action selector="thumbPressed:" destination="2Gv-3E-bpz" eventType="touchDown" id="Tlj-iF-3V9"/>
+                        <action selector="thumbReleased:" destination="2Gv-3E-bpz" eventType="touchUpOutside" id="MhN-Gy-fXd"/>
+                        <action selector="thumbReleased:" destination="-1" eventType="touchUpOutside" id="Y7A-ty-TmP"/>
+                        <action selector="thumbReleased:" destination="-1" eventType="touchUpInside" id="uAT-R8-3vQ"/>
+                        <action selector="thumbReleased:" destination="2Gv-3E-bpz" eventType="touchUpInside" id="vqw-oE-oHO"/>
+                    </connections>
+                </slider>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZU-As-z94" userLabel="Increment Button" customClass="CMKCircleWithTextView">
+                    <rect key="frame" x="276" y="24" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="JZU-As-z94" secondAttribute="height" multiplier="1:1" id="X18-60-YdX"/>
+                    </constraints>
+                    <connections>
+                        <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="Wn8-pd-cG4"/>
+                        <action selector="buttonTapped:" destination="2Gv-3E-bpz" eventType="touchUpInside" id="iez-dU-UJ3"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WXF-jm-ryq" secondAttribute="bottom" constant="4" id="0xt-64-q3d"/>
+                <constraint firstAttribute="bottom" secondItem="JZU-As-z94" secondAttribute="bottom" constant="4" id="4j9-46-InX"/>
+                <constraint firstItem="WXF-jm-ryq" firstAttribute="leading" secondItem="2Gv-3E-bpz" secondAttribute="leading" constant="12" id="7N4-nf-rAE"/>
+                <constraint firstAttribute="trailing" secondItem="JZU-As-z94" secondAttribute="trailing" constant="12" id="8En-D2-Lgb"/>
+                <constraint firstItem="17N-Py-YGo" firstAttribute="leading" secondItem="2Gv-3E-bpz" secondAttribute="leading" constant="12" id="8d5-Dp-ELN"/>
+                <constraint firstItem="17N-Py-YGo" firstAttribute="top" secondItem="2Gv-3E-bpz" secondAttribute="top" constant="2" id="Fua-8y-M6w"/>
+                <constraint firstItem="ms6-d5-Hv9" firstAttribute="leading" secondItem="WXF-jm-ryq" secondAttribute="trailing" constant="12" id="Huv-Nk-4M7"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WXF-jm-ryq" secondAttribute="bottom" constant="4" id="IcO-by-ocT"/>
+                <constraint firstItem="ms6-d5-Hv9" firstAttribute="leading" secondItem="WXF-jm-ryq" secondAttribute="trailing" constant="12" id="N54-b4-bAY"/>
+                <constraint firstAttribute="trailing" secondItem="17N-Py-YGo" secondAttribute="trailing" constant="12" id="P5P-nL-Jzy"/>
+                <constraint firstItem="ms6-d5-Hv9" firstAttribute="top" secondItem="17N-Py-YGo" secondAttribute="bottom" constant="5" id="Scc-We-4Yl"/>
+                <constraint firstItem="JZU-As-z94" firstAttribute="leading" secondItem="ms6-d5-Hv9" secondAttribute="trailing" constant="12" id="Uq8-vH-aT0"/>
+                <constraint firstItem="WXF-jm-ryq" firstAttribute="top" secondItem="17N-Py-YGo" secondAttribute="bottom" constant="4" id="W0p-wY-uq7"/>
+                <constraint firstAttribute="bottom" secondItem="ms6-d5-Hv9" secondAttribute="bottom" constant="5" id="Xty-pp-hz3"/>
+                <constraint firstItem="WXF-jm-ryq" firstAttribute="top" secondItem="17N-Py-YGo" secondAttribute="bottom" constant="4" id="YBh-gr-A8J"/>
+                <constraint firstItem="WXF-jm-ryq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Gv-3E-bpz" secondAttribute="leading" constant="12" id="gTk-AJ-MyC"/>
+                <constraint firstItem="JZU-As-z94" firstAttribute="leading" secondItem="ms6-d5-Hv9" secondAttribute="trailing" constant="12" id="qva-xA-FHD"/>
+                <constraint firstItem="ms6-d5-Hv9" firstAttribute="leading" secondItem="WXF-jm-ryq" secondAttribute="trailing" constant="12" id="vUo-Er-TmK"/>
+                <constraint firstItem="JZU-As-z94" firstAttribute="top" secondItem="17N-Py-YGo" secondAttribute="bottom" constant="4" id="xHZ-nl-muZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="attributeLabel" destination="17N-Py-YGo" id="0sp-mp-Je3"/>
+                <outlet property="decrementButton" destination="WXF-jm-ryq" id="sY8-Ar-EfZ"/>
+                <outlet property="incrementButton" destination="JZU-As-z94" id="tOI-9J-znY"/>
+                <outlet property="slider" destination="ms6-d5-Hv9" id="SE1-Mb-Kya"/>
+            </connections>
+        </view>
+    </objects>
+</document>
