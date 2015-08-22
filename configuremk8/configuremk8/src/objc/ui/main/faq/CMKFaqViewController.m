@@ -18,9 +18,9 @@
 
 @interface CMKFaqViewController ()
 
-@property (nonatomic, weak) IBOutlet UIWebView *webView;
-@property (nonatomic, weak) IBOutlet CMKCircleWithTextView *rateButton;
-@property (nonatomic, weak) IBOutlet CMKCircleWithTextView *donateButton;
+@property(nonatomic, weak) IBOutlet UIWebView *webView;
+@property(nonatomic, weak) IBOutlet CMKCircleWithTextView *rateButton;
+@property(nonatomic, weak) IBOutlet CMKCircleWithTextView *donateButton;
 
 - (IBAction)handleRateButtonTapped:(id)sender;
 
@@ -31,7 +31,7 @@
 @implementation CMKFaqViewController
 
 - (instancetype)init {
-  self = [super initWithTitle:FAQ_TITLE_STRING withImageName:FAQ_ICON_IMAGE];
+  self = [super initWithTitle:FAQ_TITLE_STRING withImageName:FAQ_ICON_IMAGE withScreenName:FAQ_SCREEN];
 
   if (self) {
   }
@@ -46,33 +46,22 @@
   [self.rateButton updateText:NSLocalizedString(@"RATE", nil)];
   [self.rateButton updateBackgroundColor:[CMKColors darkRedColor]];
   [self.rateButton updateTextColor:[CMKColors whiteColor]];
-  [self.rateButton
-         updateFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold"
-                                    size:FAQ_BUTTON_FONT_SIZE_IPHONE]];
+  [self.rateButton updateFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:FAQ_BUTTON_FONT_SIZE_IPHONE]];
   [self.rateButton updateShadow:YES];
   [self.rateButton setNeedsDisplay];
 
   [self.donateButton updateText:NSLocalizedString(@"DONATE", nil)];
   [self.donateButton updateBackgroundColor:[CMKColors blueColor]];
   [self.donateButton updateTextColor:[CMKColors whiteColor]];
-  [self.donateButton
-         updateFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold"
-                                    size:FAQ_BUTTON_FONT_SIZE_IPHONE]];
+  [self.donateButton updateFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:FAQ_BUTTON_FONT_SIZE_IPHONE]];
   [self.donateButton updateShadow:YES];
   [self.donateButton setNeedsDisplay];
-  
+
   NSString *path = [[NSBundle mainBundle] pathForResource:@"faq" ofType:@"html"];
 
-  NSString *htmlString = [[NSString alloc] initWithContentsOfFile:path
-                                                         encoding:NSUTF8StringEncoding
-                                                            error:nil];
+  NSString *htmlString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 
   [self.webView loadHTMLString:htmlString baseURL:[[NSBundle mainBundle] bundleURL]];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  self.screenName = FAQ_SCREEN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,16 +75,14 @@
   NSLog(@"%@ handleRateButtonTapped", _TAG);
   [CMKAnalyticsUtils sendRateButtonClicked:self.tracker];
 
-  NSURL *appStoreUrl = [NSURL URLWithString:[NSString stringWithFormat:
-                                             @"itms-apps://itunes.apple.com/app/id%@",
-                                             APP_ID]];
+  NSURL *appStoreUrl =
+      [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", APP_ID]];
 
   if ([[UIApplication sharedApplication] canOpenURL:appStoreUrl]) {
     [[UIApplication sharedApplication] openURL:appStoreUrl];
   } else {
-    NSURL *appStoreWebsiteUrl = [NSURL URLWithString:[NSString stringWithFormat:
-                                                      @"http://itunes.apple.com/app/id%@",
-                                                      APP_ID]];
+    NSURL *appStoreWebsiteUrl =
+        [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", APP_ID]];
 
     if ([[UIApplication sharedApplication] canOpenURL:appStoreWebsiteUrl]) {
       [[UIApplication sharedApplication] openURL:appStoreWebsiteUrl];
@@ -105,11 +92,10 @@
 
 - (IBAction)handleDonateButtonTapped:(id)sender {
   [CMKAnalyticsUtils sendDonateButtonClicked:self.tracker];
-  CMKDonationPopupView *donationPopup = [[[NSBundle mainBundle]
-                                          loadNibNamed:NSStringFromClass([CMKDonationPopupView class])
-                                                 owner:self
-                                               options:nil]
-                                         firstObject];
+  CMKDonationPopupView *donationPopup =
+      [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CMKDonationPopupView class])
+                                     owner:self
+                                   options:nil] firstObject];
 
   // Add popup into window
   CMKAppDelegate *appDelegate = (CMKAppDelegate *)[[UIApplication sharedApplication] delegate];

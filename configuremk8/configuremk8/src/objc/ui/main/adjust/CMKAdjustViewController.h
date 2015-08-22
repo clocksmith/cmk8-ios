@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CMKKartConfigurationModel.h"
 #import "CMKAdjustAttributeView.h"
-#import "GAITrackedViewController.h"
+#import "CMKTrackedViewController.h"
 
-@protocol CMKAdjustViewControllerDelegate <NSObject>
+@protocol CMKAdjustViewControllerDelegate<NSObject>
 
 @required
 
@@ -19,7 +19,6 @@
 
 @end
 
-@interface CMKAdjustViewController : GAITrackedViewController <CMKSpinnerViewDelegate,
-                                                               CMKAdjustAttributeViewDelegate>
+@interface CMKAdjustViewController : CMKTrackedViewController<CMKSpinnerViewDelegate, CMKAdjustAttributeViewDelegate>
 
 @end

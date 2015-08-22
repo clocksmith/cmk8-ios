@@ -48,7 +48,7 @@
                                contentHeight,
                                self.frame.size.width,
                                rowView.frame.size.height);
-    rowView.attributeLabel.text = [CMKStatsModel nameForIndex:attributeIndex];
+    rowView.attributeLabel.text = [CMKStatsModel displayNameForIndex:attributeIndex];
     _rowViews[attributeIndex] = rowView;
     contentHeight += rowView.frame.size.height;
   }

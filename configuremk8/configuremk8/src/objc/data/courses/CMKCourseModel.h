@@ -9,18 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "CMKSpinnerView.h"
 
-@interface CMKCourseModel : NSObject <CMKSpinnerItem>
+@interface CMKCourseModel : NSObject<CMKSpinnerItem>
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *displayName;
-@property (nonatomic, copy) NSString *iconImageName;
-@property (nonatomic, copy) NSString *mapImageName;
-@property (nonatomic) int courseIndex;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *displayName;
+@property(nonatomic, copy) NSString *iconImageName;
+@property(nonatomic, copy) NSString *mapImageName;
+@property(nonatomic) int courseIndex;
 
-- (instancetype)initWithName:(NSString *)name
-             withDisplayName:displayName
-           withIconImageName:iconImageName
-            withMapImageName:(NSString *)mapImageName
-             withCourseIndex:(int)courseIndex;
+- (instancetype)initWithName:(NSString *)name withCourseIndex:(int)courseIndex;
 
 @end

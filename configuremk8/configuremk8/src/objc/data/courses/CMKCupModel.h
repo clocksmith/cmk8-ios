@@ -9,16 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "CMKSpinnerView.h"
 
-@interface CMKCupModel : NSObject <CMKSpinnerItem>
+@interface CMKCupModel : NSObject<CMKSpinnerItem>
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *displayName;
-@property (nonatomic, copy) NSString *iconImageName;
-@property (nonatomic, strong) NSArray *courses;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *displayName;
+@property(nonatomic, copy) NSString *iconImageName;
+@property(nonatomic, strong) NSArray *courses;
 
-- (instancetype)initWithName:(NSString *)theName
-             withDisplayName:(NSString *)displayName
-           withIconImageName:(NSString *)iconImageName
-                 withCourses:(NSArray *)courses;
+- (instancetype)initWithName:(NSString *)theName withCourses:(NSArray *)courses;
 
 @end

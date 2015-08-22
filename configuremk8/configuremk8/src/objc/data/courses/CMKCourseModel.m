@@ -10,18 +10,15 @@
 
 @implementation CMKCourseModel
 
-- (instancetype)initWithName:(NSString *)name
-             withDisplayName:displayName
-           withIconImageName:iconImageName
-            withMapImageName:mapImageName
-             withCourseIndex:(int)courseIndex {
+- (instancetype)initWithName:(NSString *)name withCourseIndex:(int)courseIndex {
   self = [super init];
 
   if (self) {
     self.name = name;
-    self.displayName = displayName;
-    self.iconImageName = iconImageName;
-    self.mapImageName = mapImageName;
+    self.displayName = NSLocalizedString(name, nil);
+    self.iconImageName = [NSString stringWithFormat:@"wiiu_course_%@", [name lowercaseString]];
+    // I dont remember why you need .jpg here, but I am pretty sure you do if its not a .png.
+    self.mapImageName = [NSString stringWithFormat:@"prima_map_%@.jpg", [name lowercaseString]];
     self.courseIndex = courseIndex;
   }
 

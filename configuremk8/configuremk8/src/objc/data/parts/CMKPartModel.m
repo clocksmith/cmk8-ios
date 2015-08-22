@@ -11,16 +11,17 @@
 @implementation CMKPartModel
 
 - (instancetype)initWithName:(NSString *)name
-             withDisplayName:(NSString *)displayName
-               withImageName:(NSString *)imageName
-               withPartGroup:(CMKPartGroupModel *)partGroup {
+                withPartType:(CMKPartType)partType
+          withPartGroupIndex:(int)partGroupIndex {
   self = [super init];
 
   if (self) {
     self.name = name;
-    self.displayName = displayName;
-    self.imageName = imageName;
-    self.partGroup = partGroup;
+    self.displayName = NSLocalizedString(name, nil);
+    self.imageName =
+        [NSString stringWithFormat:@"wiiu_%@_%@", [CMKPartData partNameAt:@(partType)], [name lowercaseString]];
+    self.partType = partType;
+    self.partGroupIndex = partGroupIndex;
   }
 
   return self;

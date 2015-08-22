@@ -80,6 +80,7 @@ extern NSString *const ADJUST_SCREEN;
 extern NSString *const CONFIGURE_SCREEN;
 extern NSString *const COMPARE_SCREEN;
 extern NSString *const FAQ_SCREEN;
+extern NSString *const MAPS_SCREEN;
 extern NSString *const PART_POPUP_SCREEN;
 extern NSString *const DONATION_POPUP_SCREEN;
 

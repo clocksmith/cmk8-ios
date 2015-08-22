@@ -53,12 +53,12 @@ static NSDictionary *_attributeNames;
   }
 }
 
-- (CMKStatsModel *)initWithAcceleration:(float)acceleration
-                       withAverageSpeed:(float)averageSpeed
-                    withAverageHandling:(float)averageHandling
-                          withMiniturbo:(float)miniturbo
-                           withTraction:(float)traction
-                             withWeight:(float)weight {
+- (CMKStatsModel *)initWithAcceleration:(double)acceleration
+                       withAverageSpeed:(double)averageSpeed
+                    withAverageHandling:(double)averageHandling
+                          withMiniturbo:(double)miniturbo
+                           withTraction:(double)traction
+                             withWeight:(double)weight {
   self = [super init];
 
   if (self) {
@@ -81,18 +81,18 @@ static NSDictionary *_attributeNames;
   return self;
 }
 
-- (CMKStatsModel *)initWithAcceleration:(float)acceleration
-                        withGroundSpeed:(float)groundSpeed
-                   withAntigravitySpeed:(float)antigravitySpeed
-                           withAirSpeed:(float)airSpeed
-                         withWaterSpeed:(float)waterSpeed
-                          withMiniturbo:(float)miniturbo
-                     withGroundHandling:(float)groundHandling
-                withAntigravityHandling:(float)antigravityHandling
-                        withAirHandling:(float)airHandling
-                      withWaterHandling:(float)waterHandling
-                           withTraction:(float)traction
-                             withWeight:(float)weight {
+- (CMKStatsModel *)initWithAcceleration:(double)acceleration
+                        withGroundSpeed:(double)groundSpeed
+                   withAntigravitySpeed:(double)antigravitySpeed
+                           withAirSpeed:(double)airSpeed
+                         withWaterSpeed:(double)waterSpeed
+                          withMiniturbo:(double)miniturbo
+                     withGroundHandling:(double)groundHandling
+                withAntigravityHandling:(double)antigravityHandling
+                        withAirHandling:(double)airHandling
+                      withWaterHandling:(double)waterHandling
+                           withTraction:(double)traction
+                             withWeight:(double)weight {
   self = [super init];
 
   if (self) {
@@ -115,12 +115,12 @@ static NSDictionary *_attributeNames;
   return self;
 }
 
-+ (NSString *)nameForIndex:(NSNumber *)attributeIndex {
++ (NSString *)displayNameForIndex:(NSNumber *)attributeIndex {
   return NSLocalizedString(_attributeNames[attributeIndex], nil);
 }
 
-- (float)statValueForIndex:(NSNumber *)attributeIndex {
-  return [[self valueForKey:[_attributeKeys objectForKey:attributeIndex]] floatValue];
+- (double)statValueForIndex:(NSNumber *)attributeIndex {
+  return [[self valueForKey:[_attributeKeys objectForKey:attributeIndex]] doubleValue];
 }
 
 + (NSArray *)attributeKeys {
@@ -156,7 +156,7 @@ static NSDictionary *_attributeNames;
 
   for (NSNumber *attributeIndex in[CMKStatsModel allAttributesInOrder]) {
     newDescription = [newDescription stringByAppendingString:
-                      [CMKStatsModel nameForIndex:attributeIndex]];
+                      [CMKStatsModel displayNameForIndex:attributeIndex]];
     newDescription = [newDescription stringByAppendingString:@":"];
     newDescription = [newDescription stringByAppendingString:
                       [NSString stringWithFormat:@"%f",

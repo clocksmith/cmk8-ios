@@ -8,17 +8,17 @@
 
 #import "CMKConfigureModel.h"
 #import "CMKKartConfigurationModel.h"
-#import "CMKParts.h"
+#import "CMKPartData.h"
 #import "CMKStarredKartConfigurationUtils.h"
 
 @implementation CMKConfigureModel
 
 - (instancetype)init {
   return [self initWithKartConfiguration:[[CMKKartConfigurationModel alloc]
-                                          initWithCharacterGroup:[CMKParts flyweight]
-                                                withVehicleGroup:[CMKParts vehicleA]
-                                                   withTireGroup:[CMKParts tireA]
-                                                 withGliderGroup:[CMKParts gliderA]]];
+                                             initWithCharacterGroup:[CMKPartData characterGroups][0]
+                                                   withVehicleGroup:[CMKPartData vehicleGroups][0]
+                                                      withTireGroup:[CMKPartData tireGroups][0]
+                                                    withGliderGroup:[CMKPartData gliderGroups][0]]];
 }
 
 - (instancetype)initWithKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {

@@ -10,16 +10,13 @@
 
 @implementation CMKCupModel
 
-- (instancetype)initWithName:(NSString *)name
-             withDisplayName:(NSString *)displayName
-           withIconImageName:(NSString *)iconImageName
-                 withCourses:(NSArray *)courses {
+- (instancetype)initWithName:(NSString *)theName withCourses:(NSArray *)courses {
   self = [super init];
 
   if (self) {
-    self.name = name;
-    self.displayName = displayName;
-    self.iconImageName = iconImageName;
+    self.name = theName;
+    self.displayName = NSLocalizedString(theName, nil);
+    self.iconImageName = [NSString stringWithFormat:@"wiiu_cup_%@", [theName lowercaseString]];
     self.courses = courses;
   }
 

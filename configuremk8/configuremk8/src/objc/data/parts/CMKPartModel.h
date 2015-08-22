@@ -7,19 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class CMKPartGroupModel;
+#import "CMKPartType.h"
+#import "CMKPartData.h"
 
 @interface CMKPartModel : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *displayName;
-@property (nonatomic, copy) NSString *imageName;
-@property (nonatomic, strong) CMKPartGroupModel *partGroup;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *displayName;
+@property(nonatomic, copy) NSString *imageName;
+@property(nonatomic, assign) CMKPartType partType;
+@property(nonatomic, assign) int partGroupIndex;
 
-- (instancetype)initWithName:(NSString *)name
-             withDisplayName:(NSString *)displayName
-               withImageName:(NSString *)imageName
-               withPartGroup:(CMKPartGroupModel *)partGroup;
+- (instancetype)initWithName:(NSString *)name withPartType:(CMKPartType)partType withPartGroupIndex:(int)partGroupIndex;
 
 @end

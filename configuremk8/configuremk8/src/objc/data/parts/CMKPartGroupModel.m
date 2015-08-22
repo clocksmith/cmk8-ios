@@ -25,20 +25,24 @@ static NSDictionary *_characterNameValues;
 
   if (!initialized) {
     initialized = YES;
-    _characterNameValues = @{ FLYWEIGHT_NAME_STRING: @0,
-                              FEATHERWEIGHT_NAME_STRING: @1,
-                              LIGHTWEIGHT_NAME_STRING: @2,
-                              MIDDLEWEIGHT_NAME_STRING: @3,
-                              CRUISERWEIGHT_NAME_STRING: @4,
-                              METALWEIGHT_NAME_STRING: @5,
-                              HEAVYWEIGHT_NAME_STRING: @6 };
+    _characterNameValues = @{
+      FLYWEIGHT_NAME_STRING : @0,
+      FEATHERWEIGHT_NAME_STRING : @1,
+      LIGHTWEIGHT_NAME_STRING : @2,
+      MIDDLEWEIGHT_NAME_STRING : @3,
+      CRUISERWEIGHT_NAME_STRING : @4,
+      METALWEIGHT_NAME_STRING : @5,
+      HEAVYWEIGHT_NAME_STRING : @6
+    };
   }
 }
 
-- (CMKPartGroupModel *)initWithType:(CMKPartGroupType)theType
+- (CMKPartGroupModel *)initWithType:(CMKPartType)theType
                            withName:(NSString *)theName
                           withStats:(CMKStatsModel *)theStats
-                          withParts:(NSArray *)theParts {
+                          withParts:(NSArray *)theParts
+                          withIndex:(int)theIndex;
+{
   self = [super init];
 
   if (self) {
@@ -46,6 +50,7 @@ static NSDictionary *_characterNameValues;
     self.name = theName;
     self.stats = theStats;
     self.parts = theParts;
+    self.index = theIndex;
   }
 
   return self;
@@ -53,7 +58,7 @@ static NSDictionary *_characterNameValues;
 
 - (NSString *)displayName {
   if (!_displayName) {
-    switch ((CMKPartGroupType)self.type) {
+    switch ((CMKPartType)self.type) {
       case Character:
 
         if ([self.name isEqualToString:FLYWEIGHT_NAME_STRING]) {
@@ -75,21 +80,15 @@ static NSDictionary *_characterNameValues;
         break;
 
       case Vehicle:
-        _displayName = [NSString stringWithFormat:@"%@ %@",
-                        NSLocalizedString(@"Vehicle", nil),
-                        self.name];
+        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Vehicle", nil), self.name];
         break;
 
       case Tire:
-        _displayName = [NSString stringWithFormat:@"%@ %@",
-                        NSLocalizedString(@"Tire", nil),
-                        self.name];
+        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Tire", nil), self.name];
         break;
 
       case Glider:
-        _displayName = [NSString stringWithFormat:@"%@ %@",
-                        NSLocalizedString(@"Glider", nil),
-                        self.name];
+        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Glider", nil), self.name];
         break;
 
       default:

@@ -7,32 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CMKPartType.h"
 
 @class CMKStatsModel;
 
-typedef NS_ENUM (NSInteger, CMKPartGroupType) {
-  Character,
-  Vehicle,
-  Tire,
-  Glider,
-};
-
 @interface CMKPartGroupModel : NSObject
 
-@property (nonatomic, assign) CMKPartGroupType type;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) CMKStatsModel *stats;
-@property (nonatomic, strong) NSArray *parts;
-@property (nonatomic, readonly, copy) NSString *displayName;
+@property(nonatomic, assign) CMKPartType type;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, strong) CMKStatsModel *stats;
+@property(nonatomic, strong) NSArray *parts;
+@property(nonatomic, assign) int index;
+@property(nonatomic, readonly, copy) NSString *displayName;
 
-// TODO(clocksmith): How come the parameters need to be prefixed with "the" here and not in
-// CMKStats?
-- (CMKPartGroupModel *)initWithType:(CMKPartGroupType)theType
+// TODO(clocksmith): How come the parameters need to be prefixed with "the" here and not in CMKStats
+- (CMKPartGroupModel *)initWithType:(CMKPartType)theType
                            withName:(NSString *)theName
                           withStats:(CMKStatsModel *)theStats
-                          withParts:(NSArray *)theParts;
+                          withParts:(NSArray *)theParts
+                          withIndex:(int)index;
 
-- (NSString *)         displayName;
+- (NSString *)displayName;
 
 - (NSComparisonResult)compare:(CMKPartGroupModel *)otherObject;
 

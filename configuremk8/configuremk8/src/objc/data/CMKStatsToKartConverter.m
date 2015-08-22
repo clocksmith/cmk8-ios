@@ -8,18 +8,18 @@
 
 #import "CMKStatsToKartConverter.h"
 #import "CMKKartConfigurationModel.h"
-#import "CMKParts.h"
+#import "CMKPartData.h"
 
 @implementation CMKStatsToKartConverter
 
 + (CMKKartConfigurationModel *)optimalKartConfiguration:(CMKStatsModel *)preferredStats {
-  float maxScore = 0;
+  double maxScore = 0;
 
   CMKKartConfigurationModel *optimalKartConfiguration;
 
-  for (CMKKartConfigurationModel *kartConfiguration in[CMKParts allKartConfigurations]) {
-    float score = [CMKStatsToKartConverter calculateScoreWithPreferredStats:preferredStats
-                                                      withKartConfiguration:kartConfiguration];
+  for (CMKKartConfigurationModel *kartConfiguration in [CMKPartData allKartConfigurations]) {
+    double score = [CMKStatsToKartConverter calculateScoreWithPreferredStats:preferredStats
+                                                       withKartConfiguration:kartConfiguration];
 
     if (score > maxScore) {
       maxScore = score;
@@ -30,12 +30,12 @@
   return optimalKartConfiguration;
 }
 
-+ (float)calculateScoreWithPreferredStats:(CMKStatsModel *)preferredStats
-                    withKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
++ (double)calculateScoreWithPreferredStats:(CMKStatsModel *)preferredStats
+                     withKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
   CMKStatsModel *kartStats = kartConfiguration.kartStats;
-  float score = 0;
+  double score = 0;
 
-  for (NSNumber *attributeIndex in[CMKStatsModel simpleAttributes]) {
+  for (NSNumber *attributeIndex in [CMKStatsModel simpleAttributes]) {
     score += [CMKStatsToKartConverter weightedValueForAttributeIndex:attributeIndex
                                                   withPreferredStats:preferredStats
                                                        withKartStats:kartStats];
@@ -44,11 +44,11 @@
   return score;
 }
 
-+ (float)weightedValueForAttributeIndex:(NSNumber *)attributeIndex
-                     withPreferredStats:(CMKStatsModel *)preferredStats
-                          withKartStats:(CMKStatsModel *)kartStats {
-  float preferredValue = [preferredStats statValueForIndex:attributeIndex];
-  float kartStatValue = [kartStats statValueForIndex:attributeIndex];
++ (double)weightedValueForAttributeIndex:(NSNumber *)attributeIndex
+                      withPreferredStats:(CMKStatsModel *)preferredStats
+                           withKartStats:(CMKStatsModel *)kartStats {
+  double preferredValue = [preferredStats statValueForIndex:attributeIndex];
+  double kartStatValue = [kartStats statValueForIndex:attributeIndex];
 
   // Floor the acceleration to reflect actual game mechanics.
   if ([attributeIndex intValue] == Acceleration) {

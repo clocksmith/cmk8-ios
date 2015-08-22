@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Blunka. All rights reserved.
 //
 
+#import <Google/Analytics.h>
 #import "CMKAdjustAttributeView.h"
 #import "CMKAdjustConfigurations.h"
 #import "CMKAdjustConfigurationSpinnerItem.h"
@@ -24,13 +25,13 @@
 
 @interface CMKAdjustViewController ()
 
-@property (nonatomic, weak) IBOutlet CMKSpinnerView *spinnerView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *accelerationAttributeView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *speedAttributeView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *handlingAttributeView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *miniturboAttributeView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *tractionAttributeView;
-@property (nonatomic, weak) IBOutlet CMKAdjustAttributeView *weightAttributeView;
+@property(nonatomic, weak) IBOutlet CMKSpinnerView *spinnerView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *accelerationAttributeView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *speedAttributeView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *handlingAttributeView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *miniturboAttributeView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *tractionAttributeView;
+@property(nonatomic, weak) IBOutlet CMKAdjustAttributeView *weightAttributeView;
 
 - (IBAction)handleCancelTapped:(id)sender;
 - (IBAction)handleOKTapped:(id)sender;
@@ -43,7 +44,7 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil withScreenName:ADJUST_SCREEN];
 
   if (self) {
     _model = [CMKUserDefaultslUtils loadAdjustModel];
@@ -81,20 +82,6 @@
   [self updateAllViews];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  self.screenName = ADJUST_SCREEN;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
 #pragma mark IBAction
 
 - (IBAction)handleCancelTapped:(id)sender {
@@ -107,7 +94,7 @@
 - (IBAction)handleOKTapped:(id)sender {
   if ([self.presentingViewController isMemberOfClass:[CMKMainTabBarController class]]) {
     UIViewController *selectedViewControler =
-      [(CMKMainTabBarController *)self.presentingViewController selectedViewController];
+        [(CMKMainTabBarController *)self.presentingViewController selectedViewController];
 
     if ([selectedViewControler isMemberOfClass:[CMKConfigureViewController class]]) {
       CMKStatsModel *preferredStats = [self preferredStats];
@@ -122,12 +109,11 @@
       [CMKUserDefaultslUtils saveAdjustModel:_model];
 
       CMKKartConfigurationModel *optimalKartConfiguration =
-        [CMKStatsToKartConverter optimalKartConfiguration:preferredStats];
+          [CMKStatsToKartConverter optimalKartConfiguration:preferredStats];
       [CMKAnalyticsUtils sendBuildConfigurationEvent:self.tracker
                              withAdjustConfiguration:_model.adjustConfiguration
                                withKartConfiguration:optimalKartConfiguration];
-      [(CMKConfigureViewController *)selectedViewControler updateKartConfiguration :
-       optimalKartConfiguration];
+      [(CMKConfigureViewController *)selectedViewControler updateKartConfiguration:optimalKartConfiguration];
     } else {
       [NSException raise:@"Invalid Selected View Controller"
                   format:@"The selected view controller must be an instance of CMKConfigureViewController"];
@@ -142,7 +128,7 @@
 
 #pragma mark - CMKSpinnerViewDelegate
 
-- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id <CMKSpinnerItem> )item {
+- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id<CMKSpinnerItem>)item {
   NSLog(@"%@ configuration index: %d", _TAG, ((CMKAdjustConfigurationSpinnerItem *)item).adjustConfiguration);
 
   if ([item isMemberOfClass:[CMKAdjustConfigurationSpinnerItem class]]) {
@@ -171,13 +157,15 @@
 
 - (void)updateSpinnerView {
   [self.spinnerView updateSelectedItem:_spinnerItems[(int)_model.adjustConfiguration]];
-  self.spinnerView.selectedItemlabel.textColor = _model.adjustConfiguration == Custom ?
-    [CMKColors blueColor] : [CMKColors darkGrayColor];
+  self.spinnerView.selectedItemlabel.textColor =
+      _model.adjustConfiguration == Custom ? [CMKColors blueColor] : [CMKColors darkGrayColor];
 }
 
 - (void)updateAttributeViews {
-  CMKStatsModel *stats = _model.adjustConfiguration == Custom ? _model.customStats :
-    [CMKAdjustConfigurations statsForIndex:[NSNumber numberWithInt:_model.adjustConfiguration]];
+  CMKStatsModel *stats =
+      _model.adjustConfiguration == Custom
+          ? _model.customStats
+          : [CMKAdjustConfigurations statsForIndex:[NSNumber numberWithInt:_model.adjustConfiguration]];
 
   [self.accelerationAttributeView updateAttributeValue:stats.acceleration];
   [self.speedAttributeView updateAttributeValue:stats.averageSpeed];
@@ -192,23 +180,21 @@
 - (void)initSpinneritems {
   NSMutableArray *spinnerItems = [[NSMutableArray alloc] init];
 
-  for (NSNumber *index in[CMKAdjustConfigurations allAdjustConfigurations]) {
+  for (NSNumber *index in [CMKAdjustConfigurations allAdjustConfigurations]) {
     [spinnerItems addObject:[[CMKAdjustConfigurationSpinnerItem alloc]
-                             initWithAdjustConfiguration:
-                             (CMKAdjustConfiguration)[index intValue]]];
+                                initWithAdjustConfiguration:(CMKAdjustConfiguration)[index intValue]]];
   }
 
   _spinnerItems = [spinnerItems copy];
 }
 
 - (CMKStatsModel *)preferredStats {
-  return [[CMKStatsModel alloc]
-          initWithAcceleration:[self.accelerationAttributeView attributeValue]
-              withAverageSpeed:[self.speedAttributeView attributeValue]
-           withAverageHandling:[self.handlingAttributeView attributeValue]
-                 withMiniturbo:[self.miniturboAttributeView attributeValue]
-                  withTraction:[self.tractionAttributeView attributeValue]
-                    withWeight:[self.weightAttributeView attributeValue]];
+  return [[CMKStatsModel alloc] initWithAcceleration:[self.accelerationAttributeView attributeValue]
+                                    withAverageSpeed:[self.speedAttributeView attributeValue]
+                                 withAverageHandling:[self.handlingAttributeView attributeValue]
+                                       withMiniturbo:[self.miniturboAttributeView attributeValue]
+                                        withTraction:[self.tractionAttributeView attributeValue]
+                                          withWeight:[self.weightAttributeView attributeValue]];
 }
 
 @end

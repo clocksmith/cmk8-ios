@@ -211,7 +211,7 @@ static NSString *const _INCREMENT_LABEL = @"+";
 
 - (void)updateAttribute:(CMKAttribute)attribute {
   _attribute = attribute;
-  self.attributeLabel.text = [CMKStatsModel nameForIndex:[NSNumber numberWithInt:attribute]];
+  self.attributeLabel.text = [CMKStatsModel displayNameForIndex:[NSNumber numberWithInt:attribute]];
 }
 
 - (void)updateAttributeValue:(float)value {

@@ -15,15 +15,16 @@
 
 @implementation CMKMainPageViewController
 
-- (instancetype)initWithTitle:(NSString *)titleString withImageName:(NSString *)imageName {
-  self = [self initWithNibName:nil bundle:nil];
+- (instancetype)initWithTitle:(NSString *)titleString
+                withImageName:(NSString *)imageName
+               withScreenName:(NSString *)screenName {
+  self = [self initWithNibName:nil bundle:nil withScreenName:screenName];
 
   if (self) {
     self.tabBarItem.title = NSLocalizedString(titleString, nil);
     self.tabBarItem.imageInsets = UIEdgeInsetsMake(-2, 0, 2, 0);
     self.tabBarItem.image = [CMKUiUtils imageWithImage:[UIImage imageNamed:imageName]
-                                          scaledToSize:CGSizeMake(MAIN_TAB_ICON_SIZE,
-                                                                  MAIN_TAB_ICON_SIZE)];
+                                          scaledToSize:CGSizeMake(MAIN_TAB_ICON_SIZE, MAIN_TAB_ICON_SIZE)];
   }
 
   return self;

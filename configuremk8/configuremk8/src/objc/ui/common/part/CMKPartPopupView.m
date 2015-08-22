@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Blunka. All rights reserved.
 //
 
+#import <Google/Analytics.h>
 #import "CMKAppDelegate.h"
 #import "CMKPartModel.h"
 #import "CMKPartGroupModel.h"
@@ -13,25 +14,20 @@
 #import "CMKSingleStatsScrollView.h"
 #import "CMKConstants.h"
 
-#import "GAI.h"
-#import "GAITracker.h"
-#import "GAIDictionaryBuilder.h"
-#import "GAIFields.h"
-
 #define _TAG (NSStringFromClass([CMKPartPopupView class]))
 
 @interface CMKPartPopupView ()
 
-@property (weak, nonatomic) IBOutlet UIView *backgroundView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet CMKSingleStatsScrollView *statsView;
+@property(weak, nonatomic) IBOutlet UIView *backgroundView;
+@property(weak, nonatomic) IBOutlet UIView *contentView;
+@property(weak, nonatomic) IBOutlet UIImageView *imageView;
+@property(weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property(weak, nonatomic) IBOutlet CMKSingleStatsScrollView *statsView;
 
 @end
 
 @implementation CMKPartPopupView {
-  id <GAITracker> _tracker;
+  id<GAITracker> _tracker;
   BOOL _layoutSubviewsCalled;
   CMKPartModel *_part;
   UIImageView *_anchorImageView;
@@ -67,19 +63,17 @@
   self.contentView.layer.shadowOffset = CGSizeMake(0, 0);
   self.contentView.layer.shadowOpacity = POPUP_SHADOW_OPACITY;
 
-
   self.userInteractionEnabled = YES;
-  UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
-                                                  initWithTarget:self
-                                                          action:@selector(close)];
+  UITapGestureRecognizer *tapGestureRecognizer =
+      [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close)];
   [self addGestureRecognizer:tapGestureRecognizer];
 
   [_tracker set:kGAIScreenName value:PART_POPUP_SCREEN];
-  [_tracker send:[[GAIDictionaryBuilder createAppView]  build]];
+  [_tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)layoutSubviews {
-//  NSLog(@" % @ layoutSubviews ", _TAG);
+  //  NSLog(@" % @ layoutSubviews ", _TAG);
   _layoutSubviewsCalled = YES;
 
   // Call super once here so that we can get the coordinates of the target image view.
@@ -104,10 +98,8 @@
 
 - (void)transitionIn {
   self.nameLabel.text = _part.displayName;
-  [self.statsView
-         drawWithMode:_part.partGroup.type == Character ?
-             CMKStatModeOnlyPositive:CMKStatModeMaybeNegative];
-  [self.statsView updateStats:_part.partGroup.stats isAnimated:YES];
+  [self.statsView drawWithMode:_part.partType == Character ? CMKStatModeOnlyPositive : CMKStatModeMaybeNegative];
+  [self.statsView updateStats:[CMKPartData partGroupForPart:_part].stats isAnimated:YES];
   self.statsView.scrollEnabled = NO;
 
   _initialOrigin = [_anchorImageView.superview convertPoint:_anchorImageView.frame.origin toView:nil];
@@ -116,41 +108,33 @@
   CGSize finalSize = self.imageView.frame.size;
 
   _transitionImageView = [[UIImageView alloc] initWithImage:_anchorImageView.image];
-  _transitionImageView.frame = CGRectMake(_initialOrigin.x,
-                                          _initialOrigin.y,
-                                          _initialSize.width,
-                                          _initialSize.height);
+  _transitionImageView.frame = CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
   _transitionImageView.contentMode = UIViewContentModeScaleAspectFit;
   [self addSubview:_transitionImageView];
 
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
-                   animations: ^{
-                     self.backgroundView.alpha = POPUP_SHADE_ALPHA;
-                     self.contentView.alpha = 1.0f;
-                     _transitionImageView.frame = CGRectMake(finalOrigin.x,
-                                            finalOrigin.y,
-                                            finalSize.width,
-                                            finalSize.height);
-                   }
+      animations:^{
+        self.backgroundView.alpha = POPUP_SHADE_ALPHA;
+        self.contentView.alpha = 1.0f;
+        _transitionImageView.frame = CGRectMake(finalOrigin.x, finalOrigin.y, finalSize.width, finalSize.height);
+      }
 
-                   completion: ^(BOOL finished) {
-                   }];
+      completion:^(BOOL finished){
+      }];
 }
 
 - (void)close {
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
-                   animations: ^{
-                     self.backgroundView.alpha = 0.0f;
-                     self.contentView.alpha = 0.0f;
-                     _transitionImageView.frame = CGRectMake(_initialOrigin.x,
-                                            _initialOrigin.y,
-                                            _initialSize.width,
-                                            _initialSize.height);
-                   }
+      animations:^{
+        self.backgroundView.alpha = 0.0f;
+        self.contentView.alpha = 0.0f;
+        _transitionImageView.frame =
+            CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
+      }
 
-                   completion: ^(BOOL finished) {
-                     [self removeFromSuperview];
-                   }];
+      completion:^(BOOL finished) {
+        [self removeFromSuperview];
+      }];
 }
 
 @end

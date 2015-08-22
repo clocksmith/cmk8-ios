@@ -80,6 +80,7 @@ NSString *const ADJUST_SCREEN = @"AdjustScreen";
 NSString *const CONFIGURE_SCREEN = @"ConfigureScreen";
 NSString *const COMPARE_SCREEN = @"CompareScreen";
 NSString *const FAQ_SCREEN = @"FAQScreen";
+NSString *const MAPS_SCREEN = @"MapsScreen";
 NSString *const PART_POPUP_SCREEN = @"PartPopupScreen";
 NSString *const DONATION_POPUP_SCREEN = @"DonationPopupScreen";
 
@@ -418,7 +419,6 @@ NSString *const MARIO_KART_STADIUM_DISPLAY_NAME_STRING = @"Mario Kart Stadium";
 NSString *const WATER_PARK_DISPLAY_NAME_STRING = @"Water Park";
 NSString *const SWEET_SWEET_CANYON_DISPLAY_NAME_STRING = @"Sweet Sweet Canyon";
 NSString *const THWOMP_RUINS_DISPLAY_NAME_STRING = @"Thwomp Ruins";
-
 
 // Flower Cup.
 NSString *const MARIO_CIRCUIT_NAME_STRING = @"MARIO_CIRCUIT";

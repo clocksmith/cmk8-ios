@@ -11,7 +11,7 @@
 #import "CMKMapsModel.h"
 #import "CMKUserDefaultslUtils.h"
 #import "CMKSpinnerView.h"
-#import "CMKCourses.h"
+#import "CMKCourseData.h"
 #import "CMKCupModel.h"
 #import "CMKCourseModel.h"
 #import "CMKUiUtils.h"
@@ -19,14 +19,13 @@
 
 #define _TAG (NSStringFromClass([CMKMapsViewController class]))
 
-@interface CMKMapsViewController () <UIScrollViewDelegate,
-                                     CMKSpinnerViewDelegate>
+@interface CMKMapsViewController () <UIScrollViewDelegate, CMKSpinnerViewDelegate>
 
-@property (nonatomic, weak) IBOutlet CMKSpinnerView *cupSpinnerView;
-@property (nonatomic, weak) IBOutlet CMKSpinnerView *courseSpinnerView;
-@property (nonatomic, weak) IBOutlet UIImageView *upwardTriangle;
-@property (nonatomic, weak) IBOutlet UIScrollView *mapChooserView;
-@property (nonatomic, weak) IBOutlet UIImageView *downwardTriangle;
+@property(nonatomic, weak) IBOutlet CMKSpinnerView *cupSpinnerView;
+@property(nonatomic, weak) IBOutlet CMKSpinnerView *courseSpinnerView;
+@property(nonatomic, weak) IBOutlet UIImageView *upwardTriangle;
+@property(nonatomic, weak) IBOutlet UIScrollView *mapChooserView;
+@property(nonatomic, weak) IBOutlet UIImageView *downwardTriangle;
 
 @end
 
@@ -42,7 +41,7 @@ static int const PLACEHOLDER_MAP_DIMEN = 64;
 static int const ACTUAL_MAP_DIMEN = 512;
 
 - (instancetype)init {
-  self = [super initWithTitle:MAPS_TITLE_STRING withImageName:MAPS_ICON_IMAGE];
+  self = [super initWithTitle:MAPS_TITLE_STRING withImageName:MAPS_ICON_IMAGE withScreenName:MAPS_SCREEN];
 
   if (self) {
     _model = [CMKUserDefaultslUtils loadMapsModel];
@@ -52,11 +51,11 @@ static int const ACTUAL_MAP_DIMEN = 512;
       [CMKUserDefaultslUtils saveMapsModel:_model];
     }
 
-    _mapPlaceholderImages = [[NSMutableArray alloc] init];
-    _mapImageViews = [[NSMutableArray alloc] init];
-    _fullMapsLoaded = [[NSMutableArray alloc] init];
+    _mapPlaceholderImages = [NSMutableArray array];
+    _mapImageViews = [NSMutableArray array];
+    _fullMapsLoaded = [NSMutableArray arrayWithCapacity:[[CMKCourseData cups] count] * NUM_COURSES_PER_CUP];
 
-    for (int i = 0; i < [[CMKCourses courses] count]; i++) {
+    for (int i = 0; i < [_fullMapsLoaded count]; i++) {
       _fullMapsLoaded[i] = @NO;
     }
   }
@@ -74,11 +73,13 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
   CGSize placeholderSize = CGSizeMake(PLACEHOLDER_MAP_DIMEN, PLACEHOLDER_MAP_DIMEN);
 
-  for (CMKCourseModel *course in[CMKCourses courses]) {
-    UIImage *mapViewImage = [CMKUiUtils imageWithImage:[UIImage imageNamed:course.mapImageName]
-                                          scaledToSize:placeholderSize];
-    NSLog(@"%@ course.mapImageName %@", _TAG, course.mapImageName);
-    [_mapPlaceholderImages addObject:mapViewImage];
+  for (CMKCupModel *cup in [CMKCourseData cups]) {
+    for (CMKCourseModel *course in [cup courses]) {
+      UIImage *mapViewImage =
+          [CMKUiUtils imageWithImage:[UIImage imageNamed:course.mapImageName] scaledToSize:placeholderSize];
+      NSLog(@"%@ course.mapImageName %@", _TAG, course.mapImageName);
+      [_mapPlaceholderImages addObject:mapViewImage];
+    }
   }
 
   NSLog(@"%@ _mapImages count: %d", _TAG, [_mapPlaceholderImages count]);
@@ -89,7 +90,7 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
   // Setup the cup spinner view.
   self.cupSpinnerView.delegate = self;
-  [self.cupSpinnerView updateItems:[CMKCourses cups]];
+  [self.cupSpinnerView updateItems:[CMKCourseData cups]];
   CMKMainTabBarController *mainTabBarController = ((CMKMainTabBarController *)self.parentViewController);
   float tabBarHeight = mainTabBarController.tabBar.frame.size.height;
   self.cupSpinnerView.listBottomMargin += tabBarHeight;
@@ -98,14 +99,13 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
   // Setup the course spinner view.
   self.courseSpinnerView.delegate = self;
-  CMKCupModel *cup = [CMKCourses cups][_model.courseIndex / NUM_COURSES_PER_CUP];
+  CMKCupModel *cup = [CMKCourseData cups][_model.courseIndex / NUM_COURSES_PER_CUP];
   [self.courseSpinnerView updateItems:cup.courses];
   self.courseSpinnerView.listBottomMargin += tabBarHeight;
-  self.courseSpinnerView.cellHeight = IS_IPAD ? COURSE_SPINNER_DROPDOWN_ITEM_HEIGHT_IPAD :
-    COURSE_SPINNER_DROPDOWN_ITEM_HEIGHT_IPHONE;
+  self.courseSpinnerView.cellHeight =
+      IS_IPAD ? COURSE_SPINNER_DROPDOWN_ITEM_HEIGHT_IPAD : COURSE_SPINNER_DROPDOWN_ITEM_HEIGHT_IPHONE;
   self.courseSpinnerView.listItemFont =
-    [UIFont systemFontOfSize:IS_IPAD ?
-           DEFAULT_SPINNER_FONT_SIZE:COURSE_SPINNER_LIST_VIEW_FONT_SIZE_IPHONE];
+      [UIFont systemFontOfSize:IS_IPAD ? DEFAULT_SPINNER_FONT_SIZE : COURSE_SPINNER_LIST_VIEW_FONT_SIZE_IPHONE];
 
   if (IS_IPAD) {
     self.courseSpinnerView.minimumListViewWidth = self.courseSpinnerView.frame.size.width * 1.3;
@@ -116,24 +116,17 @@ static int const ACTUAL_MAP_DIMEN = 512;
     self.mapChooserView.delegate = self;
     int scrollViewWidth = self.mapChooserView.frame.size.width;
     int scrollViewHeight = self.mapChooserView.frame.size.height;
-    self.mapChooserView.contentSize = CGSizeMake(scrollViewWidth,
-                                                 scrollViewHeight * [_mapPlaceholderImages count]);
+    self.mapChooserView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight * [_mapPlaceholderImages count]);
 
     int mapViewIndex = 0;
 
     for (UIImage *mapImage in _mapPlaceholderImages) {
-      CGRect mapImageViewFrame = CGRectMake(0,
-                                            0,
-                                            scrollViewWidth,
-                                            scrollViewHeight);
+      CGRect mapImageViewFrame = CGRectMake(0, 0, scrollViewWidth, scrollViewHeight);
       UIImageView *mapImageView = [[UIImageView alloc] initWithImage:mapImage];
       mapImageView.frame = mapImageViewFrame;
       mapImageView.contentMode = UIViewContentModeScaleAspectFit;
 
-      CGRect subScrollViewFrame = CGRectMake(0,
-                                             mapViewIndex * scrollViewHeight,
-                                             scrollViewWidth,
-                                             scrollViewHeight);
+      CGRect subScrollViewFrame = CGRectMake(0, mapViewIndex * scrollViewHeight, scrollViewWidth, scrollViewHeight);
       UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:subScrollViewFrame];
       subScrollView.delegate = self;
       [subScrollView addSubview:mapImageView];
@@ -160,10 +153,9 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
   for (int mapIndex = 0; mapIndex < [_mapImageViews count]; mapIndex++) {
     if (mapIndex < pageIndex - 1 || mapIndex > pageIndex + 1) {
-      CMKCourseModel *course = [CMKCourses courses][mapIndex];
+      CMKCourseModel *course = [CMKCourseData courseForIndex:mapIndex];
       ((UIImageView *)_mapImageViews[mapIndex]).image =
-        [CMKUiUtils imageWithImage:[UIImage imageNamed:course.mapImageName]
-                      scaledToSize:placeholderSize];
+          [CMKUiUtils imageWithImage:[UIImage imageNamed:course.mapImageName] scaledToSize:placeholderSize];
       _fullMapsLoaded[mapIndex] = @NO;
       NSLog(@"%@ Released full map for mapIndex: %d", _TAG, mapIndex);
     }
@@ -172,7 +164,7 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
 #pragma mark - CMKSpinnerViewDelegate
 
-- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id <CMKSpinnerItem> )item {
+- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id<CMKSpinnerItem>)item {
   if (spinner == self.cupSpinnerView) {
     _model.courseIndex = ((CMKCourseModel *)((CMKCupModel *)item).courses[0]).courseIndex;
     [self updateAllViews];
@@ -226,31 +218,26 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
 - (void)updateCupSpinnerView {
   NSLog(@"%@ updateCupSpinnerView", _TAG);
-  [self.cupSpinnerView
-   updateSelectedItem:
-   [CMKCourses cups][_model.courseIndex / NUM_COURSES_PER_CUP]];
+  [self.cupSpinnerView updateSelectedItem:[CMKCourseData cups][_model.courseIndex / NUM_COURSES_PER_CUP]];
 }
 
 - (void)updateCourseSpinnerView {
   NSLog(@"%@ updateCourseSpinnerView", _TAG);
   [self.courseSpinnerView
-   updateItems:
-   ((CMKCupModel *)[CMKCourses cups][_model.courseIndex / NUM_COURSES_PER_CUP]).courses];
-  [self.courseSpinnerView
-   updateSelectedItem:[CMKCourses courses][_model.courseIndex]];
+      updateItems:((CMKCupModel *)[CMKCourseData cups][_model.courseIndex / NUM_COURSES_PER_CUP]).courses];
+  [self.courseSpinnerView updateSelectedItem:[CMKCourseData courseForIndex:_model.courseIndex]];
 }
 
 - (void)updateMapChooserView {
   NSLog(@"%@ updateMapChooserView", _TAG);
-  [self.mapChooserView
-   setContentOffset:CGPointMake(0, _model.courseIndex * self.mapChooserView.frame.size.height)
-           animated:YES];
+  [self.mapChooserView setContentOffset:CGPointMake(0, _model.courseIndex * self.mapChooserView.frame.size.height)
+                               animated:YES];
   [self loadFullMapsForCurrentIndex];
 }
 
 - (void)updateTriangles {
   _upwardTriangle.hidden = _model.courseIndex == 0;
-  _downwardTriangle.hidden = _model.courseIndex == ([[CMKCourses courses] count] - 1);
+  _downwardTriangle.hidden = _model.courseIndex == ([[CMKCourseData cups] count] * NUM_COURSES_PER_CUP - 1);
 }
 
 #pragma mark - Helper methods
@@ -265,7 +252,7 @@ static int const ACTUAL_MAP_DIMEN = 512;
   [self loadMapForIndex:_model.courseIndex];
 
   // Load the map to the right.
-  if (_model.courseIndex < [[CMKCourses courses] count] - 1) {
+  if (_model.courseIndex < [[CMKCourseData cups] count] * NUM_COURSES_PER_CUP - 1) {
     [self loadMapForIndex:_model.courseIndex + 1];
   }
 }
@@ -276,10 +263,9 @@ static int const ACTUAL_MAP_DIMEN = 512;
   if (![_fullMapsLoaded[index] boolValue]) {
     NSLog(@"%@ loading full map: %d", _TAG, index);
     CGSize actualSize = CGSizeMake(ACTUAL_MAP_DIMEN, ACTUAL_MAP_DIMEN);
-    UIImage *fullMapViewImage = [CMKUiUtils imageWithImage:
-                                 [UIImage imageNamed:
-                                  ((CMKCourseModel *)[CMKCourses courses][index]).mapImageName]
-                                              scaledToSize:actualSize];
+    UIImage *fullMapViewImage =
+        [CMKUiUtils imageWithImage:[UIImage imageNamed:[CMKCourseData courseForIndex:index].mapImageName]
+                      scaledToSize:actualSize];
     ((UIImageView *)_mapImageViews[index]).image = fullMapViewImage;
     _fullMapsLoaded[index] = [NSNumber numberWithBool:YES];
   }

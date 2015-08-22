@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GAITrackedViewController.h"
+#import "CMKTrackedViewController.h"
 
-@interface CMKMainPageViewController : GAITrackedViewController
+@interface CMKMainPageViewController : CMKTrackedViewController
 
-- (instancetype)initWithTitle:(NSString *)titleString withImageName:(NSString *)imageName;
+- (instancetype)initWithTitle:(NSString *)titleString
+                withImageName:(NSString *)imageName
+               withScreenName:(NSString *)screenName;
 
 @end

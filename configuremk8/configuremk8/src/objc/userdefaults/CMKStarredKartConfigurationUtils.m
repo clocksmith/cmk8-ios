@@ -10,7 +10,7 @@
 #import "CMKConfigureModel.h"
 #import "CMKKartConfigurationModel.h"
 #import "CMKPartGroupModel.h"
-#import "CMKParts.h"
+#import "CMKPartData.h"
 #import "CMKConstants.h"
 
 #define _TAG (NSStringFromClass([CMKStarredKartConfigurationUtils class]))
@@ -26,21 +26,21 @@
 static NSString *const _STARRED_KART_CONFIGURATION_NAMESPACE = @"starredKartConfiguration";
 
 + (void)starKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
-  [[NSUserDefaults standardUserDefaults] setObject:[kartConfiguration name]
-                                            forKey:
-   [CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]];
+  [[NSUserDefaults standardUserDefaults]
+      setObject:[kartConfiguration name]
+         forKey:[CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void)unstarKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
-  [[NSUserDefaults standardUserDefaults] removeObjectForKey:
-   [CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]];
+  [[NSUserDefaults standardUserDefaults]
+      removeObjectForKey:[CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (BOOL)isKartConfigurationStarred:(CMKKartConfigurationModel *)kartConfiguration {
-  return [[NSUserDefaults standardUserDefaults] stringForKey:
-          [CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]] != nil;
+  return [[NSUserDefaults standardUserDefaults]
+             stringForKey:[CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]] != nil;
 }
 
 + (NSArray *)allStarredKartConfigurations {
@@ -49,9 +49,9 @@ static NSString *const _STARRED_KART_CONFIGURATION_NAMESPACE = @"starredKartConf
 
   for (NSString *key in unfilteredKeys) {
     if ([key hasPrefix:_STARRED_KART_CONFIGURATION_NAMESPACE]) {
-      [unsortedKartConfigurations addObject:
-       [[CMKKartConfigurationModel alloc] initWithUserDefaultsKey:
-        [key componentsSeparatedByString:NAMESPACE_SEPERATOR][1]]];
+      [unsortedKartConfigurations
+          addObject:[[CMKKartConfigurationModel alloc]
+                        initWithUserDefaultsKey:[key componentsSeparatedByString:NAMESPACE_SEPERATOR][1]]];
     }
   }
 
@@ -59,10 +59,8 @@ static NSString *const _STARRED_KART_CONFIGURATION_NAMESPACE = @"starredKartConf
 }
 
 + (NSString *)starredKartConfigurationKey:(CMKKartConfigurationModel *)kartConfiguration {
-  return [NSString stringWithFormat:@"%@%@%@",
-          _STARRED_KART_CONFIGURATION_NAMESPACE,
-          NAMESPACE_SEPERATOR,
-          [kartConfiguration keyForUserDefaults]];
+  return [NSString stringWithFormat:@"%@%@%@", _STARRED_KART_CONFIGURATION_NAMESPACE, NAMESPACE_SEPERATOR,
+                                    [kartConfiguration keyForUserDefaults]];
 }
 
 @end

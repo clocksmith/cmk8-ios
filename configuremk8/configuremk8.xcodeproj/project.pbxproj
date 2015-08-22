@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D05AD5C5346ED7D6FF0190A /* libPods-configuremk8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F78C0F08685A2A12AF970887 /* libPods-configuremk8.a */; };
 		8709E23819A66ADE0008E9BC /* CMKAnyNumberSingleStatsRowView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8709E23219A66ADE0008E9BC /* CMKAnyNumberSingleStatsRowView~iphone.xib */; };
 		8709E23B19A66ADE0008E9BC /* CMKPartPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8709E23519A66ADE0008E9BC /* CMKPartPopupView.xib */; };
 		8709E23C19A66ADE0008E9BC /* CMKCompareViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8709E23619A66ADE0008E9BC /* CMKCompareViewController~iphone.xib */; };
@@ -35,7 +36,7 @@
 		8768001819BF9179003D1D40 /* CMKMapsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768001719BF9179003D1D40 /* CMKMapsModel.m */; };
 		8768001C19BF92EB003D1D40 /* CMKCupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768001B19BF92EB003D1D40 /* CMKCupModel.m */; };
 		8768001F19BF9305003D1D40 /* CMKCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768001E19BF9305003D1D40 /* CMKCourseModel.m */; };
-		8768002219BF9322003D1D40 /* CMKCourses.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768002119BF9322003D1D40 /* CMKCourses.m */; };
+		8768002219BF9322003D1D40 /* CMKCourseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768002119BF9322003D1D40 /* CMKCourseData.m */; };
 		8768FF2019AE3609003D1D40 /* CMKComparePlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768FF1F19AE3609003D1D40 /* CMKComparePlaceholderView.m */; };
 		8768FF2219AE3636003D1D40 /* CMKComparePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8768FF2119AE3636003D1D40 /* CMKComparePlaceholderView.xib */; };
 		8768FF2719AE421D003D1D40 /* CMKAdjustViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768FF2519AE421D003D1D40 /* CMKAdjustViewController.m */; };
@@ -201,7 +202,7 @@
 		87A6DB1A199BD67400049383 /* wiiu_character_baby_mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 87A6DAAD199BD67400049383 /* wiiu_character_baby_mario.png */; };
 		87A6DB21199BEF6100049383 /* CMKPartGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB20199BEF6100049383 /* CMKPartGroupModel.m */; };
 		87A6DB24199BEF9900049383 /* CMKStatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB23199BEF9900049383 /* CMKStatsModel.m */; };
-		87A6DB2A199C01A800049383 /* CMKParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB29199C01A800049383 /* CMKParts.m */; };
+		87A6DB2A199C01A800049383 /* CMKPartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB29199C01A800049383 /* CMKPartData.m */; };
 		87A6DB2D199D23C000049383 /* CMKPartGroupChooserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB2C199D23C000049383 /* CMKPartGroupChooserView.m */; };
 		87A6DB30199D242B00049383 /* CMKPartGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A6DB2F199D242B00049383 /* CMKPartGroupView.m */; };
 		87CEC6CA1993EC83003F2CDB /* CMKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CEC6C91993EC83003F2CDB /* CMKConstants.m */; };
@@ -239,6 +240,11 @@
 		87D209BC19C8D3BA003580A5 /* prima_map_water_park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87D2099C19C8D3BA003580A5 /* prima_map_water_park.jpg */; };
 		87D209BD19C8D3BA003580A5 /* prima_map_mario_kart_stadium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87D2099D19C8D3BA003580A5 /* prima_map_mario_kart_stadium.jpg */; };
 		87D209BF19C8D469003580A5 /* CMKAdjustAttributeView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D209BE19C8D469003580A5 /* CMKAdjustAttributeView~ipad.xib */; };
+		87DACA251B83D19400D9B7CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DACA241B83D19400D9B7CA /* GoogleService-Info.plist */; };
+		87DACA261B83D1A900D9B7CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DACA241B83D19400D9B7CA /* GoogleService-Info.plist */; };
+		87DACA291B83FB3D00D9B7CA /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 87DACA271B83FB3D00D9B7CA /* parts.json */; };
+		87DACA2A1B83FB3D00D9B7CA /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 87DACA281B83FB3D00D9B7CA /* courses.json */; };
+		87DACA2E1B83FFF900D9B7CA /* CMKTrackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DACA2D1B83FFF900D9B7CA /* CMKTrackedViewController.m */; };
 		87E7D2D719C21E11005E9B14 /* wiiu_map_icon_bone_dry_dunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E7D2B619C21E11005E9B14 /* wiiu_map_icon_bone_dry_dunes.png */; };
 		87E7D2D819C21E11005E9B14 /* wiiu_map_icon_bowsers_castle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E7D2B719C21E11005E9B14 /* wiiu_map_icon_bowsers_castle.png */; };
 		87E7D2D919C21E11005E9B14 /* wiiu_map_icon_cheep_cheep_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E7D2B819C21E11005E9B14 /* wiiu_map_icon_cheep_cheep_beach.png */; };
@@ -331,6 +337,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EF07B80CA9B18301FCED0F2 /* Pods-configuremk8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-configuremk8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-configuremk8/Pods-configuremk8.debug.xcconfig"; sourceTree = "<group>"; };
 		8709E23219A66ADE0008E9BC /* CMKAnyNumberSingleStatsRowView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "CMKAnyNumberSingleStatsRowView~iphone.xib"; path = "src/res/xibs/CMKAnyNumberSingleStatsRowView~iphone.xib"; sourceTree = "<group>"; };
 		8709E23519A66ADE0008E9BC /* CMKPartPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CMKPartPopupView.xib; path = src/res/xibs/CMKPartPopupView.xib; sourceTree = "<group>"; };
 		8709E23619A66ADE0008E9BC /* CMKCompareViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "CMKCompareViewController~iphone.xib"; path = "src/res/xibs/CMKCompareViewController~iphone.xib"; sourceTree = "<group>"; };
@@ -379,8 +386,8 @@
 		8768001B19BF92EB003D1D40 /* CMKCupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCupModel.m; sourceTree = "<group>"; };
 		8768001D19BF9305003D1D40 /* CMKCourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKCourseModel.h; sourceTree = "<group>"; };
 		8768001E19BF9305003D1D40 /* CMKCourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCourseModel.m; sourceTree = "<group>"; };
-		8768002019BF9322003D1D40 /* CMKCourses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKCourses.h; sourceTree = "<group>"; };
-		8768002119BF9322003D1D40 /* CMKCourses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCourses.m; sourceTree = "<group>"; };
+		8768002019BF9322003D1D40 /* CMKCourseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKCourseData.h; sourceTree = "<group>"; };
+		8768002119BF9322003D1D40 /* CMKCourseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCourseData.m; sourceTree = "<group>"; };
 		8768FF1E19AE3609003D1D40 /* CMKComparePlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKComparePlaceholderView.h; path = ui/main/compare/CMKComparePlaceholderView.h; sourceTree = "<group>"; };
 		8768FF1F19AE3609003D1D40 /* CMKComparePlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKComparePlaceholderView.m; path = ui/main/compare/CMKComparePlaceholderView.m; sourceTree = "<group>"; };
 		8768FF2119AE3636003D1D40 /* CMKComparePlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CMKComparePlaceholderView.xib; path = src/res/xibs/CMKComparePlaceholderView.xib; sourceTree = "<group>"; };
@@ -433,7 +440,6 @@
 		8768FF7219B65EE8003D1D40 /* CMKAnalyticsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKAnalyticsUtils.h; path = analytics/CMKAnalyticsUtils.h; sourceTree = "<group>"; };
 		8768FF7319B65EE8003D1D40 /* CMKAnalyticsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKAnalyticsUtils.m; path = analytics/CMKAnalyticsUtils.m; sourceTree = "<group>"; };
 		8768FF7519B7B8BC003D1D40 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = ../../../../Downloads/GoogleAnalyticsServicesiOS_3.09/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		8768FF7A19B7BD58003D1D40 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = configuremk8/libs/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		8768FF7C19B7C045003D1D40 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		8768FF7E19B7C08D003D1D40 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8768FF8719B95FC9003D1D40 /* CMKOnlyPositiveSingleStatsRowView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "CMKOnlyPositiveSingleStatsRowView~ipad.xib"; path = "src/res/xibs/CMKOnlyPositiveSingleStatsRowView~ipad.xib"; sourceTree = "<group>"; };
@@ -585,12 +591,13 @@
 		87A6DB20199BEF6100049383 /* CMKPartGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKPartGroupModel.m; sourceTree = "<group>"; };
 		87A6DB22199BEF9900049383 /* CMKStatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKStatsModel.h; sourceTree = "<group>"; };
 		87A6DB23199BEF9900049383 /* CMKStatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKStatsModel.m; sourceTree = "<group>"; };
-		87A6DB28199C01A700049383 /* CMKParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKParts.h; sourceTree = "<group>"; };
-		87A6DB29199C01A800049383 /* CMKParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKParts.m; sourceTree = "<group>"; };
+		87A6DB28199C01A700049383 /* CMKPartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKPartData.h; sourceTree = "<group>"; };
+		87A6DB29199C01A800049383 /* CMKPartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKPartData.m; sourceTree = "<group>"; };
 		87A6DB2B199D23C000049383 /* CMKPartGroupChooserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKPartGroupChooserView.h; path = ui/main/configure/CMKPartGroupChooserView.h; sourceTree = "<group>"; };
 		87A6DB2C199D23C000049383 /* CMKPartGroupChooserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKPartGroupChooserView.m; path = ui/main/configure/CMKPartGroupChooserView.m; sourceTree = "<group>"; };
 		87A6DB2E199D242B00049383 /* CMKPartGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKPartGroupView.h; path = ui/main/configure/CMKPartGroupView.h; sourceTree = "<group>"; };
 		87A6DB2F199D242B00049383 /* CMKPartGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKPartGroupView.m; path = ui/main/configure/CMKPartGroupView.m; sourceTree = "<group>"; };
+		87BADF8E1B838EB400BF22A1 /* CMKPartType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMKPartType.h; sourceTree = "<group>"; };
 		87CEC6C81993EC83003F2CDB /* CMKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKConstants.h; path = constants/CMKConstants.h; sourceTree = "<group>"; };
 		87CEC6C91993EC83003F2CDB /* CMKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKConstants.m; path = constants/CMKConstants.m; sourceTree = "<group>"; };
 		87CEC6CE1993EE62003F2CDB /* CMKColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKColors.h; path = constants/CMKColors.h; sourceTree = "<group>"; };
@@ -628,6 +635,11 @@
 		87D2099C19C8D3BA003580A5 /* prima_map_water_park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prima_map_water_park.jpg; path = src/res/images/prima_map_water_park.jpg; sourceTree = "<group>"; };
 		87D2099D19C8D3BA003580A5 /* prima_map_mario_kart_stadium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prima_map_mario_kart_stadium.jpg; path = src/res/images/prima_map_mario_kart_stadium.jpg; sourceTree = "<group>"; };
 		87D209BE19C8D469003580A5 /* CMKAdjustAttributeView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "CMKAdjustAttributeView~ipad.xib"; path = "src/res/xibs/CMKAdjustAttributeView~ipad.xib"; sourceTree = "<group>"; };
+		87DACA241B83D19400D9B7CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87DACA271B83FB3D00D9B7CA /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = parts.json; path = src/res/data/parts.json; sourceTree = "<group>"; };
+		87DACA281B83FB3D00D9B7CA /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = courses.json; path = src/res/data/courses.json; sourceTree = "<group>"; };
+		87DACA2B1B83FF9C00D9B7CA /* CMKTrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMKTrackedViewController.h; sourceTree = "<group>"; };
+		87DACA2D1B83FFF900D9B7CA /* CMKTrackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKTrackedViewController.m; path = ui/common/CMKTrackedViewController.m; sourceTree = "<group>"; };
 		87E7D2B619C21E11005E9B14 /* wiiu_map_icon_bone_dry_dunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_bone_dry_dunes.png; path = src/res/images/wiiu_map_icon_bone_dry_dunes.png; sourceTree = "<group>"; };
 		87E7D2B719C21E11005E9B14 /* wiiu_map_icon_bowsers_castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_bowsers_castle.png; path = src/res/images/wiiu_map_icon_bowsers_castle.png; sourceTree = "<group>"; };
 		87E7D2B819C21E11005E9B14 /* wiiu_map_icon_cheep_cheep_beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_cheep_cheep_beach.png; path = src/res/images/wiiu_map_icon_cheep_cheep_beach.png; sourceTree = "<group>"; };
@@ -713,6 +725,8 @@
 		87F0C32F19E32373003D89F7 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "src/res/images/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		87F0C33019E32373003D89F7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = src/res/images/Icon.png; sourceTree = "<group>"; };
 		87F0C33119E32373003D89F7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "src/res/images/Icon@2x.png"; sourceTree = "<group>"; };
+		A646AB14321BDC2494D1D973 /* Pods-configuremk8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-configuremk8.release.xcconfig"; path = "Pods/Target Support Files/Pods-configuremk8/Pods-configuremk8.release.xcconfig"; sourceTree = "<group>"; };
+		F78C0F08685A2A12AF970887 /* libPods-configuremk8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-configuremk8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,6 +741,7 @@
 				8768FF6F19B65631003D1D40 /* SystemConfiguration.framework in Frameworks */,
 				8768FF8019B7C1E2003D1D40 /* libsqlite3.0.dylib in Frameworks */,
 				8768FF7119B65644003D1D40 /* libz.dylib in Frameworks */,
+				2D05AD5C5346ED7D6FF0190A /* libPods-configuremk8.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +780,15 @@
 				8709E24919AB9CE60008E9BC /* CMKPartImageView.m */,
 			);
 			name = part;
+			sourceTree = "<group>";
+		};
+		8710510C1B82A2C40079058B /* data */ = {
+			isa = PBXGroup;
+			children = (
+				87DACA271B83FB3D00D9B7CA /* parts.json */,
+				87DACA281B83FB3D00D9B7CA /* courses.json */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 		87354EE319AD009A001067FB /* html */ = {
@@ -882,8 +906,8 @@
 				8768001B19BF92EB003D1D40 /* CMKCupModel.m */,
 				8768001D19BF9305003D1D40 /* CMKCourseModel.h */,
 				8768001E19BF9305003D1D40 /* CMKCourseModel.m */,
-				8768002019BF9322003D1D40 /* CMKCourses.h */,
-				8768002119BF9322003D1D40 /* CMKCourses.m */,
+				8768002019BF9322003D1D40 /* CMKCourseData.h */,
+				8768002119BF9322003D1D40 /* CMKCourseData.m */,
 			);
 			path = courses;
 			sourceTree = "<group>";
@@ -935,15 +959,6 @@
 				8768FF7319B65EE8003D1D40 /* CMKAnalyticsUtils.m */,
 			);
 			name = analytics;
-			sourceTree = "<group>";
-		};
-		8768FF7819B7BCB7003D1D40 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				8768FF7A19B7BD58003D1D40 /* libGoogleAnalyticsServices.a */,
-			);
-			name = libs;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		87798BBE1997CB5100D926BC /* images */ = {
@@ -1175,10 +1190,12 @@
 		877A421019912C88006526D7 = {
 			isa = PBXGroup;
 			children = (
+				87DACA241B83D19400D9B7CA /* GoogleService-Info.plist */,
 				877A422219912C89006526D7 /* configuremk8 */,
 				877A424419912C89006526D7 /* configuremk8Tests */,
 				877A421B19912C88006526D7 /* Frameworks */,
 				877A421A19912C88006526D7 /* Products */,
+				E4CE624A0FAA9A6022DF4854 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1204,6 +1221,7 @@
 				877A421E19912C88006526D7 /* CoreGraphics.framework */,
 				877A422019912C88006526D7 /* UIKit.framework */,
 				877A423E19912C89006526D7 /* XCTest.framework */,
+				F78C0F08685A2A12AF970887 /* libPods-configuremk8.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1211,7 +1229,6 @@
 		877A422219912C89006526D7 /* configuremk8 */ = {
 			isa = PBXGroup;
 			children = (
-				8768FF7819B7BCB7003D1D40 /* libs */,
 				877A425719913813006526D7 /* src */,
 				877A422319912C89006526D7 /* Supporting Files */,
 			);
@@ -1274,6 +1291,7 @@
 		877A4259199138B4006526D7 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				8710510C1B82A2C40079058B /* data */,
 				87354EE319AD009A001067FB /* html */,
 				874B01D719994FCC003E2C79 /* xibs */,
 				87798BBE1997CB5100D926BC /* images */,
@@ -1325,6 +1343,8 @@
 				8709E24719AB9CA60008E9BC /* part */,
 				8709E23E19A7A2CD0008E9BC /* spinner */,
 				87A5CB6819A6529D00F9476D /* stats */,
+				87DACA2B1B83FF9C00D9B7CA /* CMKTrackedViewController.h */,
+				87DACA2D1B83FFF900D9B7CA /* CMKTrackedViewController.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -1351,8 +1371,9 @@
 				87A6DA40199BC99700049383 /* CMKPartModel.m */,
 				87A6DB1F199BEF6100049383 /* CMKPartGroupModel.h */,
 				87A6DB20199BEF6100049383 /* CMKPartGroupModel.m */,
-				87A6DB28199C01A700049383 /* CMKParts.h */,
-				87A6DB29199C01A800049383 /* CMKParts.m */,
+				87A6DB28199C01A700049383 /* CMKPartData.h */,
+				87BADF8E1B838EB400BF22A1 /* CMKPartType.h */,
+				87A6DB29199C01A800049383 /* CMKPartData.m */,
 			);
 			path = parts;
 			sourceTree = "<group>";
@@ -1379,6 +1400,15 @@
 			name = userdefaults;
 			sourceTree = "<group>";
 		};
+		E4CE624A0FAA9A6022DF4854 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EF07B80CA9B18301FCED0F2 /* Pods-configuremk8.debug.xcconfig */,
+				A646AB14321BDC2494D1D973 /* Pods-configuremk8.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1386,9 +1416,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 877A424E19912C89006526D7 /* Build configuration list for PBXNativeTarget "configuremk8" */;
 			buildPhases = (
+				3BB4E14DA89B18DE01139A29 /* Check Pods Manifest.lock */,
 				877A421519912C88006526D7 /* Sources */,
 				877A421619912C88006526D7 /* Frameworks */,
 				877A421719912C88006526D7 /* Resources */,
+				C368929EDEBE276C557DFCA1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1590,6 +1622,7 @@
 				87A6DB00199BD67400049383 /* wiiu_character_pink_gold_peach.png in Resources */,
 				87A6DB0A199BD67400049383 /* wiiu_character_yoshi.png in Resources */,
 				87A6DAEB199BD67400049383 /* wiiu_vehicle_the_duke.png in Resources */,
+				87DACA2A1B83FB3D00D9B7CA /* courses.json in Resources */,
 				87A6DB0F199BD67400049383 /* wiiu_character_toadette.png in Resources */,
 				87D209B519C8D3BA003580A5 /* prima_map_sunshine_airport.jpg in Resources */,
 				87F0C31119E30157003D89F7 /* cmk8_launch_image-568h@2x~iphone.png in Resources */,
@@ -1642,6 +1675,7 @@
 				87A6DACE199BD67400049383 /* wiiu_glider_wario_wing.png in Resources */,
 				87E7D2E019C21E11005E9B14 /* wiiu_map_icon_grumble_volcano.png in Resources */,
 				87E7D31D19C670D5005E9B14 /* CMKSpinnerView~ipad.xib in Resources */,
+				87DACA251B83D19400D9B7CA /* GoogleService-Info.plist in Resources */,
 				8768FFBC19BE4D80003D1D40 /* compare_icon@2x.png in Resources */,
 				87F0C31419E30157003D89F7 /* cmk8_launch_image-667h@2x~iphone.png in Resources */,
 				87F0C32319E3227E003D89F7 /* Icon-40@2x.png in Resources */,
@@ -1663,6 +1697,7 @@
 				87D209B919C8D3BA003580A5 /* prima_map_mario_circuit.jpg in Resources */,
 				87A6DB02199BD67400049383 /* wiiu_character_roy.png in Resources */,
 				87A6DAD7199BD67400049383 /* wiiu_tire_blue_standard.png in Resources */,
+				87DACA291B83FB3D00D9B7CA /* parts.json in Resources */,
 				87A6DB18199BD67400049383 /* wiiu_character_baby_peach.png in Resources */,
 				87D2099F19C8D3BA003580A5 /* prima_map_grumble_volcano.jpg in Resources */,
 				87A6DAE5199BD67400049383 /* wiiu_vehicle_standard_atv.png in Resources */,
@@ -1714,10 +1749,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				877A424919912C89006526D7 /* InfoPlist.strings in Resources */,
+				87DACA261B83D1A900D9B7CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BB4E14DA89B18DE01139A29 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C368929EDEBE276C557DFCA1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-configuremk8/Pods-configuremk8-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		877A421519912C88006526D7 /* Sources */ = {
@@ -1726,7 +1795,7 @@
 			files = (
 				87E9933C19A25721002CD346 /* CMKConfigureModel.m in Sources */,
 				87461E7D1992C115002102FA /* CMKCompareViewController.m in Sources */,
-				8768002219BF9322003D1D40 /* CMKCourses.m in Sources */,
+				8768002219BF9322003D1D40 /* CMKCourseData.m in Sources */,
 				877A422919912C89006526D7 /* main.m in Sources */,
 				8768FF4A19B3857C003D1D40 /* CMKDonationPopupView.m in Sources */,
 				8768FF3919AFBB60003D1D40 /* CMKStatsToKartConverter.m in Sources */,
@@ -1737,6 +1806,7 @@
 				8744EC3219AC03E700B3FA1B /* CMKKartConfigurationView.m in Sources */,
 				8768FF4F19B3C2EF003D1D40 /* CMKHelpWizardView.m in Sources */,
 				8768FF7419B65EE8003D1D40 /* CMKAnalyticsUtils.m in Sources */,
+				87DACA2E1B83FFF900D9B7CA /* CMKTrackedViewController.m in Sources */,
 				8768FF2B19AE4730003D1D40 /* CMKCustomSpinnerItem.m in Sources */,
 				8768001219BF8E77003D1D40 /* CMKMapsViewController.m in Sources */,
 				87E7D31119C4D4A0005E9B14 /* CMKSpinnerListViewCell.m in Sources */,
@@ -1759,7 +1829,7 @@
 				87354EDC19AC2065001067FB /* CMKCompareStatsScrollView.m in Sources */,
 				87A5CB5319A5289A00F9476D /* CMKAnyNumberSingleStatsRowView.m in Sources */,
 				87E9934819A3CBB3002CD346 /* CMKCompareModel.m in Sources */,
-				87A6DB2A199C01A800049383 /* CMKParts.m in Sources */,
+				87A6DB2A199C01A800049383 /* CMKPartData.m in Sources */,
 				87354EFC19AD1703001067FB /* CMKUserDefaultslUtils.m in Sources */,
 				8768FF3C19B0C920003D1D40 /* CMKAdjustConfigurationSpinnerItem.m in Sources */,
 				8768001F19BF9305003D1D40 /* CMKCourseModel.m in Sources */,
@@ -1914,6 +1984,7 @@
 		};
 		877A424F19912C89006526D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EF07B80CA9B18301FCED0F2 /* Pods-configuremk8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1921,15 +1992,8 @@
 				GCC_PREFIX_HEADER = "configuremk8/configuremk8-Prefix.pch";
 				INFOPLIST_FILE = "configuremk8/configuremk8-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/configuremk8/libs",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					configuremk8/libs/libGoogleAnalyticsServices.a,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1938,6 +2002,7 @@
 		};
 		877A425019912C89006526D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A646AB14321BDC2494D1D973 /* Pods-configuremk8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1947,15 +2012,8 @@
 				GCC_PREFIX_HEADER = "configuremk8/configuremk8-Prefix.pch";
 				INFOPLIST_FILE = "configuremk8/configuremk8-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/configuremk8/libs",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					configuremk8/libs/libGoogleAnalyticsServices.a,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM (NSInteger, CMKAttribute) {
+typedef NS_ENUM(NSInteger, CMKAttribute) {
   Acceleration,
   AverageSpeed,
   GroundSpeed,
@@ -27,51 +27,51 @@ typedef NS_ENUM (NSInteger, CMKAttribute) {
 
 @interface CMKStatsModel : NSObject
 
-@property (nonatomic) float acceleration;
-@property (nonatomic) float averageSpeed;
-@property (nonatomic) float groundSpeed;
-@property (nonatomic) float antigravitySpeed;
-@property (nonatomic) float airSpeed;
-@property (nonatomic) float waterSpeed;
-@property (nonatomic) float miniturbo;
-@property (nonatomic) float averageHandling;
-@property (nonatomic) float groundHandling;
-@property (nonatomic) float antigravityHandling;
-@property (nonatomic) float airHandling;
-@property (nonatomic) float waterHandling;
-@property (nonatomic) float traction;
-@property (nonatomic) float weight;
+@property(nonatomic) double acceleration;
+@property(nonatomic) double averageSpeed;
+@property(nonatomic) double groundSpeed;
+@property(nonatomic) double antigravitySpeed;
+@property(nonatomic) double airSpeed;
+@property(nonatomic) double waterSpeed;
+@property(nonatomic) double miniturbo;
+@property(nonatomic) double averageHandling;
+@property(nonatomic) double groundHandling;
+@property(nonatomic) double antigravityHandling;
+@property(nonatomic) double airHandling;
+@property(nonatomic) double waterHandling;
+@property(nonatomic) double traction;
+@property(nonatomic) double weight;
 
-- (CMKStatsModel *)initWithAcceleration:(float)acceleration
-                       withAverageSpeed:(float)averageSpeed
-                    withAverageHandling:(float)averageHandling
-                          withMiniturbo:(float)miniturbo
-                           withTraction:(float)traction
-                             withWeight:(float)weight;
+- (CMKStatsModel *)initWithAcceleration:(double)acceleration
+                       withAverageSpeed:(double)averageSpeed
+                    withAverageHandling:(double)averageHandling
+                          withMiniturbo:(double)miniturbo
+                           withTraction:(double)traction
+                             withWeight:(double)weight;
 
-- (CMKStatsModel *)initWithAcceleration:(float)acceleration
-                        withGroundSpeed:(float)groundSpeed
-                   withAntigravitySpeed:(float)antigravitySpeed
-                           withAirSpeed:(float)airSpeed
-                         withWaterSpeed:(float)waterSpeed
-                          withMiniturbo:(float)miniturbo
-                     withGroundHandling:(float)groundHandling
-                withAntigravityHandling:(float)antigravityHandling
-                        withAirHandling:(float)airHandling
-                      withWaterHandling:(float)waterHandling
-                           withTraction:(float)traction
-                             withWeight:(float)weight;
+- (CMKStatsModel *)initWithAcceleration:(double)acceleration
+                        withGroundSpeed:(double)groundSpeed
+                   withAntigravitySpeed:(double)antigravitySpeed
+                           withAirSpeed:(double)airSpeed
+                         withWaterSpeed:(double)waterSpeed
+                          withMiniturbo:(double)miniturbo
+                     withGroundHandling:(double)groundHandling
+                withAntigravityHandling:(double)antigravityHandling
+                        withAirHandling:(double)airHandling
+                      withWaterHandling:(double)waterHandling
+                           withTraction:(double)traction
+                             withWeight:(double)weight;
 
-+ (NSString *)nameForIndex:(NSNumber *)attributeIndex;
++ (NSString *)displayNameForIndex:(NSNumber *)attributeIndex;
 
-- (float)statValueForIndex:(NSNumber *)attributeIndex;
+- (double)statValueForIndex:(NSNumber *)attributeIndex;
 
-+ (NSArray *)      attributeKeys;
++ (NSArray *)attributeKeys;
 
-+ (NSArray *)      simpleAttributes;
++ (NSArray *)simpleAttributes;
 
-+ (NSArray *)      advancedAttributes;
++ (NSArray *)advancedAttributes;
 
-+ (NSArray *)      allAttributesInOrder;
++ (NSArray *)allAttributesInOrder;
 
 @end

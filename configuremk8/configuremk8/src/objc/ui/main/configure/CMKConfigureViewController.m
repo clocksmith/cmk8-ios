@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Blunka. All rights reserved.
 //
 
+#import <Google/Analytics.h>
 #import "CMKAdjustViewController.h"
 #import "CMKConstants.h"
 #import "CMKConfigureViewController.h"
 #import "CMKKartConfigurationModel.h"
 #import "CMKCustomSpinnerItem.h"
-#import "CMKParts.h"
+#import "CMKPartData.h"
 #import "CMKPartGroupChooserView.h"
 #import "CMKStarView.h"
 #import "CMKUserDefaultslUtils.h"
@@ -31,18 +32,16 @@
 
 #define _TAG (NSStringFromClass([CMKConfigureViewController class]))
 
-@interface CMKConfigureViewController () <CMKSpinnerViewDelegate,
-                                          CMKPartGroupChooserViewDelegate,
-                                          CMKPartImageViewDelegate,
-                                          CMKAdjustViewControllerDelegate>
+@interface CMKConfigureViewController () <CMKSpinnerViewDelegate, CMKPartGroupChooserViewDelegate,
+                                          CMKPartImageViewDelegate, CMKAdjustViewControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet CMKSpinnerView *spinnerView;
-@property (nonatomic, weak) IBOutlet CMKStarView *starView;
-@property (nonatomic, weak) IBOutlet CMKPartGroupChooserView *characterChooserView;
-@property (nonatomic, weak) IBOutlet CMKPartGroupChooserView *vehicleChooserView;
-@property (nonatomic, weak) IBOutlet CMKPartGroupChooserView *tireChooserView;
-@property (nonatomic, weak) IBOutlet CMKPartGroupChooserView *gliderChooserView;
-@property (nonatomic, weak) IBOutlet CMKSingleStatsScrollView *statsView;
+@property(nonatomic, weak) IBOutlet CMKSpinnerView *spinnerView;
+@property(nonatomic, weak) IBOutlet CMKStarView *starView;
+@property(nonatomic, weak) IBOutlet CMKPartGroupChooserView *characterChooserView;
+@property(nonatomic, weak) IBOutlet CMKPartGroupChooserView *vehicleChooserView;
+@property(nonatomic, weak) IBOutlet CMKPartGroupChooserView *tireChooserView;
+@property(nonatomic, weak) IBOutlet CMKPartGroupChooserView *gliderChooserView;
+@property(nonatomic, weak) IBOutlet CMKSingleStatsScrollView *statsView;
 
 - (IBAction)handleStarTapped:(id)sender;
 
@@ -57,18 +56,19 @@
 #pragma mark - UIViewController
 
 - (instancetype)init {
-//  NSLog(@"%@ init ", _TAG);
-  self = [super initWithTitle:CONFIGURE_TITLE_STRING withImageName:CONFIGURE_ICON_IMAGE];
+  //  NSLog(@"%@ init ", _TAG);
+  self =
+      [super initWithTitle:CONFIGURE_TITLE_STRING withImageName:CONFIGURE_ICON_IMAGE withScreenName:CONFIGURE_SCREEN];
 
   if (self) {
     _model = [CMKUserDefaultslUtils loadConfigureModel];
 
     if (_model.kartConfiguration == nil) {
-      _model.kartConfiguration = [[CMKKartConfigurationModel alloc]
-                                  initWithCharacterGroup:[CMKParts flyweight]
-                                        withVehicleGroup:[CMKParts vehicleA]
-                                           withTireGroup:[CMKParts tireA]
-                                         withGliderGroup:[CMKParts gliderA]];
+      _model.kartConfiguration =
+          [[CMKKartConfigurationModel alloc] initWithCharacterGroup:[CMKPartData characterGroups][0]
+                                                   withVehicleGroup:[CMKPartData vehicleGroups][0]
+                                                      withTireGroup:[CMKPartData tireGroups][0]
+                                                    withGliderGroup:[CMKPartData gliderGroups][0]];
       [CMKUserDefaultslUtils saveConfigureModel:_model];
     }
   }
@@ -77,7 +77,7 @@
 }
 
 - (void)viewDidLoad {
-//  NSLog(@"%@ viewDidLoad ", _TAG);
+  //  NSLog(@"%@ viewDidLoad ", _TAG);
   [super viewDidLoad];
 
   // Setup the spinner view.
@@ -90,7 +90,6 @@
   self.spinnerView.listItemFont = [UIFont systemFontOfSize:DEFAULT_SPINNER_FONT_SIZE];
   [self.spinnerView updateItems:[self spinnerItems]];
 
-
   // Setup the part chooser views.
   self.characterChooserView.delegate = self;
   self.vehicleChooserView.delegate = self;
@@ -100,13 +99,8 @@
   _isFirstLoad = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  self.screenName = CONFIGURE_SCREEN;
-}
-
 - (void)viewDidAppear:(BOOL)animated {
-//  NSLog(@"%@ viewDidAppear ", _TAG);
+  //  NSLog(@"%@ viewDidAppear ", _TAG);
   [super viewDidAppear:animated];
 
   _animateViews = NO;
@@ -115,10 +109,10 @@
   [self.statsView drawWithMode:CMKStatModeOnlyPositive];
 
   // Draw the part chooser views.
-  [self.characterChooserView drawPartGroups:[CMKParts characterGroups]];
-  [self.vehicleChooserView drawPartGroups:[CMKParts vehicleGroups]];
-  [self.tireChooserView drawPartGroups:[CMKParts tireGroups]];
-  [self.gliderChooserView drawPartGroups:[CMKParts gliderGroups]];
+  [self.characterChooserView drawPartGroups:[CMKPartData characterGroups]];
+  [self.vehicleChooserView drawPartGroups:[CMKPartData vehicleGroups]];
+  [self.tireChooserView drawPartGroups:[CMKPartData tireGroups]];
+  [self.gliderChooserView drawPartGroups:[CMKPartData gliderGroups]];
 
   [self updateAllViews];
 
@@ -182,7 +176,7 @@
 
 - (void)partGroupChooserView:(CMKPartGroupChooserView *)partGroupChooserView
           didSelectPartGroup:(CMKPartGroupModel *)partGroup {
-//  NSLog(@" % @ partGroupChooserView : didSelectPartGroup : % @", _TAG, partGroup.displayName);
+  //  NSLog(@" % @ partGroupChooserView : didSelectPartGroup : % @", _TAG, partGroup.displayName);
 
   if (partGroup.type == Character) {
     _model.kartConfiguration.characterGroup = partGroup;
@@ -209,15 +203,11 @@
 
 - (void)partImageView:(UIImageView *)partImageView didTapPart:(CMKPartModel *)part {
   NSLog(@"%@ didTapPart: %@", _TAG, part.name);
-  [CMKAnalyticsUtils sendPartViewClickedEvent:self.tracker
-                               withScreenName:CONFIGURE_SCREEN
-                                     withPart:part];
+  [CMKAnalyticsUtils sendPartViewClickedEvent:self.tracker withScreenName:CONFIGURE_SCREEN withPart:part];
 
-  CMKPartPopupView *partPopup = [[[NSBundle mainBundle]
-                                  loadNibNamed:NSStringFromClass([CMKPartPopupView class])
-                                         owner:self
-                                       options:nil]
-                                 firstObject];
+  CMKPartPopupView *partPopup = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CMKPartPopupView class])
+                                                               owner:self
+                                                             options:nil] firstObject];
 
   // Add popup into window
   CMKAppDelegate *appDelegate = (CMKAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -230,7 +220,7 @@
 
 #pragma mark - CMKSpinnerViewDelegate
 
-- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id <CMKSpinnerItem> )item {
+- (void)spinner:(CMKSpinnerView *)spinner didSelectItem:(id<CMKSpinnerItem>)item {
   if ([item isMemberOfClass:[CMKCustomSpinnerItem class]]) {
     [self handleNewCustomConfigurationSelected];
   } else if ([item isMemberOfClass:[CMKKartConfigurationModel class]]) {
@@ -263,53 +253,44 @@
 
 - (void)updateStarView {
   NSLog(@"%@ updateStarView", _TAG);
-  [self.starView
-   updateFill:[CMKStarredKartConfigurationUtils isKartConfigurationStarred:
-               _model.kartConfiguration]];
+  [self.starView updateFill:[CMKStarredKartConfigurationUtils isKartConfigurationStarred:_model.kartConfiguration]];
 }
 
 - (void)updateChooserViews {
   NSLog(@"%@ updateChooserViews", _TAG);
-  [self.characterChooserView
-   selectPartGroup:_model.kartConfiguration.characterGroup
-        isAnimated:_animateViews || _isFirstLoad];
-  [self.vehicleChooserView
-   selectPartGroup:_model.kartConfiguration.vehicleGroup
-        isAnimated:_animateViews || _isFirstLoad];
-  [self.tireChooserView
-   selectPartGroup:_model.kartConfiguration.tireGroup
-        isAnimated:_animateViews || _isFirstLoad];
-  [self.gliderChooserView
-   selectPartGroup:_model.kartConfiguration.gliderGroup
-        isAnimated:_animateViews || _isFirstLoad];
+  [self.characterChooserView selectPartGroup:_model.kartConfiguration.characterGroup
+                                  isAnimated:_animateViews || _isFirstLoad];
+  [self.vehicleChooserView selectPartGroup:_model.kartConfiguration.vehicleGroup
+                                isAnimated:_animateViews || _isFirstLoad];
+  [self.tireChooserView selectPartGroup:_model.kartConfiguration.tireGroup isAnimated:_animateViews || _isFirstLoad];
+  [self.gliderChooserView selectPartGroup:_model.kartConfiguration.gliderGroup
+                               isAnimated:_animateViews || _isFirstLoad];
 }
 
 - (void)updateStatsView {
   NSLog(@"%@ updateStatsView", _TAG);
-  [self.statsView
-   updateStats:_model.kartConfiguration.kartStats
-    isAnimated:_animateViews || _isFirstLoad];
+  [self.statsView updateStats:_model.kartConfiguration.kartStats isAnimated:_animateViews || _isFirstLoad];
 }
 
 #pragma mark - Helper methods
 
 - (NSArray *)spinnerItems {
-  return [@[[[CMKCustomSpinnerItem alloc]initWithDisplayText:
-             NSLocalizedString(@"Custom Configuration...", nil)]] arrayByAddingObjectsFromArray :
-          [CMKStarredKartConfigurationUtils allStarredKartConfigurations]];
+  return [@[ [[CMKCustomSpinnerItem alloc] initWithDisplayText:NSLocalizedString(@"Custom Configuration...", nil)] ]
+      arrayByAddingObjectsFromArray:[CMKStarredKartConfigurationUtils allStarredKartConfigurations]];
 }
 
 - (void)startHelpWizard {
   CMKAppDelegate *appDelegate = (CMKAppDelegate *)[[UIApplication sharedApplication] delegate];
-  CMKHelpWizardView *helpWizardView =
-    [[CMKHelpWizardView alloc] initWithFrame:appDelegate.window.frame
-                               withHelpItems:
-     @[[[CMKHelpWizardItemModel alloc] initWithView:self.characterChooserView
-                                    withHelpMessage:NSLocalizedString(@"PartGroupChooserHelpMessage", nil)],
-       [[CMKHelpWizardItemModel alloc] initWithView:self.starView
-                                    withHelpMessage:NSLocalizedString(@"StarHelpMessage", nil)],
-       [[CMKHelpWizardItemModel alloc] initWithView:self.spinnerView
-                                    withHelpMessage:NSLocalizedString(@"SpinnerHelpMessage", nil)]]];
+  CMKHelpWizardView *helpWizardView = [[CMKHelpWizardView alloc]
+      initWithFrame:appDelegate.window.frame
+      withHelpItems:@[
+        [[CMKHelpWizardItemModel alloc] initWithView:self.characterChooserView
+                                     withHelpMessage:NSLocalizedString(@"PartGroupChooserHelpMessage", nil)],
+        [[CMKHelpWizardItemModel alloc] initWithView:self.starView
+                                     withHelpMessage:NSLocalizedString(@"StarHelpMessage", nil)],
+        [[CMKHelpWizardItemModel alloc] initWithView:self.spinnerView
+                                     withHelpMessage:NSLocalizedString(@"SpinnerHelpMessage", nil)]
+      ]];
 
   helpWizardView.frame = appDelegate.window.frame;
   [appDelegate.window addSubview:helpWizardView];

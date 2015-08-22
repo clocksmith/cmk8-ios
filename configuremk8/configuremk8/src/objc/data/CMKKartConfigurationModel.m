@@ -10,7 +10,7 @@
 #import "CMKKartConfigurationModel.h"
 #import "CMKPartGroupModel.h"
 #import "CMKStatsModel.h"
-#import "CMKParts.h"
+#import "CMKPartData.h"
 #import "CMKStarredKartConfigurationUtils.h"
 
 #define _TAG (NSStringFromClass([CMKKartConfigurationModel class]))
@@ -39,13 +39,12 @@
   if (key) {
     NSArray *keyComponents = [key componentsSeparatedByString:KEY_SEPERATOR];
 
-    self.characterGroup = [CMKParts valueForKey:[keyComponents[0] lowercaseString]];
-    self.vehicleGroup = [CMKParts valueForKey:[[VEHICLE_STRING lowercaseString]
-                                               stringByAppendingString:keyComponents[1]]];
-    self.tireGroup = [CMKParts valueForKey:[[TIRE_STRING lowercaseString]
-                                            stringByAppendingString:keyComponents[2]]];
-    self.gliderGroup = [CMKParts valueForKey:[[GLIDER_STRING lowercaseString]
-                                              stringByAppendingString:keyComponents[3]]];
+    self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
+    self.vehicleGroup =
+        [CMKPartData valueForKey:[[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]]];
+    self.tireGroup = [CMKPartData valueForKey:[[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]]];
+    self.gliderGroup =
+        [CMKPartData valueForKey:[[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]]];
     return self;
   } else {
     return nil;
@@ -55,7 +54,7 @@
 - (CMKStatsModel *)kartStats {
   CMKStatsModel *kartStats = [CMKStatsModel alloc];
 
-  for (NSString *key in[CMKStatsModel attributeKeys]) {
+  for (NSString *key in [CMKStatsModel attributeKeys]) {
     [kartStats setValue:[NSNumber numberWithFloat:[self attributeSum:key]] forKey:key];
   }
 
@@ -63,13 +62,12 @@
 }
 
 - (NSArray *)partGroups {
-  return @[self.characterGroup, self.vehicleGroup, self.tireGroup, self.gliderGroup];
+  return @[ self.characterGroup, self.vehicleGroup, self.tireGroup, self.gliderGroup ];
 }
 
 - (float)attributeSum:(NSString *)key {
   return [[self.characterGroup.stats valueForKey:key] floatValue] +
-         [[self.vehicleGroup.stats valueForKey:key] floatValue] +
-         [[self.tireGroup.stats valueForKey:key] floatValue] +
+         [[self.vehicleGroup.stats valueForKey:key] floatValue] + [[self.tireGroup.stats valueForKey:key] floatValue] +
          [[self.gliderGroup.stats valueForKey:key] floatValue];
 }
 
@@ -96,17 +94,13 @@
 }
 
 - (NSString *)keyForUserDefaults {
-  return [@[self.characterGroup.name,
-            self.vehicleGroup.name,
-            self.tireGroup.name,
-            self.gliderGroup.name] componentsJoinedByString : KEY_SEPERATOR];
+  return [@[ self.characterGroup.name, self.vehicleGroup.name, self.tireGroup.name, self.gliderGroup.name ]
+      componentsJoinedByString:KEY_SEPERATOR];
 }
 
 - (NSString *)name {
-  return [@[self.characterGroup.displayName,
-            self.vehicleGroup.name,
-            self.tireGroup.name,
-            self.gliderGroup.name] componentsJoinedByString : NAME_SEPERATOR];
+  return [@[ self.characterGroup.displayName, self.vehicleGroup.name, self.tireGroup.name, self.gliderGroup.name ]
+      componentsJoinedByString:NAME_SEPERATOR];
 }
 
 #pragma mark - CMKSpinneritem
