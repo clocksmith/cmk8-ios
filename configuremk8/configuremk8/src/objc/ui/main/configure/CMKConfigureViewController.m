@@ -56,7 +56,7 @@
 #pragma mark - UIViewController
 
 - (instancetype)init {
-  //  NSLog(@"%@ init ", _TAG);
+  NSLog(@"%@ init ", _TAG);
   self =
       [super initWithTitle:CONFIGURE_TITLE_STRING withImageName:CONFIGURE_ICON_IMAGE withScreenName:CONFIGURE_SCREEN];
 
