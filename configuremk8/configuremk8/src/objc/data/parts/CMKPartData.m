@@ -103,8 +103,6 @@
     }
 }
 
-
-
 - (NSString *)partNameAt:(NSNumber *)index {
     NSString *partName = self.partTypeNames[index];
     return partName;
