@@ -15,14 +15,7 @@
 
 @interface CMKPartData : NSObject
 
-// Groups.
-+ (NSMutableArray *)characterGroups;
-+ (NSMutableArray *)vehicleGroups;
-+ (NSMutableArray *)tireGroups;
-+ (NSMutableArray *)gliderGroups;
-
-// All kart configurations.
-+ (NSMutableArray *)allKartConfigurations;
++ (instancetype)sharedPartModelDataStore;
 
 + (NSString *)partNameAt:(NSNumber *)index;
 
