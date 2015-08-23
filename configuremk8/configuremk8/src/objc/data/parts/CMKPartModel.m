@@ -18,8 +18,8 @@
   if (self) {
     self.name = name;
     self.displayName = NSLocalizedString(name, nil);
-    self.imageName =
-        [NSString stringWithFormat:@"wiiu_%@_%@", [CMKPartData partNameAt:@(partType)], [name lowercaseString]];
+//    self.imageName =
+//        [NSString stringWithFormat:@"wiiu_%@_%@", [[CMKPartData sharedPartModelDataStore] partNameAt:@(partType)], [name lowercaseString]];
     self.partType = partType;
     self.partGroupIndex = partGroupIndex;
   }

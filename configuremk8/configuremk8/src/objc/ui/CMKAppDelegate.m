@@ -19,7 +19,7 @@
   NSLog(@"%@ application:didFinishLaunchingWithOptions", _TAG);
 
   // Initialize the parts.
-  [CMKPartData initialize];
+  CMKPartData *sharedPartData = [CMKPartData sharedPartModelDataStore];
 
   // Initialize the courses.
   [CMKCourseData initialize];

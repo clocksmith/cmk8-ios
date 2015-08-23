@@ -64,11 +64,13 @@
     _model = [CMKUserDefaultslUtils loadConfigureModel];
 
     if (_model.kartConfiguration == nil) {
+        
+        CMKPartData *sharedInstance = [CMKPartData sharedPartModelDataStore];
       _model.kartConfiguration =
-          [[CMKKartConfigurationModel alloc] initWithCharacterGroup:[CMKPartData characterGroups][0]
-                                                   withVehicleGroup:[CMKPartData vehicleGroups][0]
-                                                      withTireGroup:[CMKPartData tireGroups][0]
-                                                    withGliderGroup:[CMKPartData gliderGroups][0]];
+          [[CMKKartConfigurationModel alloc] initWithCharacterGroup:sharedInstance.characterGroups[0]
+                                                   withVehicleGroup:sharedInstance.vehicleGroups[0]
+                                                      withTireGroup:sharedInstance.tireGroups[0]
+                                                    withGliderGroup:sharedInstance.gliderGroups[0]];
       [CMKUserDefaultslUtils saveConfigureModel:_model];
     }
   }
@@ -109,10 +111,10 @@
   [self.statsView drawWithMode:CMKStatModeOnlyPositive];
 
   // Draw the part chooser views.
-  [self.characterChooserView drawPartGroups:[CMKPartData characterGroups]];
-  [self.vehicleChooserView drawPartGroups:[CMKPartData vehicleGroups]];
-  [self.tireChooserView drawPartGroups:[CMKPartData tireGroups]];
-  [self.gliderChooserView drawPartGroups:[CMKPartData gliderGroups]];
+  [self.characterChooserView drawPartGroups:[CMKPartData sharedPartModelDataStore].characterGroups];
+  [self.vehicleChooserView drawPartGroups:[CMKPartData sharedPartModelDataStore].vehicleGroups];
+  [self.tireChooserView drawPartGroups:[CMKPartData sharedPartModelDataStore].tireGroups];
+  [self.gliderChooserView drawPartGroups:[CMKPartData sharedPartModelDataStore].gliderGroups];
 
   [self updateAllViews];
 

@@ -14,11 +14,13 @@
 @implementation CMKConfigureModel
 
 - (instancetype)init {
+    CMKPartData *sharedInstance = [CMKPartData sharedPartModelDataStore];
+    
   return [self initWithKartConfiguration:[[CMKKartConfigurationModel alloc]
-                                             initWithCharacterGroup:[CMKPartData characterGroups][0]
-                                                   withVehicleGroup:[CMKPartData vehicleGroups][0]
-                                                      withTireGroup:[CMKPartData tireGroups][0]
-                                                    withGliderGroup:[CMKPartData gliderGroups][0]]];
+                                             initWithCharacterGroup:sharedInstance.characterGroups[0]
+                                                   withVehicleGroup:sharedInstance.vehicleGroups[0]
+                                                      withTireGroup:sharedInstance.tireGroups[0]
+                                                    withGliderGroup:sharedInstance.gliderGroups[0]]];
 }
 
 - (instancetype)initWithKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {

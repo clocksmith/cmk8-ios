@@ -15,9 +15,16 @@
 
 @interface CMKPartData : NSObject
 
+@property (strong, nonatomic) NSDictionary *partTypeNames;
+@property (strong, nonatomic) NSMutableArray *characterGroups;
+@property (strong, nonatomic) NSMutableArray *vehicleGroups;
+@property (strong, nonatomic) NSMutableArray *tireGroups;
+@property (strong, nonatomic) NSMutableArray *gliderGroups;
+@property (strong, nonatomic) NSMutableArray *allKartConfigurations;
+
 + (instancetype)sharedPartModelDataStore;
 
-+ (NSString *)partNameAt:(NSNumber *)index; // OK
+- (NSString *)partNameAt:(NSNumber *)index;
 
 + (NSMutableArray *)partGroupForType:(CMKPartType)partType;
 

@@ -17,7 +17,7 @@
 
   CMKKartConfigurationModel *optimalKartConfiguration;
 
-  for (CMKKartConfigurationModel *kartConfiguration in [CMKPartData allKartConfigurations]) {
+  for (CMKKartConfigurationModel *kartConfiguration in [CMKPartData sharedPartModelDataStore].allKartConfigurations) {
     double score = [CMKStatsToKartConverter calculateScoreWithPreferredStats:preferredStats
                                                        withKartConfiguration:kartConfiguration];
 
