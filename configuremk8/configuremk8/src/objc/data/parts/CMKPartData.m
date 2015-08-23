@@ -130,8 +130,23 @@
     }
 }
 
+
+//NSArray *keyComponents = [key componentsSeparatedByString:KEY_SEPERATOR];
+//
+//self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
+//self.vehicleGroup =
+//[CMKPartData valueForKey:[[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]]];
+//self.tireGroup = [CMKPartData valueForKey:[[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]]];
+//self.gliderGroup =
+//[CMKPartData valueForKey:[[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]]];
+
 + (CMKPartGroupModel *)partGroupForPart:(CMKPartModel *)part {
+    
+    CMKPartGroupModel *thing = [CMKPartData partGroupForType:part.partType][part.partGroupIndex];
+    
     return [CMKPartData partGroupForType:part.partType][part.partGroupIndex];
+    
+    
 }
 
 - (void)initPartGroupsFor:(NSMutableArray *)partGroups
@@ -146,6 +161,9 @@
         [partGroupJsonObj valueForKey:[NSString stringWithFormat:@"%@s", [self.partTypeNames objectForKey:@(partType)]]];
         
         for (int j = 0; j < [partsJsonArray count]; j++) {
+            
+            
+    
             
             
             

@@ -38,6 +38,9 @@
 - (instancetype)initWithUserDefaultsKey:(NSString *)key {
   if (key) {
     NSArray *keyComponents = [key componentsSeparatedByString:KEY_SEPERATOR];
+      
+//      CMKPartGroupModel *cGroup = [CMKPartData partGroupForType:[keyComponents[0] lowercaseString]];
+//      CMKPartGroupModel *vGroup = [CMKPartData partGroupForType:[keyComponents]]
 
     self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
     self.vehicleGroup =
