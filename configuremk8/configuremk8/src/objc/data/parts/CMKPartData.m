@@ -18,6 +18,8 @@
 
 - (void)setupThePartsData;
 - (void)initializeTheVariousProperties;
+- (void)initalizeTheGroupsWithJSONObj:(NSDictionary *)json;
+- (void)createAllKartConfigurations;
 
 @end
 
@@ -27,8 +29,6 @@
 #pragma mark - Initializers
 
 + (instancetype)sharedPartModelDataStore {
-    
-    NSLog(@"SharedPartModel getting called!");
     
     static CMKPartData *_sharedPartModelDataStore = nil;
     static dispatch_once_t onceToken;
@@ -40,60 +40,23 @@
 }
 
 - (instancetype)init {
-    
-    NSLog(@"init in CMKPartdata getting called");
     self = [super init];
     if (self) {
-        
-        NSLog(@"If self passed in CMKPartData");
         [self setupThePartsData];
     }
     return self;
 }
 
 - (void)setupThePartsData {
-    
-    NSLog(@"Inside setupthepartsdata");
     [self initializeTheVariousProperties];
-    
-    self.partTypeNames = @{
-                           [NSNumber numberWithInt:Character] : @"character",
-                           [NSNumber numberWithInt:Vehicle] : @"vehicle",
-                           [NSNumber numberWithInt:Tire] : @"tire",
-                           [NSNumber numberWithInt:Glider] : @"glider"
-                           };
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"parts" ofType:@"json"];
     NSData *content = [[NSData alloc] initWithContentsOfFile:filePath];
     NSDictionary *partsJsonObj = [NSJSONSerialization JSONObjectWithData:content options:kNilOptions error:nil];
     
+    [self initalizeTheGroupsWithJSONObj:partsJsonObj];
     
-
-    
-    [self initPartGroupsFor:self.characterGroups
-                     withJsonArray:[partsJsonObj valueForKey:@"character_groups"]
-                      withPartType:Character];
-    [self initPartGroupsFor:self.vehicleGroups
-                     withJsonArray:[partsJsonObj valueForKey:@"vehicle_groups"]
-                      withPartType:Vehicle];
-    [self initPartGroupsFor:self.tireGroups
-                     withJsonArray:[partsJsonObj valueForKey:@"tire_groups"]
-                      withPartType:Tire];
-    [self initPartGroupsFor:self.gliderGroups
-                     withJsonArray:[partsJsonObj valueForKey:@"glider_groups"]
-                      withPartType:Glider];
-    
-    for (CMKPartGroupModel *characterGroup in self.characterGroups) {
-        for (CMKPartGroupModel *vehicleGroup in self.vehicleGroups) {
-            for (CMKPartGroupModel *tireGroup in self.tireGroups) {
-                for (CMKPartGroupModel *gliderGroup in self.gliderGroups) {
-                    [self.allKartConfigurations addObject:[[CMKKartConfigurationModel alloc]initWithCharacterGroup:characterGroup withVehicleGroup:vehicleGroup withTireGroup:tireGroup withGliderGroup:gliderGroup]];
-                }
-            }
-        }
-    }
-    
-    NSLog(@"What are we dealing with HEREE!!");
+    [self createAllKartConfigurations];
 }
 
 
@@ -106,6 +69,38 @@
     _tireGroups = [NSMutableArray new];
     _gliderGroups = [NSMutableArray new];
     _allKartConfigurations = [NSMutableArray new];
+    
+    self.partTypeNames = @{ [NSNumber numberWithInt:Character] : @"character",
+                            [NSNumber numberWithInt:Vehicle] : @"vehicle",
+                            [NSNumber numberWithInt:Tire] : @"tire",
+                            [NSNumber numberWithInt:Glider] : @"glider" };
+}
+
+- (void)initalizeTheGroupsWithJSONObj:(NSDictionary *)json {
+    [self initPartGroupsFor:self.characterGroups
+              withJsonArray:[json valueForKey:@"character_groups"]
+               withPartType:Character];
+    [self initPartGroupsFor:self.vehicleGroups
+              withJsonArray:[json valueForKey:@"vehicle_groups"]
+               withPartType:Vehicle];
+    [self initPartGroupsFor:self.tireGroups
+              withJsonArray:[json valueForKey:@"tire_groups"]
+               withPartType:Tire];
+    [self initPartGroupsFor:self.gliderGroups
+              withJsonArray:[json valueForKey:@"glider_groups"]
+               withPartType:Glider];
+}
+
+- (void)createAllKartConfigurations {
+    for (CMKPartGroupModel *characterGroup in self.characterGroups) {
+        for (CMKPartGroupModel *vehicleGroup in self.vehicleGroups) {
+            for (CMKPartGroupModel *tireGroup in self.tireGroups) {
+                for (CMKPartGroupModel *gliderGroup in self.gliderGroups) {
+                    [self.allKartConfigurations addObject:[[CMKKartConfigurationModel alloc]initWithCharacterGroup:characterGroup withVehicleGroup:vehicleGroup withTireGroup:tireGroup withGliderGroup:gliderGroup]];
+                }
+            }
+        }
+    }
 }
 
 
@@ -153,7 +148,6 @@
             withJsonArray:(NSMutableArray *)partGroupsJsonArray
              withPartType:(CMKPartType)partType {
     
-    NSLog(@"What's happening here!!!");
     for (int i = 0; i < [partGroupsJsonArray count]; i++) {
         NSDictionary *partGroupJsonObj = [partGroupsJsonArray objectAtIndex:i];
         NSMutableArray *parts = [NSMutableArray new];
@@ -161,12 +155,6 @@
         [partGroupJsonObj valueForKey:[NSString stringWithFormat:@"%@s", [self.partTypeNames objectForKey:@(partType)]]];
         
         for (int j = 0; j < [partsJsonArray count]; j++) {
-            
-            
-    
-            
-            
-            
             NSString *name = [partsJsonArray objectAtIndex:j];
             NSString *imageName = [NSString stringWithFormat:@"wiiu_%@_%@", [self partNameAt:@(partType)], [name lowercaseString]];
             

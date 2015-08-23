@@ -30,7 +30,7 @@
 
 + (CMKPartGroupModel *)partGroupForPart:(CMKPartModel *)part;
 
-+ (void)initPartGroupsFor:(NSMutableArray *)partGroups
+- (void)initPartGroupsFor:(NSMutableArray *)partGroups
             withJsonArray:(NSMutableArray *)partGroupsJsonArray
              withPartType:(CMKPartType)partType;
 
