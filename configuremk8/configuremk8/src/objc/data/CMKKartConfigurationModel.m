@@ -39,15 +39,30 @@
   if (key) {
     NSArray *keyComponents = [key componentsSeparatedByString:KEY_SEPERATOR];
       
+      CMKPartData *sharedPartDataStore = [CMKPartData sharedPartModelDataStore];
+      NSDictionary *partTypeNamesDictionary = sharedPartDataStore.partTypeNames;
+      
+      
+      self.characterGroup = sharedPartDataStore .characterGroups[0];
+      self.vehicleGroup = sharedPartDataStore.vehicleGroups[0];
+      self.tireGroup = sharedPartDataStore.tireGroups[0];
+      self.gliderGroup = sharedPartDataStore.tireGroups[0];
+      
 //      CMKPartGroupModel *cGroup = [CMKPartData partGroupForType:[keyComponents[0] lowercaseString]];
 //      CMKPartGroupModel *vGroup = [CMKPartData partGroupForType:[keyComponents]]
+      
+      NSString *characterGroupString = [keyComponents[0] lowercaseString];
+      NSString *vehicleGroupString = [[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]];
+      NSString *tireGroupString = [[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]];
+      NSString *gliderGroupString = [[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]];
 
-    self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
-    self.vehicleGroup =
-        [CMKPartData valueForKey:[[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]]];
-    self.tireGroup = [CMKPartData valueForKey:[[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]]];
-    self.gliderGroup =
-        [CMKPartData valueForKey:[[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]]];
+
+//    self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
+//    self.vehicleGroup =
+//        [CMKPartData valueForKey:[[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]]];
+//    self.tireGroup = [CMKPartData valueForKey:[[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]]];
+//    self.gliderGroup =
+//        [CMKPartData valueForKey:[[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]]];
     return self;
   } else {
     return nil;
