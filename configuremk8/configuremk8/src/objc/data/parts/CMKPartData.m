@@ -101,23 +101,24 @@
     _allKartConfigurations = [NSMutableArray new];
 }
 
+
+
 + (NSString *)partNameAt:(NSNumber *)index {
-    return _partTypeNames[index];
+    return [CMKPartData sharedPartModelDataStore].partTypeNames[index];
 }
 
 + (NSMutableArray *)partGroupForType:(CMKPartType)partType {
+    CMKPartData *sharedInstance = [CMKPartData sharedPartModelDataStore];
+    
     switch (partType) {
         case Character:
-            return [CMKPartData characterGroups];
+            return sharedInstance.characterGroups;
         case Vehicle:
-            return [CMKPartData vehicleGroups];
+            return sharedInstance.vehicleGroups;
         case Tire:
-            return [CMKPartData tireGroups];
+            return sharedInstance.tireGroups;
         case Glider:
-            return [CMKPartData gliderGroups];
-            
-        default:
-            break;
+            return sharedInstance.gliderGroups;
     }
 }
 
@@ -128,13 +129,11 @@
 + (void)initPartGroupsFor:(NSMutableArray *)partGroups
             withJsonArray:(NSMutableArray *)partGroupsJsonArray
              withPartType:(CMKPartType)partType {
-    NSLog(@"%@ initPartGroupsFor:%@", _TAG, [CMKPartData partNameAt:@(partType)]);
     
     for (int i = 0; i < [partGroupsJsonArray count]; i++) {
-        NSLog(@"%@ adding part group %d", _TAG, i);
         NSDictionary *partGroupJsonObj = [partGroupsJsonArray objectAtIndex:i];
         
-        NSMutableArray *parts = [NSMutableArray array];
+        NSMutableArray *parts = [NSMutableArray new];
         NSArray *partsJsonArray =
         [partGroupJsonObj valueForKey:[NSString stringWithFormat:@"%@s", [_partTypeNames objectForKey:@(partType)]]];
         for (int j = 0; j < [partsJsonArray count]; j++) {

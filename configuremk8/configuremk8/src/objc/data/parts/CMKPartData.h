@@ -17,7 +17,7 @@
 
 + (instancetype)sharedPartModelDataStore;
 
-+ (NSString *)partNameAt:(NSNumber *)index;
++ (NSString *)partNameAt:(NSNumber *)index; // OK
 
 + (NSMutableArray *)partGroupForType:(CMKPartType)partType;
 
