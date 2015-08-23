@@ -18,6 +18,9 @@
 @property(nonatomic, assign) CMKPartType partType;
 @property(nonatomic, assign) int partGroupIndex;
 
-- (instancetype)initWithName:(NSString *)name withPartType:(CMKPartType)partType withPartGroupIndex:(int)partGroupIndex;
+- (instancetype)initWithName:(NSString *)name
+                withPartType:(CMKPartType)partType
+          withPartGroupIndex:(int)partGroupIndex
+               withImageName:(NSString *)imageName;
 
 @end

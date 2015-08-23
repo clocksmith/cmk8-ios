@@ -12,16 +12,17 @@
 
 - (instancetype)initWithName:(NSString *)name
                 withPartType:(CMKPartType)partType
-          withPartGroupIndex:(int)partGroupIndex {
+          withPartGroupIndex:(int)partGroupIndex
+               withImageName:(NSString *)imageName {
   self = [super init];
 
   if (self) {
-    self.name = name;
-    self.displayName = NSLocalizedString(name, nil);
-//    self.imageName =
-//        [NSString stringWithFormat:@"wiiu_%@_%@", [[CMKPartData sharedPartModelDataStore] partNameAt:@(partType)], [name lowercaseString]];
-    self.partType = partType;
-    self.partGroupIndex = partGroupIndex;
+    _name = name;
+    _displayName = NSLocalizedString(name, nil);
+    _imageName = imageName;
+    _partType = partType;
+    _partGroupIndex = partGroupIndex;
+      
   }
 
   return self;

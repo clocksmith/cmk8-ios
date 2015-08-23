@@ -146,9 +146,16 @@
         [partGroupJsonObj valueForKey:[NSString stringWithFormat:@"%@s", [self.partTypeNames objectForKey:@(partType)]]];
         
         for (int j = 0; j < [partsJsonArray count]; j++) {
-            [parts addObject:[[CMKPartModel alloc] initWithName:[partsJsonArray objectAtIndex:j]
+            
+            
+            
+            NSString *name = [partsJsonArray objectAtIndex:j];
+            NSString *imageName = [NSString stringWithFormat:@"wiiu_%@_%@", [self partNameAt:@(partType)], [name lowercaseString]];
+            
+            [parts addObject:[[CMKPartModel alloc] initWithName:name
                                                    withPartType:partType
-                                             withPartGroupIndex:i]];
+                                             withPartGroupIndex:i
+                                                  withImageName:imageName]];
         }
         
         NSDictionary *statsJsonObj = [partGroupJsonObj objectForKey:@"stats"];
