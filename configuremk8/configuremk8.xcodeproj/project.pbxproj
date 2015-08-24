@@ -37,6 +37,7 @@
 		8768001C19BF92EB003D1D40 /* CMKCupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768001B19BF92EB003D1D40 /* CMKCupModel.m */; };
 		8768001F19BF9305003D1D40 /* CMKCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768001E19BF9305003D1D40 /* CMKCourseModel.m */; };
 		8768002219BF9322003D1D40 /* CMKCourseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768002119BF9322003D1D40 /* CMKCourseData.m */; };
+		876810151B8BB51D00762150 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 876810141B8BB51D00762150 /* .gitignore */; };
 		8768FF2019AE3609003D1D40 /* CMKComparePlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768FF1F19AE3609003D1D40 /* CMKComparePlaceholderView.m */; };
 		8768FF2219AE3636003D1D40 /* CMKComparePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8768FF2119AE3636003D1D40 /* CMKComparePlaceholderView.xib */; };
 		8768FF2719AE421D003D1D40 /* CMKAdjustViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768FF2519AE421D003D1D40 /* CMKAdjustViewController.m */; };
@@ -388,6 +389,7 @@
 		8768001E19BF9305003D1D40 /* CMKCourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCourseModel.m; sourceTree = "<group>"; };
 		8768002019BF9322003D1D40 /* CMKCourseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKCourseData.h; sourceTree = "<group>"; };
 		8768002119BF9322003D1D40 /* CMKCourseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKCourseData.m; sourceTree = "<group>"; };
+		876810141B8BB51D00762150 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8768FF1E19AE3609003D1D40 /* CMKComparePlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKComparePlaceholderView.h; path = ui/main/compare/CMKComparePlaceholderView.h; sourceTree = "<group>"; };
 		8768FF1F19AE3609003D1D40 /* CMKComparePlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKComparePlaceholderView.m; path = ui/main/compare/CMKComparePlaceholderView.m; sourceTree = "<group>"; };
 		8768FF2119AE3636003D1D40 /* CMKComparePlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CMKComparePlaceholderView.xib; path = src/res/xibs/CMKComparePlaceholderView.xib; sourceTree = "<group>"; };
@@ -1190,6 +1192,7 @@
 		877A421019912C88006526D7 = {
 			isa = PBXGroup;
 			children = (
+				876810141B8BB51D00762150 /* .gitignore */,
 				87DACA241B83D19400D9B7CA /* GoogleService-Info.plist */,
 				877A422219912C89006526D7 /* configuremk8 */,
 				877A424419912C89006526D7 /* configuremk8Tests */,
@@ -1552,6 +1555,7 @@
 				87A6DAB8199BD67400049383 /* grip_gray.png in Resources */,
 				87A6DAF5199BD67400049383 /* wiiu_vehicle_badwagon.png in Resources */,
 				87A6DAED199BD67400049383 /* wiiu_vehicle_comet.png in Resources */,
+				876810151B8BB51D00762150 /* .gitignore in Resources */,
 				87D209B019C8D3BA003580A5 /* prima_map_bone_dry_dunes.jpg in Resources */,
 				87F0C32619E3227E003D89F7 /* Icon-60@3x.png in Resources */,
 				8768FFBE19BE4D80003D1D40 /* configure_icon@2x.png in Resources */,
