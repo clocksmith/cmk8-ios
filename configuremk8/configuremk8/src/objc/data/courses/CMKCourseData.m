@@ -35,13 +35,11 @@ static NSMutableArray *_cups;
     NSArray *cupsJsonObj = [coursesJsonObj valueForKey:@"cups"];
 
     for (int i = 0; i < [cupsJsonObj count]; i++) {
-      NSLog(@"%@ adding cup %d", _TAG, i);
       NSDictionary *cupJsonObj = cupsJsonObj[i];
       NSArray *coursesJsonObj = [cupJsonObj valueForKey:@"courses"];
 
       NSMutableArray *courses = [NSMutableArray array];
       for (int j = 0; j < [coursesJsonObj count]; j++) {
-        NSLog(@"%@ adding course %d", _TAG, j);
         NSDictionary *courseString = coursesJsonObj[j];
         [courses
             addObject:[[CMKCourseModel alloc] initWithName:courseString withCourseIndex:i * NUM_COURSES_PER_CUP + j]];

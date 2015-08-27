@@ -90,9 +90,6 @@ static NSDictionary *_characterNameValues;
       case Glider:
         _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Glider", nil), self.name];
         break;
-
-      default:
-        break;
     }
   }
 

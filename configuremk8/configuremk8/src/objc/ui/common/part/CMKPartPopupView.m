@@ -32,8 +32,12 @@
   CMKPartModel *_part;
   UIImageView *_anchorImageView;
   UIImageView *_transitionImageView;
+  NSLayoutConstraint *_topTransitionImageConstraint;
+  NSLayoutConstraint *_leftTransitionImageConstraint;
   CGPoint _initialOrigin;
   CGSize _initialSize;
+  CGPoint _finalOrigin;
+  CGSize _finalSize;
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -85,6 +89,8 @@
 
   // Call super again here after the transition.
   [super layoutSubviews];
+
+  self.translatesAutoresizingMaskIntoConstraints = YES;
 }
 
 - (void)updatePart:(CMKPartModel *)part withAnchorImageView:(UIImageView *)imageView {
@@ -104,19 +110,36 @@
 
   _initialOrigin = [_anchorImageView.superview convertPoint:_anchorImageView.frame.origin toView:nil];
   _initialSize = _anchorImageView.frame.size;
-  CGPoint finalOrigin = [self.imageView.superview convertPoint:self.imageView.frame.origin toView:nil];
-  CGSize finalSize = self.imageView.frame.size;
+  _finalOrigin = [self.imageView.superview convertPoint:self.imageView.frame.origin toView:nil];
+  _finalSize = self.imageView.frame.size;
 
   _transitionImageView = [[UIImageView alloc] initWithImage:_anchorImageView.image];
   _transitionImageView.frame = CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
   _transitionImageView.contentMode = UIViewContentModeScaleAspectFit;
   [self addSubview:_transitionImageView];
 
+  //  _topTransitionImageConstraint = [NSLayoutConstraint constraintWithItem:_transitionImageView
+  //                                                               attribute:NSLayoutAttributeTop
+  //                                                               relatedBy:NSLayoutRelationEqual
+  //                                                                  toItem:self
+  //                                                               attribute:NSLayoutAttributeBottom
+  //                                                              multiplier:1.0
+  //                                                                constant:_initialOrigin.y];
+  //  _leftTransitionImageConstraint = [NSLayoutConstraint constraintWithItem:_transitionImageView
+  //                                                                attribute:NSLayoutAttributeLeft
+  //                                                                relatedBy:NSLayoutRelationEqual
+  //                                                                   toItem:self
+  //                                                                attribute:NSLayoutAttributeRight
+  //                                                               multiplier:1.0
+  //                                                                 constant:_initialOrigin.x];
+  //  [self addConstraint:_topTransitionImageConstraint];
+  //  [self addConstraint:_leftTransitionImageConstraint];
+
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
       animations:^{
         self.backgroundView.alpha = POPUP_SHADE_ALPHA;
         self.contentView.alpha = 1.0f;
-        _transitionImageView.frame = CGRectMake(finalOrigin.x, finalOrigin.y, finalSize.width, finalSize.height);
+        _transitionImageView.frame = CGRectMake(_finalOrigin.x, _finalOrigin.y, _finalSize.width, _finalSize.height);
       }
 
       completion:^(BOOL finished){
@@ -124,7 +147,14 @@
 }
 
 - (void)close {
+  //  [self removeConstraints:self.constraints];
+  //  [self setNeedsUpdateConstraints];
+
+  //  _transitionImageView.frame = CGRectMake(_finalOrigin.x, _finalOrigin.y, _finalSize.width, _finalSize.height);
+
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
+      delay:0
+      options:UIViewAnimationOptionBeginFromCurrentState
       animations:^{
         self.backgroundView.alpha = 0.0f;
         self.contentView.alpha = 0.0f;

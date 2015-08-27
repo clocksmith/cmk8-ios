@@ -80,9 +80,6 @@ static NSMutableArray *_allKartConfigurations;
         }
       }
     }
-
-    NSLog(@"%@parts initialized", _TAG);
-    NSLog(@"%@_characterGroups count: %lu", _TAG, [_characterGroups count]);
   }
 }
 
@@ -122,9 +119,6 @@ static NSMutableArray *_allKartConfigurations;
       return [CMKPartData tireGroups];
     case Glider:
       return [CMKPartData gliderGroups];
-
-    default:
-      break;
   }
 }
 
@@ -135,10 +129,7 @@ static NSMutableArray *_allKartConfigurations;
 + (void)initPartGroupsFor:(NSMutableArray *)partGroups
             withJsonArray:(NSMutableArray *)partGroupsJsonArray
              withPartType:(CMKPartType)partType {
-  NSLog(@"%@ initPartGroupsFor:%@", _TAG, [CMKPartData partNameAt:@(partType)]);
-
   for (int i = 0; i < [partGroupsJsonArray count]; i++) {
-    NSLog(@"%@ adding part group %d", _TAG, i);
     NSDictionary *partGroupJsonObj = [partGroupsJsonArray objectAtIndex:i];
 
     NSMutableArray *parts = [NSMutableArray array];
