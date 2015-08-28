@@ -36,7 +36,7 @@ static const int _MAX_PARTS_PER_ROW = 4;
 
   if (self) {
     self.delegate = delegate;
-    int partCount = [CMKPartData partCount];
+    int partCount = [partGroup parts].count;
 
     int frameWidth = self.frame.size.width;
     int frameHeight = self.frame.size.height;

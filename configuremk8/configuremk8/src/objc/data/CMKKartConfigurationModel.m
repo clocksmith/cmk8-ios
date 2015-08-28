@@ -98,12 +98,8 @@
 }
 
 - (NSString *)displayName {
-  return [@[
-    self.characterGroup.displayName,
-    self.vehicleGroup.displayName,
-    self.tireGroup.displayName,
-    self.gliderGroup.displayName
-  ] componentsJoinedByString:NAME_SEPERATOR];
+  return [@[ self.characterGroup.displayName, self.vehicleGroup.name, self.tireGroup.name, self.gliderGroup.name ]
+      componentsJoinedByString:NAME_SEPERATOR];
 }
 
 #pragma mark - CMKSpinneritem

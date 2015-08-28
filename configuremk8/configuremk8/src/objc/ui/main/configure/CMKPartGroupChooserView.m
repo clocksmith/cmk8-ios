@@ -19,7 +19,7 @@
 @end
 
 @implementation CMKPartGroupChooserView {
-  NSArray *_partGroups;
+  CMKMutableOrderedDictionary *_partGroups;
 
   UIImageView *_upwardTriangle;
   UIScrollView *_scrollView;
@@ -48,7 +48,7 @@ static const int _PAGER_ARROW_HEIGHT = 10;
 - (void)internalInit {
 }
 
-- (void)drawPartGroups:(NSArray *)partGroups {
+- (void)drawPartGroups:(CMKMutableOrderedDictionary *)partGroups {
   _partGroups = partGroups;
 
   int frameWidth = self.frame.size.width;
@@ -95,7 +95,7 @@ static const int _PAGER_ARROW_HEIGHT = 10;
 
   id<CMKPartImageViewDelegate> strongDelegate = (id<CMKPartImageViewDelegate>)self.delegate;
 
-  for (CMKPartGroupModel *partGroup in _partGroups) {
+  for (CMKPartGroupModel *partGroup in [_partGroups allValues]) {
     CGRect partGroupFrame = CGRectMake(0, partGroupIndex * scrollViewHeight, scrollViewWidth, scrollViewHeight);
     CMKPartGroupView *partGroupView = [[CMKPartGroupView alloc] initWithFrame:partGroupFrame
                                                                     withGroup:partGroup
@@ -113,7 +113,7 @@ static const int _PAGER_ARROW_HEIGHT = 10;
 - (void)selectPartGroup:(CMKPartGroupModel *)partGroup isAnimated:(BOOL)animated {
   int pageIndex = 0;
 
-  for (CMKPartGroupModel *partGroupFromModel in _partGroups) {
+  for (CMKPartGroupModel *partGroupFromModel in [_partGroups allValues]) {
     if ([partGroup.name isEqualToString:partGroupFromModel.name]) {
       break;
     } else {
