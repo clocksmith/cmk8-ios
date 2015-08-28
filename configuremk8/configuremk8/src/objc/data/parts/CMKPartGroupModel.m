@@ -8,10 +8,10 @@
 
 #import "CMKConstants.h"
 #import "CMKPartGroupModel.h"
+#import "CMKPartData.h"
+#import "CMKPartType.h"
 
-@interface CMKPartGroupModel () {
-  NSString *_displayName;
-}
+@interface CMKPartGroupModel ()
 
 @end
 
@@ -19,30 +19,11 @@
 
 static NSDictionary *_characterNameValues;
 
-+ (void)initialize {
-  // Need to do if we call initialize directly.
-  static BOOL initialized = NO;
-
-  if (!initialized) {
-    initialized = YES;
-    _characterNameValues = @{
-      FLYWEIGHT_NAME_STRING : @0,
-      FEATHERWEIGHT_NAME_STRING : @1,
-      LIGHTWEIGHT_NAME_STRING : @2,
-      MIDDLEWEIGHT_NAME_STRING : @3,
-      CRUISERWEIGHT_NAME_STRING : @4,
-      METALWEIGHT_NAME_STRING : @5,
-      HEAVYWEIGHT_NAME_STRING : @6
-    };
-  }
-}
-
 - (CMKPartGroupModel *)initWithType:(CMKPartType)theType
                            withName:(NSString *)theName
                           withStats:(CMKStatsModel *)theStats
                           withParts:(NSArray *)theParts
-                          withIndex:(int)theIndex;
-{
+                          withIndex:(int)theIndex {
   self = [super init];
 
   if (self) {
@@ -51,55 +32,39 @@ static NSDictionary *_characterNameValues;
     self.stats = theStats;
     self.parts = theParts;
     self.index = theIndex;
+
+    NSString *name = self.name;
+    CMKPartType type = self.type;
+    switch (type) {
+      case Character: {
+        NSString *firstLetter = [NSString stringWithString:[name substringToIndex:1]];
+        NSString *restOfLetters = [NSString stringWithString:[[name substringFromIndex:1] lowercaseString]];
+        NSString *localizedStringKey = [NSString stringWithFormat:@"%@%@", firstLetter, restOfLetters];
+        self.displayName = NSLocalizedString(localizedStringKey, nil);
+        break;
+      }
+
+      case Vehicle:
+        self.displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Vehicle", nil), name];
+        break;
+
+      case Tire:
+        self.displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Tire", nil), name];
+        break;
+
+      case Glider:
+        self.displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Glider", nil), name];
+        break;
+    }
   }
 
   return self;
 }
 
-- (NSString *)displayName {
-  if (!_displayName) {
-    switch ((CMKPartType)self.type) {
-      case Character:
-
-        if ([self.name isEqualToString:FLYWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(FLYWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:FEATHERWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(FEATHERWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:LIGHTWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(LIGHTWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:MIDDLEWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(MIDDLEWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:CRUISERWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(CRUISERWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:METALWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(METALWEIGHT_STRING, nil);
-        } else if ([self.name isEqualToString:HEAVYWEIGHT_NAME_STRING]) {
-          _displayName = NSLocalizedString(HEAVYWEIGHT_STRING, nil);
-        }
-
-        break;
-
-      case Vehicle:
-        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Vehicle", nil), self.name];
-        break;
-
-      case Tire:
-        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Tire", nil), self.name];
-        break;
-
-      case Glider:
-        _displayName = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Glider", nil), self.name];
-        break;
-    }
-  }
-
-  return _displayName;
-}
-
 - (NSComparisonResult)compare:(CMKPartGroupModel *)otherObject {
   if (self.type == Character) {
-    int lhs = [[_characterNameValues valueForKey:self.name] integerValue];
-    int rhs = [[_characterNameValues valueForKey:otherObject.name] integerValue];
+    long lhs = [[CMKPartData characterGroups] indexOfKey:self.name];
+    long rhs = [[CMKPartData characterGroups] indexOfKey:otherObject.name];
 
     if (lhs < rhs) {
       return NSOrderedAscending;

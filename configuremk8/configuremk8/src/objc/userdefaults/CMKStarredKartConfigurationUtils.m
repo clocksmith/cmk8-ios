@@ -27,7 +27,7 @@ static NSString *const _STARRED_KART_CONFIGURATION_NAMESPACE = @"starredKartConf
 
 + (void)starKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
   [[NSUserDefaults standardUserDefaults]
-      setObject:[kartConfiguration name]
+      setObject:[kartConfiguration displayName]
          forKey:[CMKStarredKartConfigurationUtils starredKartConfigurationKey:kartConfiguration]];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }

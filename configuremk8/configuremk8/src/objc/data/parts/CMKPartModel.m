@@ -17,9 +17,9 @@
 
   if (self) {
     self.name = name;
-    self.displayName = NSLocalizedString(name, nil);
+    self.displayName = partType == Character ? NSLocalizedString(name, nil) : name;
     self.imageName =
-        [NSString stringWithFormat:@"wiiu_%@_%@", [CMKPartData partNameAt:@(partType)], [name lowercaseString]];
+        [NSString stringWithFormat:@"wiiu_%@_%@", [CMKPartData nameForPartType:partType], [name lowercaseString]];
     self.partType = partType;
     self.partGroupIndex = partGroupIndex;
   }

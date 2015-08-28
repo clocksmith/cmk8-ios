@@ -11,6 +11,7 @@
 #import "CMKPartGroupModel.h"
 #import "CMKStatsModel.h"
 #import "CMKPartData.h"
+#import "CMKPartType.h"
 #import "CMKStarredKartConfigurationUtils.h"
 
 #define _TAG (NSStringFromClass([CMKKartConfigurationModel class]))
@@ -39,12 +40,10 @@
   if (key) {
     NSArray *keyComponents = [key componentsSeparatedByString:KEY_SEPERATOR];
 
-    self.characterGroup = [CMKPartData valueForKey:[keyComponents[0] lowercaseString]];
-    self.vehicleGroup =
-        [CMKPartData valueForKey:[[VEHICLE_STRING lowercaseString] stringByAppendingString:keyComponents[1]]];
-    self.tireGroup = [CMKPartData valueForKey:[[TIRE_STRING lowercaseString] stringByAppendingString:keyComponents[2]]];
-    self.gliderGroup =
-        [CMKPartData valueForKey:[[GLIDER_STRING lowercaseString] stringByAppendingString:keyComponents[3]]];
+    self.characterGroup = [CMKPartData partGroupsForType:Character][keyComponents[0]];
+    self.vehicleGroup = [CMKPartData partGroupsForType:Vehicle][keyComponents[1]];
+    self.tireGroup = [CMKPartData partGroupsForType:Tire][keyComponents[2]];
+    self.gliderGroup = [CMKPartData partGroupsForType:Glider][keyComponents[3]];
     return self;
   } else {
     return nil;
@@ -98,15 +97,19 @@
       componentsJoinedByString:KEY_SEPERATOR];
 }
 
-- (NSString *)name {
-  return [@[ self.characterGroup.displayName, self.vehicleGroup.name, self.tireGroup.name, self.gliderGroup.name ]
-      componentsJoinedByString:NAME_SEPERATOR];
+- (NSString *)displayName {
+  return [@[
+    self.characterGroup.displayName,
+    self.vehicleGroup.displayName,
+    self.tireGroup.displayName,
+    self.gliderGroup.displayName
+  ] componentsJoinedByString:NAME_SEPERATOR];
 }
 
 #pragma mark - CMKSpinneritem
 
 - (NSString *)displayText {
-  return [self name];
+  return [self displayName];
 }
 
 @end

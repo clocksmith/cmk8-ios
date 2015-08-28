@@ -18,7 +18,7 @@
 @property(nonatomic, strong) CMKStatsModel *stats;
 @property(nonatomic, strong) NSArray *parts;
 @property(nonatomic, assign) int index;
-@property(nonatomic, readonly, copy) NSString *displayName;
+@property(nonatomic, copy) NSString *displayName;
 
 // TODO(clocksmith): How come the parameters need to be prefixed with "the" here and not in CMKStats
 - (CMKPartGroupModel *)initWithType:(CMKPartType)theType
@@ -26,8 +26,6 @@
                           withStats:(CMKStatsModel *)theStats
                           withParts:(NSArray *)theParts
                           withIndex:(int)index;
-
-- (NSString *)displayName;
 
 - (NSComparisonResult)compare:(CMKPartGroupModel *)otherObject;
 

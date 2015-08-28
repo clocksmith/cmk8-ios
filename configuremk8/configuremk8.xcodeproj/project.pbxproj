@@ -15,6 +15,8 @@
 		8709E24119A7BBA90008E9BC /* CMKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8709E24019A7BBA90008E9BC /* CMKSpinnerView.m */; };
 		8709E24319A7BE550008E9BC /* CMKSpinnerView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8709E24219A7BE550008E9BC /* CMKSpinnerView~iphone.xib */; };
 		8709E24A19AB9CE60008E9BC /* CMKPartImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8709E24919AB9CE60008E9BC /* CMKPartImageView.m */; };
+		870BB1961B8F9E7E00072F0D /* CMKOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 870BB1951B8F9E7E00072F0D /* CMKOrderedDictionary.m */; };
+		870BB1991B90C1C000072F0D /* CMKMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 870BB1981B90C1C000072F0D /* CMKMutableOrderedDictionary.m */; };
 		87354EDC19AC2065001067FB /* CMKCompareStatsScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87354EDB19AC2065001067FB /* CMKCompareStatsScrollView.m */; };
 		87354EDF19AC23E5001067FB /* CMKCompareStatsRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87354EDE19AC23E5001067FB /* CMKCompareStatsRowView.m */; };
 		87354EE119AC243F001067FB /* CMKCompareStatsRowView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87354EE019AC243F001067FB /* CMKCompareStatsRowView~iphone.xib */; };
@@ -348,6 +350,10 @@
 		8709E24219A7BE550008E9BC /* CMKSpinnerView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "CMKSpinnerView~iphone.xib"; path = "src/res/xibs/CMKSpinnerView~iphone.xib"; sourceTree = "<group>"; };
 		8709E24819AB9CE60008E9BC /* CMKPartImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKPartImageView.h; path = ui/common/part/CMKPartImageView.h; sourceTree = "<group>"; };
 		8709E24919AB9CE60008E9BC /* CMKPartImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKPartImageView.m; path = ui/common/part/CMKPartImageView.m; sourceTree = "<group>"; };
+		870BB1941B8F9E3400072F0D /* CMKOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKOrderedDictionary.h; sourceTree = "<group>"; };
+		870BB1951B8F9E7E00072F0D /* CMKOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKOrderedDictionary.m; sourceTree = "<group>"; };
+		870BB1971B90C17C00072F0D /* CMKMutableOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKMutableOrderedDictionary.h; sourceTree = "<group>"; };
+		870BB1981B90C1C000072F0D /* CMKMutableOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKMutableOrderedDictionary.m; sourceTree = "<group>"; };
 		87354EDA19AC2065001067FB /* CMKCompareStatsScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKCompareStatsScrollView.h; path = ui/common/stats/CMKCompareStatsScrollView.h; sourceTree = "<group>"; };
 		87354EDB19AC2065001067FB /* CMKCompareStatsScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMKCompareStatsScrollView.m; path = ui/common/stats/CMKCompareStatsScrollView.m; sourceTree = "<group>"; };
 		87354EDD19AC23E5001067FB /* CMKCompareStatsRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMKCompareStatsRowView.h; path = ui/common/stats/CMKCompareStatsRowView.h; sourceTree = "<group>"; };
@@ -1363,6 +1369,10 @@
 				87A6DB23199BEF9900049383 /* CMKStatsModel.m */,
 				8768FF3719AFBB60003D1D40 /* CMKStatsToKartConverter.h */,
 				8768FF3819AFBB60003D1D40 /* CMKStatsToKartConverter.m */,
+				870BB1941B8F9E3400072F0D /* CMKOrderedDictionary.h */,
+				870BB1971B90C17C00072F0D /* CMKMutableOrderedDictionary.h */,
+				870BB1981B90C1C000072F0D /* CMKMutableOrderedDictionary.m */,
+				870BB1951B8F9E7E00072F0D /* CMKOrderedDictionary.m */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -1805,6 +1815,7 @@
 				8768FF3919AFBB60003D1D40 /* CMKStatsToKartConverter.m in Sources */,
 				87A6DB24199BEF9900049383 /* CMKStatsModel.m in Sources */,
 				8768FF2019AE3609003D1D40 /* CMKComparePlaceholderView.m in Sources */,
+				870BB1991B90C1C000072F0D /* CMKMutableOrderedDictionary.m in Sources */,
 				87E9932E19A12B13002CD346 /* CMKKartConfigurationModel.m in Sources */,
 				87A5CB4919A4F04C00F9476D /* CMKOnlyPositiveSingleStatsRowView.m in Sources */,
 				8744EC3219AC03E700B3FA1B /* CMKKartConfigurationView.m in Sources */,
@@ -1834,6 +1845,7 @@
 				87A5CB5319A5289A00F9476D /* CMKAnyNumberSingleStatsRowView.m in Sources */,
 				87E9934819A3CBB3002CD346 /* CMKCompareModel.m in Sources */,
 				87A6DB2A199C01A800049383 /* CMKPartData.m in Sources */,
+				870BB1961B8F9E7E00072F0D /* CMKOrderedDictionary.m in Sources */,
 				87354EFC19AD1703001067FB /* CMKUserDefaultslUtils.m in Sources */,
 				8768FF3C19B0C920003D1D40 /* CMKAdjustConfigurationSpinnerItem.m in Sources */,
 				8768001F19BF9305003D1D40 /* CMKCourseModel.m in Sources */,

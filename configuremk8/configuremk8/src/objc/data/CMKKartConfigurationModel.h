@@ -12,12 +12,12 @@
 @class CMKPartGroupModel;
 @class CMKStatsModel;
 
-@interface CMKKartConfigurationModel : NSObject <CMKSpinnerItem>
+@interface CMKKartConfigurationModel : NSObject<CMKSpinnerItem>
 
-@property (nonatomic, strong) CMKPartGroupModel *characterGroup;
-@property (nonatomic, strong) CMKPartGroupModel *vehicleGroup;
-@property (nonatomic, strong) CMKPartGroupModel *tireGroup;
-@property (nonatomic, strong) CMKPartGroupModel *gliderGroup;
+@property(nonatomic, strong) CMKPartGroupModel *characterGroup;
+@property(nonatomic, strong) CMKPartGroupModel *vehicleGroup;
+@property(nonatomic, strong) CMKPartGroupModel *tireGroup;
+@property(nonatomic, strong) CMKPartGroupModel *gliderGroup;
 
 - (instancetype)initWithCharacterGroup:(CMKPartGroupModel *)characterGroup
                       withVehicleGroup:(CMKPartGroupModel *)vehicleGroup
@@ -26,14 +26,14 @@
 
 - (instancetype)initWithUserDefaultsKey:(NSString *)key;
 
-- (CMKStatsModel *)   kartStats;
+- (CMKStatsModel *)kartStats;
 
-- (NSArray *)         partGroups;
+- (NSArray *)partGroups;
 
 - (NSComparisonResult)compare:(CMKKartConfigurationModel *)otherObject;
 
-- (NSString *)        keyForUserDefaults;
+- (NSString *)keyForUserDefaults;
 
-- (NSString *)        name;
+- (NSString *)displayName;
 
 @end

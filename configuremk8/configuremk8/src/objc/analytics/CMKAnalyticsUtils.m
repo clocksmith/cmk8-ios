@@ -53,7 +53,7 @@ static const int _CUSTOM_DIMENSION_TIRE_GROUP = 3;
 static const int _CUSTOM_DIMENSION_GLIDER_GROUP = 4;
 static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
 
-+ (void)sendAdjustConfigurationCancelEvent:(id <GAITracker> )tracker
++ (void)sendAdjustConfigurationCancelEvent:(id<GAITracker>)tracker
                    withAdjustConfiguration:(CMKAdjustConfiguration)adjustConfiguration
                         withPreferredStats:(CMKStatsModel *)preferredStats {
   [CMKAnalyticsUtils sendAdjustConfigurationEvent:tracker
@@ -62,7 +62,7 @@ static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
                                withPreferredStats:preferredStats];
 }
 
-+ (void)sendAdjustConfigurationOKEvent:(id <GAITracker> )tracker
++ (void)sendAdjustConfigurationOKEvent:(id<GAITracker>)tracker
                withAdjustConfiguration:(CMKAdjustConfiguration)adjustConfiguration
                     withPreferredStats:(CMKStatsModel *)preferredStats {
   [CMKAnalyticsUtils sendAdjustConfigurationEvent:tracker
@@ -71,49 +71,49 @@ static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
                                withPreferredStats:preferredStats];
 }
 
-+ (void)sendAdjustConfigurationEvent:(id <GAITracker> )tracker
++ (void)sendAdjustConfigurationEvent:(id<GAITracker>)tracker
                           withAction:(NSString *)action
              withAdjustConfiguration:(CMKAdjustConfiguration)adjustConfiguration
                   withPreferredStats:(CMKStatsModel *)preferredStats {
-  GAIDictionaryBuilder *builder =
-    [GAIDictionaryBuilder createEventWithCategory:_ADJUST_CONFIGURATION_CATEGORY_CUSTOM
-                                           action:action
-                                            label:[CMKAdjustConfigurations analyticsNameForIndex:
-                                                   [NSNumber numberWithInt:adjustConfiguration]]
-                                            value:nil];
+  GAIDictionaryBuilder *builder = [GAIDictionaryBuilder
+      createEventWithCategory:_ADJUST_CONFIGURATION_CATEGORY_CUSTOM
+                       action:action
+                        label:[CMKAdjustConfigurations
+                                  analyticsNameForIndex:[NSNumber numberWithInt:adjustConfiguration]]
+                        value:nil];
 
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:Acceleration]]] stringValue]
+  [builder set:[[NSNumber numberWithFloat:[preferredStats
+                                              statValueForIndex:[NSNumber numberWithInt:Acceleration]]] stringValue]
         forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_ACCELERATION_INDEX]];
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:AverageSpeed]]] stringValue]
+  [builder set:[[NSNumber numberWithFloat:[preferredStats
+                                              statValueForIndex:[NSNumber numberWithInt:AverageSpeed]]] stringValue]
         forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_AVERAGE_SPEED_INDEX]];
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:AverageHandling]]] stringValue]
+  [builder set:[[NSNumber numberWithFloat:[preferredStats
+                                              statValueForIndex:[NSNumber numberWithInt:AverageHandling]]] stringValue]
         forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_AVERAGE_HANDLING_INDEX]];
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:Miniturbo]]] stringValue]
+  [builder set:[[NSNumber
+                   numberWithFloat:[preferredStats statValueForIndex:[NSNumber numberWithInt:Miniturbo]]] stringValue]
         forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_MINITURBO_INDEX]];
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:Traction]]] stringValue]
+  [builder set:[[NSNumber
+                   numberWithFloat:[preferredStats statValueForIndex:[NSNumber numberWithInt:Traction]]] stringValue]
         forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_TRACTION_INDEX]];
-  [builder set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:
-                                           [NSNumber numberWithInt:Weight]]] stringValue]
-        forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_WEIGHT_INDEX]];
+  [builder
+         set:[[NSNumber numberWithFloat:[preferredStats statValueForIndex:[NSNumber numberWithInt:Weight]]] stringValue]
+      forKey:[GAIFields customMetricForIndex:_CUSTOM_METRIC_ATTRIBUTE_WEIGHT_INDEX]];
 
   [tracker send:[builder build]];
 }
 
-+ (void)sendBuildConfigurationEvent:(id <GAITracker> )tracker
++ (void)sendBuildConfigurationEvent:(id<GAITracker>)tracker
             withAdjustConfiguration:(CMKAdjustConfiguration)adjustConfiguration
               withKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
   // Custom.
-  GAIDictionaryBuilder *builder =
-    [GAIDictionaryBuilder createEventWithCategory:_ADJUST_BUILD_RESULT_CATEGORY_CUSTOM
-                                           action:nil
-                                            label:[CMKAdjustConfigurations analyticsNameForIndex:
-                                                   [NSNumber numberWithInt:adjustConfiguration]]
-                                            value:nil];
+  GAIDictionaryBuilder *builder = [GAIDictionaryBuilder
+      createEventWithCategory:_ADJUST_BUILD_RESULT_CATEGORY_CUSTOM
+                       action:nil
+                        label:[CMKAdjustConfigurations
+                                  analyticsNameForIndex:[NSNumber numberWithInt:adjustConfiguration]]
+                        value:nil];
 
   [builder set:kartConfiguration.characterGroup.name
         forKey:[GAIFields customDimensionForIndex:_CUSTOM_DIMENSION_CHARACTER_GROUP]];
@@ -129,35 +129,32 @@ static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
   // Simple.
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_ADJUST_BUILD_RESULT_CATEGORY_SIMPLE
                                                         action:nil
-                                                         label:kartConfiguration.name
+                                                         label:kartConfiguration.keyForUserDefaults
                                                          value:nil] build]];
 }
 
-+ (void)sendPartViewClickedEvent:(id <GAITracker> )tracker
++ (void)sendPartViewClickedEvent:(id<GAITracker>)tracker
                   withScreenName:(NSString *)screenName
                         withPart:(CMKPartModel *)partModel {
-  GAIDictionaryBuilder *builder =
-    [GAIDictionaryBuilder createEventWithCategory:_PART_VIEW_CATEGORY
-                                           action:_CLICK_ACTION
-                                            label:partModel.name
-                                            value:nil];
+  GAIDictionaryBuilder *builder = [GAIDictionaryBuilder createEventWithCategory:_PART_VIEW_CATEGORY
+                                                                         action:_CLICK_ACTION
+                                                                          label:partModel.name
+                                                                          value:nil];
 
-  [builder set:screenName
-        forKey:[GAIFields customDimensionForIndex:_CUSTOM_DIMENSION_PARENT_FRAGMENT]];
+  [builder set:screenName forKey:[GAIFields customDimensionForIndex:_CUSTOM_DIMENSION_PARENT_FRAGMENT]];
 
   [tracker send:[builder build]];
 }
 
-+ (void)sendStarViewStarredEvent:(id <GAITracker> )tracker
++ (void)sendStarViewStarredEvent:(id<GAITracker>)tracker
            withKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration
                        isStarred:(BOOL)isStarred {
   // Custom.
   GAIDictionaryBuilder *builder =
-    [GAIDictionaryBuilder createEventWithCategory:_STAR_VIEW_CATEGORY_CUSTOM
-                                           action:isStarred ?
-                                     _STAR_ACTION:_UNSTAR_ACTION
-                                            label:nil
-                                            value:nil];
+      [GAIDictionaryBuilder createEventWithCategory:_STAR_VIEW_CATEGORY_CUSTOM
+                                             action:isStarred ? _STAR_ACTION : _UNSTAR_ACTION
+                                              label:nil
+                                              value:nil];
 
   [builder set:kartConfiguration.characterGroup.name
         forKey:[GAIFields customDimensionForIndex:_CUSTOM_DIMENSION_CHARACTER_GROUP]];
@@ -172,20 +169,18 @@ static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
 
   // Simple.
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_STAR_VIEW_CATEGORY_SIMPLE
-                                                        action:isStarred ?
-                                                  _STAR_ACTION:_UNSTAR_ACTION
-                                                         label:kartConfiguration.name
+                                                        action:isStarred ? _STAR_ACTION : _UNSTAR_ACTION
+                                                         label:kartConfiguration.keyForUserDefaults
                                                          value:nil] build]];
 }
 
-+ (void)sendCompareViewSelectedEvent:(id <GAITracker> )tracker
++ (void)sendCompareViewSelectedEvent:(id<GAITracker>)tracker
                withKartConfiguration:(CMKKartConfigurationModel *)kartConfiguration {
   // Custom.
-  GAIDictionaryBuilder *builder =
-    [GAIDictionaryBuilder createEventWithCategory:_COMPARE_VIEW_CATEGORY_CUSTOM
-                                           action:_SELECT_ACTION
-                                            label:nil
-                                            value:nil];
+  GAIDictionaryBuilder *builder = [GAIDictionaryBuilder createEventWithCategory:_COMPARE_VIEW_CATEGORY_CUSTOM
+                                                                         action:_SELECT_ACTION
+                                                                          label:nil
+                                                                          value:nil];
 
   [builder set:kartConfiguration.characterGroup.name
         forKey:[GAIFields customDimensionForIndex:_CUSTOM_DIMENSION_CHARACTER_GROUP]];
@@ -201,32 +196,32 @@ static const int _CUSTOM_DIMENSION_PARENT_FRAGMENT = 5;
   // Simple.
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_COMPARE_VIEW_CATEGORY_SIMPLE
                                                         action:_SELECT_ACTION
-                                                         label:kartConfiguration.name
+                                                         label:kartConfiguration.keyForUserDefaults
                                                          value:nil] build]];
 }
 
-+ (void)sendRateButtonClicked:(id <GAITracker> )tracker {
++ (void)sendRateButtonClicked:(id<GAITracker>)tracker {
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_BUTTON_CATEGORY
                                                         action:_CLICK_ACTION
                                                          label:_RATE_BUTTON_LABEL
                                                          value:nil] build]];
 }
 
-+ (void)sendDonateButtonClicked:(id <GAITracker> )tracker {
++ (void)sendDonateButtonClicked:(id<GAITracker>)tracker {
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_BUTTON_CATEGORY
                                                         action:_CLICK_ACTION
                                                          label:_DONATE_ACTION
                                                          value:nil] build]];
 }
 
-+ (void)sendDonationComplete:(id <GAITracker> )tracker withProductId:(NSString *)productId {
++ (void)sendDonationComplete:(id<GAITracker>)tracker withProductId:(NSString *)productId {
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_DONATION_CATEGORY
                                                         action:_DONATE_ACTION
                                                          label:productId
                                                          value:nil] build]];
 }
 
-+ (void)sendErrorLogEvent:(id <GAITracker> )tracker withErrorMessage:(NSString *)errorMessage {
++ (void)sendErrorLogEvent:(id<GAITracker>)tracker withErrorMessage:(NSString *)errorMessage {
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:_ERROR_CATEGORY
                                                         action:nil
                                                          label:errorMessage

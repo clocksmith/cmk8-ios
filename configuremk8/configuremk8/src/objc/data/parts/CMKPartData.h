@@ -10,27 +10,31 @@
 #import "CMKPartGroupModel.h"
 #import "CMKPartType.h"
 #import "CMKPartModel.h"
+#import "CMKOrderedDictionary.h"
+#import "CMKMutableOrderedDictionary.h"
 
 @class CMKPartModel;
 
 @interface CMKPartData : NSObject
 
 // Groups.
-+ (NSMutableArray *)characterGroups;
-+ (NSMutableArray *)vehicleGroups;
-+ (NSMutableArray *)tireGroups;
-+ (NSMutableArray *)gliderGroups;
++ (CMKOrderedDictionary *)characterGroups;
++ (CMKOrderedDictionary *)vehicleGroups;
++ (CMKOrderedDictionary *)tireGroups;
++ (CMKOrderedDictionary *)gliderGroups;
 
 // All kart configurations.
 + (NSMutableArray *)allKartConfigurations;
 
-+ (NSString *)partNameAt:(NSNumber *)index;
++ (int)partCount;
 
-+ (NSMutableArray *)partGroupForType:(CMKPartType)partType;
++ (NSString *)nameForPartType:(CMKPartType)partType;
+
++ (CMKOrderedDictionary *)partGroupsForType:(CMKPartType)partType;
 
 + (CMKPartGroupModel *)partGroupForPart:(CMKPartModel *)part;
 
-+ (void)initPartGroupsFor:(NSMutableArray *)partGroups
++ (void)initPartGroupsFor:(CMKMutableOrderedDictionary *)partGroups
             withJsonArray:(NSMutableArray *)partGroupsJsonArray
              withPartType:(CMKPartType)partType;
 
