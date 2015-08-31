@@ -36,7 +36,7 @@ static const int _MAX_PARTS_PER_ROW = 4;
 
   if (self) {
     self.delegate = delegate;
-    int partCount = [partGroup parts].count;
+    long partCount = [partGroup parts].count;
 
     int frameWidth = self.frame.size.width;
     int frameHeight = self.frame.size.height;
@@ -89,7 +89,7 @@ static const int _MAX_PARTS_PER_ROW = 4;
   int partIndex = 0;
 
   for (CMKPartModel *part in parts) {
-    int partsCount = [parts count];
+    long partsCount = [parts count];
     int deltaX = row.frame.size.width / partsCount;
     CGRect partImageFrame =
         CGRectMake(partIndex * deltaX + (partsCount == _MAX_PARTS_PER_ROW ? 0 : (deltaX / [parts count] / 2)), 0,

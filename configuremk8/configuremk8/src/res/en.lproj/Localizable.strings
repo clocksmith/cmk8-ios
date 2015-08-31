@@ -74,204 +74,261 @@
 "Glider" = "Glider";
 
 // Weight classes.
-"Flyweight" = "Flyweight";
-"Featherweight" = "Featherweight";
-"Lightweight" = "Lightweight";
-"Middleweight" = "Middleweight";
-"Cruiserweight" = "Cruiserweight";
-"Metalweight" = "Metalweight";
-"Heavyweight" = "Heavyweight";
+"FLYWEIGHT" = "Flyweight";
+"FEATHERWEIGHT" = "Featherweight";
+"CATWEIGHT" = "Catweight";
+"LIGHTWEIGHT" = "Lightweight";
+"TANOOKIWEIGHT" = "Tanookiweight";
+
+"MIDDLEWEIGHT" = "Middleweight";
+"CRUISERWEIGHT" = "Cruiserweight";
+"METALWEIGHT" = "Metalweight";
+"HEAVYWEIGHT" = "Heavyweight";
 
 // Flyweights.
-"Baby Mario" = "Baby Mario";
-"Baby Luigi" = "Baby Luigi";
-"Baby Peach" = "Baby Peach";
-"Baby Daisy" = "Baby Daisy";
-"Baby Rosalina" = "Baby Rosalina";
-"Lemmy" = "Lemmy";
+"BABY_MARIO" = "Baby Mario";
+"BABY_LUIGI" = "Baby Luigi";
+"BABY_PEACH" = "Baby Peach";
+"BABY_DAISY" = "Baby Daisy";
+"BABY_ROSALINA" = "Baby Rosalina";
+"LEMMY" = "Lemmy";
 
 // Featherweights.
-"Toad" = "Toad";
-"Koopa Troopa" = "Koopa Troopa";
-"Shy Guy" = "Shy Guy";
-"Lakitu" = "Lakitu";
-"Toadette" = "Toadette";
-"Larry" = "Larry";
-"Wendy" = "Wendy";
+"TOAD" = "Toad";
+"KOOPA_TROOPA" = "Koopa Troopa";
+"SHY_GUY" = "Shy Guy";
+"LAKITU" = "Lakitu";
+"TOADETTE" = "Toadette";
+"LARRY" = "Larry";
+"WENDY" = "Wendy";
+"ISABELLE" = "Isabelle"
+
+// Catweights.
+"CAT_PEACH" = "Cat Peach";
+"VILLAGER_FEMALE" = "Villager Female"
 
 // Lightweights.
-"Peach" = "Peach";
-"Daisy" = "Daisy";
-"Yoshi" = "Yoshi";
+"PEACH" = "Peach";
+"DAISY" = "Daisy";
+"YOSHI" = "Yoshi";
+
+// Tanookiweights.
+"TANOOKI_MARIO" = "Tanooki Mario";
+"VILLAGER_MALE" = "Villager Male";
+"YOSHI" = "Yoshi";
 
 // Middleweights.
-"Mario" = "Mario";
-"Luigi" = "Luigi";
-"Iggy" = "Iggy";
-"Ludwig" = "Ludwig";
+"MARIO" = "Mario";
+"LUIGI" = "Luigi";
+"IGGY" = "Iggy";
+"LUDWIG" = "Ludwig";
 
 // Cruiserweights.
-"Donkey Kong" = "Donkey Kong";
-"Waluigi" = "Waluigi";
-"Rosalina" = "Rosalina";
-"Roy" = "Roy";
+"DONKEY_KONG" = "Donkey Kong";
+"WALUIGI" = "Waluigi";
+"ROSALINA" = "Rosalina";
+"ROY" = "Roy";
+"LINK" = "Link";
 
 // Metalweights.
-"Metal Mario" = "Metal Mario";
-"Pink Gold Peach" = "Pink Gold Peach";
+"METAL_MARIO" = "Metal Mario";
+"PINK_GOLD_PEACH" = "Pink Gold Peach";
 
 // Heavyweights.
-"Bowser" = "Bowser";
-"Wario" = "Wario";
-"Morton" = "Morton";
+"BOWSER" = "Bowser";
+"WARIO" = "Wario";
+"MORTON" = "Morton";
+"DRY_BOWSER" = "Dry Bowser";
 
 // Vehicle class A.
-"Standard Kart" = "Standard Kart";
-"Cat Cruiser" = "Cat Cruiser";
-"Prancer" = "Prancer";
-"Sneeker" = "Sneeker";
-"The Duke" = "The Duke";
-"Teddy Buggy" = "Teddy Buggy";
-"300 SL Roadster";
+"STANDARD_KART" = "Standard Kart";
+"CAT_CRUISER" = "Cat Cruiser";
+"PRANCER" = "Prancer";
+"SNEEKER" = "Sneeker";
+"THE_DUKE" = "The Duke";
+"TEDDY_BUGGY" = "Teddy Buggy";
+"THREE_HUNDRED_SL_ROADSTER";
 
 // Vehicle class B.
-"Pipe Frame" = "Pipe Frame";
-"Standard Bike" = "Standard Bike";
-"Flame Rider" = "Flame Rider";
-"Varmint" = "Varmint";
-"Wild Wiggler" = "Wild Wiggler";
-"W 25 Silver Arrow" = "W 25 Silver Arrow";
+"PIPE_FRAME" = "Pipe Frame";
+"STANDARD_BIKE" = "Standard Bike";
+"FLAME_RIDER" = "Flame Rider";
+"VARMINTt" = "Varmint";
+"WILD_WIGGLER" = "Wild Wiggler";
+"W_25_SILVER_ARROW" = "W 25 Silver Arrow";
+"CITY_TRIPPER" = "City Tripper";
 
 // Vehicle class C.
-"Mach 8" = "Mach 8";
-"Circuit Special" = "Circuit Special";
-"Sports Coupe" = "Sports Coupe";
-"Gold Standard" = "Gold Standard";
+"MACH_8" = "Mach 8";
+"CIRCUIT_SPECIAL" = "Circuit Special";
+"SPORTS_COUPE" = "Sports Coupe";
+"GOLD_STANDARD" = "Gold Standard";
+"B_DASHER" = "B Dasher";
+"P_WING" = "P-Wing";
 
 // Vehicle class D.
-"Steel Driver" = "Steel Driver";
-"Tri Speeder" = "Tri Speeder";
-"Badwagon" = "Badwagon";
-"Standard ATV" = "Standard ATV";
+"STEEL_DRIVER" = "Steel Driver";
+"TRI_SPEEDER" = "Tri Speeder";
+"BADWAGON" = "Badwagon";
+"STANDARD_ATV" = "Standard ATV";
 "GLA" = "GLA";
 
 // Vehicle class E.
-"Biddybuggy" = "Biddybuggy";
-"Landship" = "Landship";
-"Mr. Scooty" = "Mr. Scooty";
+"BIDDYBUGGY" = "Biddybuggy";
+"LANDSHIP" = "Landship";
+"MR_SCOOTY" = "Mr. Scooty";
 
 // Vehicle class F.
-"Comet" = "Comet";
-"Sports Bike" = "Sports Bike";
-"Jet Bike" = "Jet Bike";
-"Yoshi Bike" = "Yoshi Bike";
+"COMET" = "Comet";
+"SPORTS_BIKE" = "Sports Bike";
+"JET_BIKE" = "Jet Bike";
+"YOSHI_BIKE" = "Yoshi Bike";
+
+// Vehicle class G.
+"MASTER_CYCLE" = "Master Cycle";
+
+// Vehicle class I.
+"TANOOKI_KART" = "Tanooki Kart";
+"BONE_RATTLER" = "Bone Rattler";
 
 // Tire class A.
-"Standard" = "Standard";
-"Off-Road" = "Off-Road";
-"Blue Standard" = "Blue Standard";
-"Retro Off-Road" = "Retro Off-Road";
-"GLA Tires" = "GLA Tires";
+"STANDARD" = "Standard";
+"OFF_ROAD" = "Off-Road";
+"BLUE_STANDARD" = "Blue Standard";
+"RETRO_OFF_ROAD" = "Retro Off-Road";
+"GLA_TIRES" = "GLA Tires";
 
 // Tire class B.
-"Monster" = "Monster";
-"Hot Monster" = "Hot Monster";
+"MONSTER" = "Monster";
+"HOT_MONSTER" = "Hot Monster";
 
 // Tire class C.
-"Roller" = "Roller";
-"Button" = "Button";
-"Azure Roller" = "Azure Roller";
+"ROLLER" = "Roller";
+"BUTTON" = "Button";
+"AZURE_ROLLER" = "Azure Roller";
+"LEAF_TIRES" = "Leaf Tires";
 
 // Tire class D.
-"Slim" = "Slim";
-"Crimson Slim" = "Crimson Slim";
+"SLIM" = "Slim";
+"CRIMSON_SLIM" = "Crimson Slim";
+"TRIFORCE_TIRES" = "Triforce Tires";
 
 // Tire class E.
-"Slick" = "Slick";
-"Cyber Slick" = "Cyber Slick";
+"SLICK" = "Slick";
+"CYBER_SLICK" = "Cyber Slick";
 
 // Tire class F.
-"Metal" = "Metal";
-"Gold Tires" = "Gold Tires";
+"METAL" = "Metal";
+"GOLD_TIRES" = "Gold Tires";
 
 // Tire class G.
-"Sponge" = "Sponge";
-"Wood" = "Wood";
-"Cushion" = "Cushion";
+"SPONGE" = "Sponge";
+"WOOD" = "Wood";
+"CUSHION" = "Cushion";
 
 // Glider class A.
-"Super Glider" = "Super Glider";
-"Wario Wing" = "Wario Wing";
-"Waddle Wing" = "Waddle Wing";
-"Plane Glider" = "Plane Glider";
-"Gold Glider" = "Gold Glider";
+"SUPER_GLIDER" = "Super Glider";
+"WARIO_WING" = "Wario Wing";
+"WADDLE_WING" = "Waddle Wing";
+"PLANE_GLIDER" = "Plane Glider";
+"GOLD_GLIDER" = "Gold Glider";
+"PAPER_GLIDER" = "Paper Glider";
 
 // Glider class B.
-"Cloud Glider" = "Cloud Glider";
-"Peach Parasol" = "Peach Parasol";
-"Parachute" = "Parachute";
-"Parafoil" = "Parafoil";
-"Flower Glider" = "Flower Glider";
-"Bowser Kite" = "Bowser Kite";
-"MKTV Parafoil" = "MKTV Parafoil";
+"CLOUD_GLIDER" = "Cloud Glider";
+"PEACH_PARASOL" = "Peach Parasol";
+"PARACHUTE" = "Parachute";
+"PARAFOIL" = "Parafoil";
+"FLOWER_GLIDER" = "Flower Glider";
+"BOWSER_KITE" = "Bowser Kite";
+"MKTV_PARAFOIL" = "MKTV Parafoil";
+"HYLIAN_KITE" = "Hylian Kite";
 
 // Cups.
-"Mushroom Cup" = "Mushroom Cup";
-"Flower Cup" = "Flower Cup";
-"Star Cup" = "Star Cup";
-"Special Cup" = "Special Cup";
-"Shell Cup" = "Shell Cup";
-"Banana Cup" = "Banana Cup";
-"Leaf Cup" = "Leaf Cup";
-"Lightning Cup" = "Lightning Cup";
+"MUSHROOM_CUP" = "Mushroom Cup";
+"FLOWER_CUP" = "Flower Cup";
+"STAR_CUP" = "Star Cup";
+"SPECIAL_CUP" = "Special Cup";
+"SHELL_CUP" = "Shell Cup";
+"BANANA_CUP" = "Banana Cup";
+"LEAF_CUP" = "Leaf Cup";
+"LIGHTNING_CUP" = "Lightning Cup";
+"EGG_CUP" = "Egg Cup";
+"TRIFORCE_CUP" = "Triforce Cup";
+"CROSSING_CUP" = "Crossing Cup";
+"BELL_CUP" = "Bell Cup";
 
 // Courses.
 
 // Mushroom Cup.
-"Mario Kart Stadium" = "Mario Kart Stadium";
-"Water Park" = "Water Park";
-"Sweet Sweet Canyon" = "Sweet Sweet Canyon";
-"Thwomp Ruins" = "Thwomp Ruins";
+"MARIO_KART_STADIUM" = "Mario Kart Stadium";
+"WATER_PARK" = "Water Park";
+"SWEET_SWEET_CANYON" = "Sweet Sweet Canyon";
+"THWOMP_RUINS" = "Thwomp Ruins";
 
 
 // Flower Cup.
-"Mario Circuit" = "Mario Circuit";
-"Toad Harbor" = "Toad Harbor";
-"Twisted Mansion" = "Twisted Mansion";
-"Shy Guy Falls" = "Shy Guy Falls";
+"MARIO_CIRCUIT" = "Mario Circuit";
+"TOAD_HARBOR" = "Toad Harbor";
+"TWISTED_MANSION" = "Twisted Mansion";
+"SHY_GUY_FALLS" = "Shy Guy Falls";
 
 // Star Cup.
-"Sunshine Airport" = "Sunshine Airport";
-"Dolphin Shoals" = "Dolphin Shoals";
-"Electrodrome" = "Electrodrome";
-"Mount Wario" = "Mount Wario";
+"SUNSHINE_AIRPORT" = "Sunshine Airport";
+"DOLPHIN_SHOALS" = "Dolphin Shoals";
+"ELECTRODOME" = "Electrodrome";
+"MOUNT_WARIO" = "Mount Wario";
 
 // Special Cup.
-"Cloudtop Cruise" = "Cloudtop Cruise";
-"Bone-Dry Dunes" = "Bone-Dry Dunes";
-"Bowser's Castle" = "Bowser's Castle";
-"Rainbow Road" = "Rainbow Road";
+"CLOUDTOP_CRUISE" = "Cloudtop Cruise";
+"BONE_DRY_DUNES" = "Bone-Dry Dunes";
+"BOWSERS_CASTLE" = "Bowser's Castle";
+"RAINBOW_ROAD" = "Rainbow Road";
 
 // Shell Cup.
-"Moo Moo Meadows" = "Moo Moo Meadows";
-"Mario Circuit (GBA)" = "Mario Circuit (GBA)";
-"Cheep Cheep Beach" = "Cheep Cheep Beach";
-"Toad's Turnpike" = "Toad's Turnpike";
+"MOO_MOO_MEADOS" = "Moo Moo Meadows";
+"MARIO_CIRCUIT_GBA" = "Mario Circuit (GBA)";
+"CHEEP_CHEEP_BEACH" = "Cheep Cheep Beach";
+"TOADS_TURNPIKE" = "Toad's Turnpike";
 
 // Banana Cup.
-"Dry Dry Desert" = "Dry Dry Desert";
-"Donut Plains 3" = "Donut Plains 3";
-"Royal Raceway" = "Royal Raceway";
-"DK Jungle" = "DK Jungle";
+"DRY_DRY_DESERT" = "Dry Dry Desert";
+"DONUT_PLAINS_3" = "Donut Plains 3";
+"ROYAL_RACEWAY" = "Royal Raceway";
+"DK_JUNGLE" = "DK Jungle";
 
 // Leaf Cup.
-"Wario Stadium" = "Wario Stadium";
-"Sherbert Land" = "Sherbert Land";
-"Music Park" = "Music Park";
-"Yoshi Valley" = "Yoshi Valley";
+"WARIO_STADIUM" = "Wario Stadium";
+"SHERBET_LAND" = "Sherbert Land";
+"MUSIC_PARK" = "Music Park";
+"YOSHI_VALLEY" = "Yoshi Valley";
 
 // Lightning Cup.
-"Tick-Tock Clock" = "Tick-Tock Clock";
-"Piranha Plant Slide" = "Piranha Plant Slide";
-"Grumble Volcano" = "Grumble Volcano";
-"Rainbow Road (N64)" = "Rainbow Road (N64)";
+"TICK_TOCK_CLOCK" = "Tick-Tock Clock";
+"PIRANHA_PLANT_SLIDE" = "Piranha Plant Slide";
+"GRUMBLE_VOLCANO" = "Grumble Volcano";
+"RAINBOW_ROAD_N64" = "Rainbow Road (N64)";
+
+// Egg Cup.
+"YOSHI_CIRCUIT" = "Yoshi Circuit";
+"EXCITEBIKE_ARENA" = "Excitebike Arena";
+"DRAGON_DRIFTWAY" = "Dragon Driftway";
+"MUTE_CITY" = "Mute City";
+
+// Trifoce Cup.
+"WARIOS_GOLD_MINE" = "Wario's Gold Mine";
+"RAINBOW_ROAD_SNES" = "Rainbow Road (SNES)";
+"ICE_ICE_OUTPOST" = "Ice Ice Outpost";
+"HYRULE_CIRCUIT" = "Hyrule Circuit";
+
+// Crossing Cup.
+"BABY_PARK" = "Baby Park";
+"CHEESE_LAND" = "Cheese Land";
+"WILD_WOODS" = "Wild Woods";
+"ANIMAL_CROSSING" = "Animal Crossing";
+
+// Bell Cup.
+"NEO_BOWSER_CITY" = "Neo Bowser City";
+"RIBBON_ROAD" = "Ribbon Road";
+"SUPER_BELL_SUBWAY" = "Super Bell Subway";
+"BIG_BLUE" = "Big Blue";
