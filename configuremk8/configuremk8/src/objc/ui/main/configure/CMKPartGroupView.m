@@ -36,7 +36,7 @@ static const int _MAX_PARTS_PER_ROW = 4;
 
   if (self) {
     self.delegate = delegate;
-    long partCount = [partGroup parts].count;
+    long partCountForGroup = [partGroup parts].count;
 
     int frameWidth = self.frame.size.width;
     int frameHeight = self.frame.size.height;
@@ -54,17 +54,17 @@ static const int _MAX_PARTS_PER_ROW = 4;
     titleLabel.font = [UIFont fontWithName:HELVETICA_NEUE_LIGHT_FONT size:DEFAULT_FONT_SIZE_IPHONE];
     [self addSubview:titleLabel];
 
-    CGRect topRowFrame =
-        CGRectMake(0, PART_GROUP_VIEW_TITLE_HEIGHT + (partCount < _MIN_PARTS_FOR_DOUBLE_ROW ? bothRowsHeight / 4 : 0),
-                   frameWidth, bothRowsHeight / 2);
+    CGRect topRowFrame = CGRectMake(
+        0, PART_GROUP_VIEW_TITLE_HEIGHT + (partCountForGroup < _MIN_PARTS_FOR_DOUBLE_ROW ? bothRowsHeight / 4 : 0),
+        frameWidth, bothRowsHeight / 2);
     UIView *topRow = [[UIView alloc] initWithFrame:topRowFrame];
     [self addSubview:topRow];
 
-    if (partCount < _MIN_PARTS_FOR_DOUBLE_ROW) {
+    if (partCountForGroup < _MIN_PARTS_FOR_DOUBLE_ROW) {
       [self fillRow:topRow withParts:partGroup.parts];
     } else {
-      int topRowCount = (int)ceil((float)partCount / 2);
-      int bottomRowCount = partCount - topRowCount;
+      long topRowCount = (partCountForGroup / 2 + partCountForGroup % 2);
+      long bottomRowCount = partCountForGroup - topRowCount;
 
       NSArray *topRowParts = [partGroup.parts subarrayWithRange:NSMakeRange(0, topRowCount)];
       NSArray *bottomRowParts = [partGroup.parts subarrayWithRange:NSMakeRange(topRowCount, bottomRowCount)];

@@ -101,11 +101,11 @@
 "TOADETTE" = "Toadette";
 "LARRY" = "Larry";
 "WENDY" = "Wendy";
-"ISABELLE" = "Isabelle"
+"ISABELLE" = "Isabelle";
 
 // Catweights.
 "CAT_PEACH" = "Cat Peach";
-"VILLAGER_FEMALE" = "Villager Female"
+"VILLAGER_FEMALE" = "Villager Female";
 
 // Lightweights.
 "PEACH" = "Peach";
