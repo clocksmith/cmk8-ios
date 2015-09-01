@@ -327,6 +327,46 @@
 		87F0C33519E32373003D89F7 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F0C32F19E32373003D89F7 /* Icon-Small-50@2x.png */; };
 		87F0C33619E32373003D89F7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F0C33019E32373003D89F7 /* Icon.png */; };
 		87F0C33719E32373003D89F7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F0C33119E32373003D89F7 /* Icon@2x.png */; };
+		87F3E7AB1B962EA800293999 /* wiiu_cup_bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7831B962EA800293999 /* wiiu_cup_bell.png */; };
+		87F3E7AC1B962EA800293999 /* wiiu_cup_crossing.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7841B962EA800293999 /* wiiu_cup_crossing.png */; };
+		87F3E7AD1B962EA800293999 /* wiiu_cup_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7851B962EA800293999 /* wiiu_cup_egg.png */; };
+		87F3E7AE1B962EA800293999 /* default_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7861B962EA800293999 /* default_map.png */; };
+		87F3E7AF1B962EA800293999 /* wiiu_map_icon_big_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7871B962EA800293999 /* wiiu_map_icon_big_blue.png */; };
+		87F3E7B01B962EA800293999 /* wiiu_map_icon_super_bell_subway.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7881B962EA800293999 /* wiiu_map_icon_super_bell_subway.png */; };
+		87F3E7B11B962EA800293999 /* wiiu_map_icon_ribbon_road.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7891B962EA800293999 /* wiiu_map_icon_ribbon_road.png */; };
+		87F3E7B21B962EA800293999 /* wiiu_map_icon_neo_bowser_city.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78A1B962EA800293999 /* wiiu_map_icon_neo_bowser_city.png */; };
+		87F3E7B31B962EA800293999 /* wiiu_map_icon_animal_crossing.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78B1B962EA800293999 /* wiiu_map_icon_animal_crossing.png */; };
+		87F3E7B41B962EA800293999 /* wiiu_map_icon_wild_woods.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78C1B962EA800293999 /* wiiu_map_icon_wild_woods.png */; };
+		87F3E7B51B962EA800293999 /* wiiu_map_icon_cheese_land.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78D1B962EA800293999 /* wiiu_map_icon_cheese_land.png */; };
+		87F3E7B61B962EA800293999 /* wiiu_map_icon_baby_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78E1B962EA800293999 /* wiiu_map_icon_baby_park.png */; };
+		87F3E7B71B962EA800293999 /* wiiu_map_icon_hyrule_circuit.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E78F1B962EA800293999 /* wiiu_map_icon_hyrule_circuit.png */; };
+		87F3E7B81B962EA800293999 /* wiiu_map_icon_ice_ice_outpost.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7901B962EA800293999 /* wiiu_map_icon_ice_ice_outpost.png */; };
+		87F3E7B91B962EA800293999 /* wiiu_map_icon_rainbow_road_snes.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7911B962EA800293999 /* wiiu_map_icon_rainbow_road_snes.png */; };
+		87F3E7BA1B962EA800293999 /* wiiu_map_icon_warios_gold_mine.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7921B962EA800293999 /* wiiu_map_icon_warios_gold_mine.png */; };
+		87F3E7BB1B962EA800293999 /* wiiu_map_icon_mute_city.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7931B962EA800293999 /* wiiu_map_icon_mute_city.png */; };
+		87F3E7BC1B962EA800293999 /* wiiu_map_icon_dragon_driftway.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7941B962EA800293999 /* wiiu_map_icon_dragon_driftway.png */; };
+		87F3E7BD1B962EA800293999 /* wiiu_map_icon_excitebike_arena.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7951B962EA800293999 /* wiiu_map_icon_excitebike_arena.png */; };
+		87F3E7BE1B962EA800293999 /* wiiu_map_icon_yoshi_circuit.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7961B962EA800293999 /* wiiu_map_icon_yoshi_circuit.png */; };
+		87F3E7BF1B962EA800293999 /* wiiu_glider_paper_glider.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7971B962EA800293999 /* wiiu_glider_paper_glider.png */; };
+		87F3E7C01B962EA800293999 /* wiiu_glider_hylian_kite.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7981B962EA800293999 /* wiiu_glider_hylian_kite.png */; };
+		87F3E7C11B962EA800293999 /* wiiu_tire_leaf_tires.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7991B962EA800293999 /* wiiu_tire_leaf_tires.png */; };
+		87F3E7C21B962EA800293999 /* wiiu_tire_triforce_tires.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79A1B962EA800293999 /* wiiu_tire_triforce_tires.png */; };
+		87F3E7C31B962EA800293999 /* wiiu_vehicle_bone_rattler.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79B1B962EA800293999 /* wiiu_vehicle_bone_rattler.png */; };
+		87F3E7C41B962EA800293999 /* wiiu_vehicle_city_tripper.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79C1B962EA800293999 /* wiiu_vehicle_city_tripper.png */; };
+		87F3E7C51B962EA800293999 /* wiiu_vehicle_master_cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79D1B962EA800293999 /* wiiu_vehicle_master_cycle.png */; };
+		87F3E7C61B962EA800293999 /* wiiu_vehicle_p_wing.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79E1B962EA800293999 /* wiiu_vehicle_p_wing.png */; };
+		87F3E7C71B962EA800293999 /* wiiu_vehicle_streetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E79F1B962EA800293999 /* wiiu_vehicle_streetle.png */; };
+		87F3E7C81B962EA800293999 /* wiiu_vehicle_b_dasher.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A01B962EA800293999 /* wiiu_vehicle_b_dasher.png */; };
+		87F3E7C91B962EA800293999 /* wiiu_vehicle_blue_falcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A11B962EA800293999 /* wiiu_vehicle_blue_falcon.png */; };
+		87F3E7CA1B962EA800293999 /* wiiu_vehicle_tanooki_kart.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A21B962EA800293999 /* wiiu_vehicle_tanooki_kart.png */; };
+		87F3E7CB1B962EA800293999 /* wiiu_character_dry_bowser.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A31B962EA800293999 /* wiiu_character_dry_bowser.png */; };
+		87F3E7CC1B962EA800293999 /* wiiu_character_villager_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A41B962EA800293999 /* wiiu_character_villager_male.png */; };
+		87F3E7CD1B962EA800293999 /* wiiu_character_villager_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A51B962EA800293999 /* wiiu_character_villager_female.png */; };
+		87F3E7CE1B962EA800293999 /* wiiu_character_isabelle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A61B962EA800293999 /* wiiu_character_isabelle.png */; };
+		87F3E7CF1B962EA800293999 /* wiiu_character_link.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A71B962EA800293999 /* wiiu_character_link.png */; };
+		87F3E7D01B962EA800293999 /* wiiu_character_tanooki_mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A81B962EA800293999 /* wiiu_character_tanooki_mario.png */; };
+		87F3E7D11B962EA800293999 /* wiiu_character_cat_peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7A91B962EA800293999 /* wiiu_character_cat_peach.png */; };
+		87F3E7D21B962EA800293999 /* wiiu_vehicle_three_hundred_sl_roadster.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F3E7AA1B962EA800293999 /* wiiu_vehicle_three_hundred_sl_roadster.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -733,6 +773,46 @@
 		87F0C32F19E32373003D89F7 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "src/res/images/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		87F0C33019E32373003D89F7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = src/res/images/Icon.png; sourceTree = "<group>"; };
 		87F0C33119E32373003D89F7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "src/res/images/Icon@2x.png"; sourceTree = "<group>"; };
+		87F3E7831B962EA800293999 /* wiiu_cup_bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_cup_bell.png; path = src/res/images/wiiu_cup_bell.png; sourceTree = "<group>"; };
+		87F3E7841B962EA800293999 /* wiiu_cup_crossing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_cup_crossing.png; path = src/res/images/wiiu_cup_crossing.png; sourceTree = "<group>"; };
+		87F3E7851B962EA800293999 /* wiiu_cup_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_cup_egg.png; path = src/res/images/wiiu_cup_egg.png; sourceTree = "<group>"; };
+		87F3E7861B962EA800293999 /* default_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_map.png; path = src/res/images/default_map.png; sourceTree = "<group>"; };
+		87F3E7871B962EA800293999 /* wiiu_map_icon_big_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_big_blue.png; path = src/res/images/wiiu_map_icon_big_blue.png; sourceTree = "<group>"; };
+		87F3E7881B962EA800293999 /* wiiu_map_icon_super_bell_subway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_super_bell_subway.png; path = src/res/images/wiiu_map_icon_super_bell_subway.png; sourceTree = "<group>"; };
+		87F3E7891B962EA800293999 /* wiiu_map_icon_ribbon_road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_ribbon_road.png; path = src/res/images/wiiu_map_icon_ribbon_road.png; sourceTree = "<group>"; };
+		87F3E78A1B962EA800293999 /* wiiu_map_icon_neo_bowser_city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_neo_bowser_city.png; path = src/res/images/wiiu_map_icon_neo_bowser_city.png; sourceTree = "<group>"; };
+		87F3E78B1B962EA800293999 /* wiiu_map_icon_animal_crossing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_animal_crossing.png; path = src/res/images/wiiu_map_icon_animal_crossing.png; sourceTree = "<group>"; };
+		87F3E78C1B962EA800293999 /* wiiu_map_icon_wild_woods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_wild_woods.png; path = src/res/images/wiiu_map_icon_wild_woods.png; sourceTree = "<group>"; };
+		87F3E78D1B962EA800293999 /* wiiu_map_icon_cheese_land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_cheese_land.png; path = src/res/images/wiiu_map_icon_cheese_land.png; sourceTree = "<group>"; };
+		87F3E78E1B962EA800293999 /* wiiu_map_icon_baby_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_baby_park.png; path = src/res/images/wiiu_map_icon_baby_park.png; sourceTree = "<group>"; };
+		87F3E78F1B962EA800293999 /* wiiu_map_icon_hyrule_circuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_hyrule_circuit.png; path = src/res/images/wiiu_map_icon_hyrule_circuit.png; sourceTree = "<group>"; };
+		87F3E7901B962EA800293999 /* wiiu_map_icon_ice_ice_outpost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_ice_ice_outpost.png; path = src/res/images/wiiu_map_icon_ice_ice_outpost.png; sourceTree = "<group>"; };
+		87F3E7911B962EA800293999 /* wiiu_map_icon_rainbow_road_snes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_rainbow_road_snes.png; path = src/res/images/wiiu_map_icon_rainbow_road_snes.png; sourceTree = "<group>"; };
+		87F3E7921B962EA800293999 /* wiiu_map_icon_warios_gold_mine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_warios_gold_mine.png; path = src/res/images/wiiu_map_icon_warios_gold_mine.png; sourceTree = "<group>"; };
+		87F3E7931B962EA800293999 /* wiiu_map_icon_mute_city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_mute_city.png; path = src/res/images/wiiu_map_icon_mute_city.png; sourceTree = "<group>"; };
+		87F3E7941B962EA800293999 /* wiiu_map_icon_dragon_driftway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_dragon_driftway.png; path = src/res/images/wiiu_map_icon_dragon_driftway.png; sourceTree = "<group>"; };
+		87F3E7951B962EA800293999 /* wiiu_map_icon_excitebike_arena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_excitebike_arena.png; path = src/res/images/wiiu_map_icon_excitebike_arena.png; sourceTree = "<group>"; };
+		87F3E7961B962EA800293999 /* wiiu_map_icon_yoshi_circuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_map_icon_yoshi_circuit.png; path = src/res/images/wiiu_map_icon_yoshi_circuit.png; sourceTree = "<group>"; };
+		87F3E7971B962EA800293999 /* wiiu_glider_paper_glider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_glider_paper_glider.png; path = src/res/images/wiiu_glider_paper_glider.png; sourceTree = "<group>"; };
+		87F3E7981B962EA800293999 /* wiiu_glider_hylian_kite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_glider_hylian_kite.png; path = src/res/images/wiiu_glider_hylian_kite.png; sourceTree = "<group>"; };
+		87F3E7991B962EA800293999 /* wiiu_tire_leaf_tires.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_tire_leaf_tires.png; path = src/res/images/wiiu_tire_leaf_tires.png; sourceTree = "<group>"; };
+		87F3E79A1B962EA800293999 /* wiiu_tire_triforce_tires.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_tire_triforce_tires.png; path = src/res/images/wiiu_tire_triforce_tires.png; sourceTree = "<group>"; };
+		87F3E79B1B962EA800293999 /* wiiu_vehicle_bone_rattler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_bone_rattler.png; path = src/res/images/wiiu_vehicle_bone_rattler.png; sourceTree = "<group>"; };
+		87F3E79C1B962EA800293999 /* wiiu_vehicle_city_tripper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_city_tripper.png; path = src/res/images/wiiu_vehicle_city_tripper.png; sourceTree = "<group>"; };
+		87F3E79D1B962EA800293999 /* wiiu_vehicle_master_cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_master_cycle.png; path = src/res/images/wiiu_vehicle_master_cycle.png; sourceTree = "<group>"; };
+		87F3E79E1B962EA800293999 /* wiiu_vehicle_p_wing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_p_wing.png; path = src/res/images/wiiu_vehicle_p_wing.png; sourceTree = "<group>"; };
+		87F3E79F1B962EA800293999 /* wiiu_vehicle_streetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_streetle.png; path = src/res/images/wiiu_vehicle_streetle.png; sourceTree = "<group>"; };
+		87F3E7A01B962EA800293999 /* wiiu_vehicle_b_dasher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_b_dasher.png; path = src/res/images/wiiu_vehicle_b_dasher.png; sourceTree = "<group>"; };
+		87F3E7A11B962EA800293999 /* wiiu_vehicle_blue_falcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_blue_falcon.png; path = src/res/images/wiiu_vehicle_blue_falcon.png; sourceTree = "<group>"; };
+		87F3E7A21B962EA800293999 /* wiiu_vehicle_tanooki_kart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_tanooki_kart.png; path = src/res/images/wiiu_vehicle_tanooki_kart.png; sourceTree = "<group>"; };
+		87F3E7A31B962EA800293999 /* wiiu_character_dry_bowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_dry_bowser.png; path = src/res/images/wiiu_character_dry_bowser.png; sourceTree = "<group>"; };
+		87F3E7A41B962EA800293999 /* wiiu_character_villager_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_villager_male.png; path = src/res/images/wiiu_character_villager_male.png; sourceTree = "<group>"; };
+		87F3E7A51B962EA800293999 /* wiiu_character_villager_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_villager_female.png; path = src/res/images/wiiu_character_villager_female.png; sourceTree = "<group>"; };
+		87F3E7A61B962EA800293999 /* wiiu_character_isabelle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_isabelle.png; path = src/res/images/wiiu_character_isabelle.png; sourceTree = "<group>"; };
+		87F3E7A71B962EA800293999 /* wiiu_character_link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_link.png; path = src/res/images/wiiu_character_link.png; sourceTree = "<group>"; };
+		87F3E7A81B962EA800293999 /* wiiu_character_tanooki_mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_tanooki_mario.png; path = src/res/images/wiiu_character_tanooki_mario.png; sourceTree = "<group>"; };
+		87F3E7A91B962EA800293999 /* wiiu_character_cat_peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_character_cat_peach.png; path = src/res/images/wiiu_character_cat_peach.png; sourceTree = "<group>"; };
+		87F3E7AA1B962EA800293999 /* wiiu_vehicle_three_hundred_sl_roadster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wiiu_vehicle_three_hundred_sl_roadster.png; path = src/res/images/wiiu_vehicle_three_hundred_sl_roadster.png; sourceTree = "<group>"; };
 		A646AB14321BDC2494D1D973 /* Pods-configuremk8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-configuremk8.release.xcconfig"; path = "Pods/Target Support Files/Pods-configuremk8/Pods-configuremk8.release.xcconfig"; sourceTree = "<group>"; };
 		F78C0F08685A2A12AF970887 /* libPods-configuremk8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-configuremk8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -972,6 +1052,46 @@
 		87798BBE1997CB5100D926BC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				87F3E7831B962EA800293999 /* wiiu_cup_bell.png */,
+				87F3E7841B962EA800293999 /* wiiu_cup_crossing.png */,
+				87F3E7851B962EA800293999 /* wiiu_cup_egg.png */,
+				87F3E7861B962EA800293999 /* default_map.png */,
+				87F3E7871B962EA800293999 /* wiiu_map_icon_big_blue.png */,
+				87F3E7881B962EA800293999 /* wiiu_map_icon_super_bell_subway.png */,
+				87F3E7891B962EA800293999 /* wiiu_map_icon_ribbon_road.png */,
+				87F3E78A1B962EA800293999 /* wiiu_map_icon_neo_bowser_city.png */,
+				87F3E78B1B962EA800293999 /* wiiu_map_icon_animal_crossing.png */,
+				87F3E78C1B962EA800293999 /* wiiu_map_icon_wild_woods.png */,
+				87F3E78D1B962EA800293999 /* wiiu_map_icon_cheese_land.png */,
+				87F3E78E1B962EA800293999 /* wiiu_map_icon_baby_park.png */,
+				87F3E78F1B962EA800293999 /* wiiu_map_icon_hyrule_circuit.png */,
+				87F3E7901B962EA800293999 /* wiiu_map_icon_ice_ice_outpost.png */,
+				87F3E7911B962EA800293999 /* wiiu_map_icon_rainbow_road_snes.png */,
+				87F3E7921B962EA800293999 /* wiiu_map_icon_warios_gold_mine.png */,
+				87F3E7931B962EA800293999 /* wiiu_map_icon_mute_city.png */,
+				87F3E7941B962EA800293999 /* wiiu_map_icon_dragon_driftway.png */,
+				87F3E7951B962EA800293999 /* wiiu_map_icon_excitebike_arena.png */,
+				87F3E7961B962EA800293999 /* wiiu_map_icon_yoshi_circuit.png */,
+				87F3E7971B962EA800293999 /* wiiu_glider_paper_glider.png */,
+				87F3E7981B962EA800293999 /* wiiu_glider_hylian_kite.png */,
+				87F3E7991B962EA800293999 /* wiiu_tire_leaf_tires.png */,
+				87F3E79A1B962EA800293999 /* wiiu_tire_triforce_tires.png */,
+				87F3E79B1B962EA800293999 /* wiiu_vehicle_bone_rattler.png */,
+				87F3E79C1B962EA800293999 /* wiiu_vehicle_city_tripper.png */,
+				87F3E79D1B962EA800293999 /* wiiu_vehicle_master_cycle.png */,
+				87F3E79E1B962EA800293999 /* wiiu_vehicle_p_wing.png */,
+				87F3E79F1B962EA800293999 /* wiiu_vehicle_streetle.png */,
+				87F3E7A01B962EA800293999 /* wiiu_vehicle_b_dasher.png */,
+				87F3E7A11B962EA800293999 /* wiiu_vehicle_blue_falcon.png */,
+				87F3E7A21B962EA800293999 /* wiiu_vehicle_tanooki_kart.png */,
+				87F3E7A31B962EA800293999 /* wiiu_character_dry_bowser.png */,
+				87F3E7A41B962EA800293999 /* wiiu_character_villager_male.png */,
+				87F3E7A51B962EA800293999 /* wiiu_character_villager_female.png */,
+				87F3E7A61B962EA800293999 /* wiiu_character_isabelle.png */,
+				87F3E7A71B962EA800293999 /* wiiu_character_link.png */,
+				87F3E7A81B962EA800293999 /* wiiu_character_tanooki_mario.png */,
+				87F3E7A91B962EA800293999 /* wiiu_character_cat_peach.png */,
+				87F3E7AA1B962EA800293999 /* wiiu_vehicle_three_hundred_sl_roadster.png */,
 				87F0C32C19E32373003D89F7 /* Icon-72.png */,
 				87F0C32D19E32373003D89F7 /* Icon-72@2x.png */,
 				87F0C32E19E32373003D89F7 /* Icon-Small-50.png */,
@@ -1505,12 +1625,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F3E7AF1B962EA800293999 /* wiiu_map_icon_big_blue.png in Resources */,
 				87E7D2DE19C21E11005E9B14 /* wiiu_map_icon_dry_dry_desert.png in Resources */,
 				87E7D2EC19C21E11005E9B14 /* wiiu_map_icon_shy_guy_falls.png in Resources */,
 				87D209B219C8D3BA003580A5 /* prima_map_mount_wario.jpg in Resources */,
 				87A6DAE1199BD67400049383 /* wiiu_tire_monster.png in Resources */,
 				87E7D30819C4C94E005E9B14 /* wiiu_cup_mushroom.png in Resources */,
 				87A6DAC9199BD67400049383 /* wiiu_glider_flower_glider.png in Resources */,
+				87F3E7CD1B962EA800293999 /* wiiu_character_villager_female.png in Resources */,
+				87F3E7B21B962EA800293999 /* wiiu_map_icon_neo_bowser_city.png in Resources */,
 				87A6DB0B199BD67400049383 /* wiiu_character_daisy.png in Resources */,
 				87A6DAF8199BD67400049383 /* wiiu_vehicle_cat_cruiser.png in Resources */,
 				87A6DAF2199BD67400049383 /* wiiu_vehicle_landship.png in Resources */,
@@ -1527,9 +1650,11 @@
 				87D209AC19C8D3BA003580A5 /* prima_map_mario_circuit_gba.jpg in Resources */,
 				87A6DAD5199BD67400049383 /* wiiu_tire_azure_roller.png in Resources */,
 				8768FF8919B95FC9003D1D40 /* CMKOnlyPositiveSingleStatsRowView~ipad.xib in Resources */,
+				87F3E7AD1B962EA800293999 /* wiiu_cup_egg.png in Resources */,
 				87A6DADD199BD67400049383 /* wiiu_tire_metal.png in Resources */,
 				8768000D19BF8E00003D1D40 /* faq.css in Resources */,
 				87D209A419C8D3BA003580A5 /* prima_map_sherbet_land.jpg in Resources */,
+				87F3E7C31B962EA800293999 /* wiiu_vehicle_bone_rattler.png in Resources */,
 				87F0C31719E30157003D89F7 /* cmk8_launch_image@2x~ipad.png in Resources */,
 				87E7D2D719C21E11005E9B14 /* wiiu_map_icon_bone_dry_dunes.png in Resources */,
 				87F0C32419E3227E003D89F7 /* Icon-40@3x.png in Resources */,
@@ -1545,6 +1670,7 @@
 				87E7D2F619C21E11005E9B14 /* wiiu_map_icon_yoshi_valley.png in Resources */,
 				87D209BF19C8D469003580A5 /* CMKAdjustAttributeView~ipad.xib in Resources */,
 				87A6DAFC199BD67400049383 /* wiiu_vehicle_standard_kart.png in Resources */,
+				87F3E7D21B962EA800293999 /* wiiu_vehicle_three_hundred_sl_roadster.png in Resources */,
 				8709E23C19A66ADE0008E9BC /* CMKCompareViewController~iphone.xib in Resources */,
 				87F0C32519E3227E003D89F7 /* Icon-60@2x.png in Resources */,
 				8768FF2819AE421D003D1D40 /* CMKAdjustViewController~iphone.xib in Resources */,
@@ -1559,6 +1685,7 @@
 				87D209B119C8D3BA003580A5 /* prima_map_cloudtop_cruise.jpg in Resources */,
 				87A6DAEF199BD67400049383 /* wiiu_vehicle_gold_standard.png in Resources */,
 				8709E23B19A66ADE0008E9BC /* CMKPartPopupView.xib in Resources */,
+				87F3E7C71B962EA800293999 /* wiiu_vehicle_streetle.png in Resources */,
 				87D209AB19C8D3BA003580A5 /* prima_map_cheep_cheep_beach.jpg in Resources */,
 				87E7D2EE19C21E11005E9B14 /* wiiu_map_icon_sweet_sweet_canyon.png in Resources */,
 				874B01D619993124003E2C79 /* spinner_corner_triangle_30@2x.png in Resources */,
@@ -1578,6 +1705,7 @@
 				87A6DB11199BD67400049383 /* wiiu_character_shy_guy.png in Resources */,
 				87E7D2EB19C21E11005E9B14 /* wiiu_map_icon_sherbet_land.png in Resources */,
 				87A6DADC199BD67400049383 /* wiiu_tire_button.png in Resources */,
+				87F3E7CA1B962EA800293999 /* wiiu_vehicle_tanooki_kart.png in Resources */,
 				87A6DAD9199BD67400049383 /* wiiu_tire_wood.png in Resources */,
 				87A6DAC4199BD67400049383 /* circle_mk8_blue.xml in Resources */,
 				87A6DABA199BD67400049383 /* stats_bar_left_mk8_blue.xml in Resources */,
@@ -1602,11 +1730,13 @@
 				87A6DB0E199BD67400049383 /* wiiu_character_larry.png in Resources */,
 				87A6DAE8199BD67400049383 /* wiiu_vehicle_mr_scooty.png in Resources */,
 				87E7D2F419C21E11005E9B14 /* wiiu_map_icon_wario_stadium.png in Resources */,
+				87F3E7BB1B962EA800293999 /* wiiu_map_icon_mute_city.png in Resources */,
 				87A6DAFD199BD67400049383 /* wiiu_character_morton.png in Resources */,
 				87A6DAF7199BD67400049383 /* wiiu_vehicle_circuit_special.png in Resources */,
 				87A6DAEE199BD67400049383 /* wiiu_vehicle_standard_bike.png in Resources */,
 				8768FF4419B0FF44003D1D40 /* wiiu_vehicle_300_sl_roadster.png in Resources */,
 				87A6DAC1199BD67400049383 /* circle_mk8_red.xml in Resources */,
+				87F3E7AB1B962EA800293999 /* wiiu_cup_bell.png in Resources */,
 				87E7D2F319C21E11005E9B14 /* wiiu_map_icon_twisted_mansion.png in Resources */,
 				87E7D31719C64A05005E9B14 /* CMKCompareViewController~ipad.xib in Resources */,
 				87D209BA19C8D3BA003580A5 /* prima_map_thwomp_ruins.jpg in Resources */,
@@ -1618,15 +1748,22 @@
 				87E7D30719C4C94E005E9B14 /* wiiu_cup_lightning.png in Resources */,
 				87A6DAD2199BD67400049383 /* wiiu_tire_retro_off_road.png in Resources */,
 				87E7D2E619C21E11005E9B14 /* wiiu_map_icon_music_park.png in Resources */,
+				87F3E7BC1B962EA800293999 /* wiiu_map_icon_dragon_driftway.png in Resources */,
 				87E7D2F219C21E11005E9B14 /* wiiu_map_icon_toads_turnpike.png in Resources */,
 				87A6DB10199BD67400049383 /* wiiu_character_lakitu.png in Resources */,
+				87F3E7CB1B962EA800293999 /* wiiu_character_dry_bowser.png in Resources */,
 				87A6DB1A199BD67400049383 /* wiiu_character_baby_mario.png in Resources */,
+				87F3E7B01B962EA800293999 /* wiiu_map_icon_super_bell_subway.png in Resources */,
 				87E7D30D19C4C94E005E9B14 /* wiiu_cup_triforce.png in Resources */,
 				8768FF4619B0FF44003D1D40 /* wiiu_vehicle_gla.png in Resources */,
 				87F0C33619E32373003D89F7 /* Icon.png in Resources */,
 				87D209AE19C8D3BA003580A5 /* prima_map_rainbow_road.jpg in Resources */,
+				87F3E7AE1B962EA800293999 /* default_map.png in Resources */,
 				87A6DAB3199BD67400049383 /* panel_background_white.9.png in Resources */,
 				87A6DAC6199BD67400049383 /* wiiu_glider_mktv_parafoil.png in Resources */,
+				87F3E7B41B962EA800293999 /* wiiu_map_icon_wild_woods.png in Resources */,
+				87F3E7CE1B962EA800293999 /* wiiu_character_isabelle.png in Resources */,
+				87F3E7CF1B962EA800293999 /* wiiu_character_link.png in Resources */,
 				87A6DAD1199BD67400049383 /* wiiu_tire_gold_tires.png in Resources */,
 				87D209B319C8D3BA003580A5 /* prima_map_electrodrome.jpg in Resources */,
 				87E7D30E19C4C94E005E9B14 /* wiiu_cup_yoshi_egg.png in Resources */,
@@ -1639,15 +1776,18 @@
 				87DACA2A1B83FB3D00D9B7CA /* courses.json in Resources */,
 				87A6DB0F199BD67400049383 /* wiiu_character_toadette.png in Resources */,
 				87D209B519C8D3BA003580A5 /* prima_map_sunshine_airport.jpg in Resources */,
+				87F3E7B11B962EA800293999 /* wiiu_map_icon_ribbon_road.png in Resources */,
 				87F0C31119E30157003D89F7 /* cmk8_launch_image-568h@2x~iphone.png in Resources */,
 				8709E23819A66ADE0008E9BC /* CMKAnyNumberSingleStatsRowView~iphone.xib in Resources */,
 				8768FF2219AE3636003D1D40 /* CMKComparePlaceholderView.xib in Resources */,
 				87E7D2EA19C21E11005E9B14 /* wiiu_map_icon_royal_raceway.png in Resources */,
 				87A6DAEA199BD67400049383 /* wiiu_vehicle_flame_rider.png in Resources */,
+				87F3E7B71B962EA800293999 /* wiiu_map_icon_hyrule_circuit.png in Resources */,
 				87D209A819C8D3BA003580A5 /* prima_map_donut_plains_3.jpg in Resources */,
 				87D209A719C8D3BA003580A5 /* prima_map_royal_raceway.jpg in Resources */,
 				87F0C32719E3227E003D89F7 /* Icon-76.png in Resources */,
 				87A6DB03199BD67400049383 /* wiiu_character_rosalina.png in Resources */,
+				87F3E7AC1B962EA800293999 /* wiiu_cup_crossing.png in Resources */,
 				87E7D2EF19C21E11005E9B14 /* wiiu_map_icon_thwomp_ruins.png in Resources */,
 				87354EE119AC243F001067FB /* CMKCompareStatsRowView~iphone.xib in Resources */,
 				87A6DAFE199BD67400049383 /* wiiu_character_wario.png in Resources */,
@@ -1661,16 +1801,26 @@
 				87D209B819C8D3BA003580A5 /* prima_map_toad_harbor.jpg in Resources */,
 				87E7D30519C4C94E005E9B14 /* wiiu_cup_flower.png in Resources */,
 				877A422719912C89006526D7 /* InfoPlist.strings in Resources */,
+				87F3E7B91B962EA800293999 /* wiiu_map_icon_rainbow_road_snes.png in Resources */,
+				87F3E7D01B962EA800293999 /* wiiu_character_tanooki_mario.png in Resources */,
+				87F3E7C41B962EA800293999 /* wiiu_vehicle_city_tripper.png in Resources */,
 				87A6DABD199BD67400049383 /* filled_star.png in Resources */,
+				87F3E7B51B962EA800293999 /* wiiu_map_icon_cheese_land.png in Resources */,
 				87D209B619C8D3BA003580A5 /* prima_map_shy_guy_falls.jpg in Resources */,
 				8768FF3019AE6B29003D1D40 /* CMKAdjustAttributeView~iphone.xib in Resources */,
+				87F3E7C81B962EA800293999 /* wiiu_vehicle_b_dasher.png in Resources */,
+				87F3E7BD1B962EA800293999 /* wiiu_map_icon_excitebike_arena.png in Resources */,
 				87E7D2F119C21E11005E9B14 /* wiiu_map_icon_toad_harbor.png in Resources */,
 				8768FF5E19B650C4003D1D40 /* Localizable.strings in Resources */,
 				87A6DAE6199BD67400049383 /* wiiu_vehicle_yoshi_bike.png in Resources */,
+				87F3E7C21B962EA800293999 /* wiiu_tire_triforce_tires.png in Resources */,
 				87E7D2E219C21E11005E9B14 /* wiiu_map_icon_mario_circuit.png in Resources */,
+				87F3E7C01B962EA800293999 /* wiiu_glider_hylian_kite.png in Resources */,
+				87F3E7B61B962EA800293999 /* wiiu_map_icon_baby_park.png in Resources */,
 				87A6DABB199BD67400049383 /* stats_bar_right_mk8_blue.xml in Resources */,
 				87D209A019C8D3BA003580A5 /* prima_map_piranha_plant_slide.jpg in Resources */,
 				87A6DB14199BD67400049383 /* wiiu_character_mii.png in Resources */,
+				87F3E7D11B962EA800293999 /* wiiu_character_cat_peach.png in Resources */,
 				87A6DAFF199BD67400049383 /* wiiu_character_bowser.png in Resources */,
 				87A6DB19199BD67400049383 /* wiiu_character_baby_luigi.png in Resources */,
 				87F0C33319E32373003D89F7 /* Icon-72@2x.png in Resources */,
@@ -1689,6 +1839,7 @@
 				87A6DACE199BD67400049383 /* wiiu_glider_wario_wing.png in Resources */,
 				87E7D2E019C21E11005E9B14 /* wiiu_map_icon_grumble_volcano.png in Resources */,
 				87E7D31D19C670D5005E9B14 /* CMKSpinnerView~ipad.xib in Resources */,
+				87F3E7CC1B962EA800293999 /* wiiu_character_villager_male.png in Resources */,
 				87DACA251B83D19400D9B7CA /* GoogleService-Info.plist in Resources */,
 				8768FFBC19BE4D80003D1D40 /* compare_icon@2x.png in Resources */,
 				87F0C31419E30157003D89F7 /* cmk8_launch_image-667h@2x~iphone.png in Resources */,
@@ -1703,6 +1854,7 @@
 				8768FF4C19B3862C003D1D40 /* CMKDonationPopupView.xib in Resources */,
 				87E7D2DB19C21E11005E9B14 /* wiiu_map_icon_dk_jungle.png in Resources */,
 				87A6DAF4199BD67400049383 /* wiiu_vehicle_prancer.png in Resources */,
+				87F3E7BE1B962EA800293999 /* wiiu_map_icon_yoshi_circuit.png in Resources */,
 				87A6DB15199BD67400049383 /* wiiu_character_lemmy.png in Resources */,
 				87F0C31619E30157003D89F7 /* cmk8_launch_image~ipad.png in Resources */,
 				87E7D2DA19C21E11005E9B14 /* wiiu_map_icon_cloudtop_cruise.png in Resources */,
@@ -1714,17 +1866,21 @@
 				87DACA291B83FB3D00D9B7CA /* parts.json in Resources */,
 				87A6DB18199BD67400049383 /* wiiu_character_baby_peach.png in Resources */,
 				87D2099F19C8D3BA003580A5 /* prima_map_grumble_volcano.jpg in Resources */,
+				87F3E7BF1B962EA800293999 /* wiiu_glider_paper_glider.png in Resources */,
 				87A6DAE5199BD67400049383 /* wiiu_vehicle_standard_atv.png in Resources */,
 				8768FF4719B0FF44003D1D40 /* wiiu_tire_gla_tires.png in Resources */,
 				8768FFAC19BA2265003D1D40 /* CMKOnlyPositiveSingleStatsRowView~iphone.xib in Resources */,
 				8768FF5A19B565F4003D1D40 /* right_pointing_triangle_white.png in Resources */,
 				87D209AF19C8D3BA003580A5 /* prima_map_bowsers_castle.jpg in Resources */,
+				87F3E7C11B962EA800293999 /* wiiu_tire_leaf_tires.png in Resources */,
 				87A6DB13199BD67400049383 /* wiiu_character_toad.png in Resources */,
 				87E7D31519C64135005E9B14 /* CMKMapsViewController~ipad.xib in Resources */,
 				87A6DADA199BD67400049383 /* wiiu_tire_sponge.png in Resources */,
 				87A6DABE199BD67400049383 /* hollow_star.png in Resources */,
 				87A6DACA199BD67400049383 /* wiiu_glider_parafoil.png in Resources */,
 				87E7D2E919C21E11005E9B14 /* wiiu_map_icon_rainbow_road.png in Resources */,
+				87F3E7BA1B962EA800293999 /* wiiu_map_icon_warios_gold_mine.png in Resources */,
+				87F3E7B31B962EA800293999 /* wiiu_map_icon_animal_crossing.png in Resources */,
 				87A6DACD199BD67400049383 /* wiiu_glider_waddle_wing.png in Resources */,
 				87E7D30C19C4C94E005E9B14 /* wiiu_cup_super_bell.png in Resources */,
 				87D209AD19C8D3BA003580A5 /* prima_map_moo_moo_meadows.jpg in Resources */,
@@ -1734,6 +1890,7 @@
 				87A6DAE9199BD67400049383 /* wiiu_vehicle_varmint.png in Resources */,
 				87D209BD19C8D3BA003580A5 /* prima_map_mario_kart_stadium.jpg in Resources */,
 				87E7D2DF19C21E11005E9B14 /* wiiu_map_icon_electrodrome.png in Resources */,
+				87F3E7C61B962EA800293999 /* wiiu_vehicle_p_wing.png in Resources */,
 				87D209AA19C8D3BA003580A5 /* prima_map_toads_turnpike.jpg in Resources */,
 				8768FFC019BE4D80003D1D40 /* faq_icon@2x.png in Resources */,
 				87A6DAE0199BD67400049383 /* wiiu_tire_roller.png in Resources */,
@@ -1743,11 +1900,14 @@
 				87F0C31319E30157003D89F7 /* cmk8_launch_image@2x~iphone.png in Resources */,
 				87A6DB16199BD67400049383 /* wiiu_character_baby_rosalina.png in Resources */,
 				87E7D2DD19C21E11005E9B14 /* wiiu_map_icon_donut_plains_3.png in Resources */,
+				87F3E7C91B962EA800293999 /* wiiu_vehicle_blue_falcon.png in Resources */,
 				87A6DAC5199BD67400049383 /* wiiu_glider_gold_glider.png in Resources */,
+				87F3E7B81B962EA800293999 /* wiiu_map_icon_ice_ice_outpost.png in Resources */,
 				87F0C33719E32373003D89F7 /* Icon@2x.png in Resources */,
 				87A6DAB7199BD67400049383 /* stats_bar_negative_left_mk8_red.xml in Resources */,
 				8709E24319A7BE550008E9BC /* CMKSpinnerView~iphone.xib in Resources */,
 				87A6DAFB199BD67400049383 /* wiiu_vehicle_pipe_frame.png in Resources */,
+				87F3E7C51B962EA800293999 /* wiiu_vehicle_master_cycle.png in Resources */,
 				87A6DAE7199BD67400049383 /* wiiu_vehicle_jet_bike.png in Resources */,
 				87D209A219C8D3BA003580A5 /* prima_map_yoshi_valley.jpg in Resources */,
 				87A6DACF199BD67400049383 /* wiiu_glider_cloud_glider.png in Resources */,
