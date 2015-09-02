@@ -34,6 +34,8 @@
   UIImageView *_transitionImageView;
   NSLayoutConstraint *_topTransitionImageConstraint;
   NSLayoutConstraint *_leftTransitionImageConstraint;
+  NSLayoutConstraint *_widthTransitionImageConstraint;
+  NSLayoutConstraint *_heightTransitionImageConstraint;
   CGPoint _initialOrigin;
   CGSize _initialSize;
   CGPoint _finalOrigin;
@@ -74,23 +76,24 @@
 
   [_tracker set:kGAIScreenName value:PART_POPUP_SCREEN];
   [_tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
+  //  self.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)layoutSubviews {
-  //  NSLog(@" % @ layoutSubviews ", _TAG);
+  NSLog(@" %@ layoutSubviews ", _TAG);
   _layoutSubviewsCalled = YES;
 
   // Call super once here so that we can get the coordinates of the target image view.
+
   [super layoutSubviews];
 
-  if (_part && _anchorImageView) {
+  if (_part && _anchorImageView && !_layoutSubviewsCalled) {
     [self transitionIn];
   }
 
   // Call super again here after the transition.
-  [super layoutSubviews];
-
-  self.translatesAutoresizingMaskIntoConstraints = YES;
+  //  [super layoutSubviews];
 }
 
 - (void)updatePart:(CMKPartModel *)part withAnchorImageView:(UIImageView *)imageView {
@@ -114,32 +117,61 @@
   _finalSize = self.imageView.frame.size;
 
   _transitionImageView = [[UIImageView alloc] initWithImage:_anchorImageView.image];
-  _transitionImageView.frame = CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
   _transitionImageView.contentMode = UIViewContentModeScaleAspectFit;
+  _transitionImageView.translatesAutoresizingMaskIntoConstraints = NO;
+
   [self addSubview:_transitionImageView];
 
-  //  _topTransitionImageConstraint = [NSLayoutConstraint constraintWithItem:_transitionImageView
-  //                                                               attribute:NSLayoutAttributeTop
-  //                                                               relatedBy:NSLayoutRelationEqual
-  //                                                                  toItem:self
-  //                                                               attribute:NSLayoutAttributeBottom
-  //                                                              multiplier:1.0
-  //                                                                constant:_initialOrigin.y];
-  //  _leftTransitionImageConstraint = [NSLayoutConstraint constraintWithItem:_transitionImageView
-  //                                                                attribute:NSLayoutAttributeLeft
-  //                                                                relatedBy:NSLayoutRelationEqual
-  //                                                                   toItem:self
-  //                                                                attribute:NSLayoutAttributeRight
-  //                                                               multiplier:1.0
-  //                                                                 constant:_initialOrigin.x];
-  //  [self addConstraint:_topTransitionImageConstraint];
-  //  [self addConstraint:_leftTransitionImageConstraint];
+  NSDictionary *views = NSDictionaryOfVariableBindings(_transitionImageView);
+
+  NSDictionary *initialMetrics = @{
+    @"left" : @(_initialOrigin.x),
+    @"top" : @(_initialOrigin.y),
+    @"width" : @(_initialSize.width),
+    @"height" : @(_initialSize.height)
+  };
+  NSMutableArray *initialConstraints = [NSMutableArray new];
+  [initialConstraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[_transitionImageView(width)]|"
+                                                                  options:0
+                                                                  metrics:initialMetrics
+                                                                    views:views]];
+  [initialConstraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_transitionImageView(height)]|"
+                                                                  options:0
+                                                                  metrics:initialMetrics
+                                                                    views:views]];
+
+  [self addConstraints:initialConstraints];
+
+  [self layoutIfNeeded];
+
+  NSDictionary *finalMetrics = @{
+    @"left" : @(_finalOrigin.x),
+    @"top" : @(_finalOrigin.y),
+    @"width" : @(_finalSize.width),
+    @"height" : @(_finalSize.height)
+  };
+  NSMutableArray *finalConstraints = [NSMutableArray new];
+  [finalConstraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[_transitionImageView(width)]|"
+                                                                  options:0
+                                                                  metrics:finalMetrics
+                                                                    views:views]];
+  [finalConstraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_transitionImageView(height)]|"
+                                                                  options:0
+                                                                  metrics:finalMetrics
+                                                                    views:views]];
+
+  [self removeConstraints:initialConstraints];
+  [self addConstraints:finalConstraints];
 
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
       animations:^{
         self.backgroundView.alpha = POPUP_SHADE_ALPHA;
         self.contentView.alpha = 1.0f;
-        _transitionImageView.frame = CGRectMake(_finalOrigin.x, _finalOrigin.y, _finalSize.width, _finalSize.height);
+        [self layoutIfNeeded];
       }
 
       completion:^(BOOL finished){
@@ -147,17 +179,13 @@
 }
 
 - (void)close {
-  //  [self removeConstraints:self.constraints];
-  //  [self setNeedsUpdateConstraints];
-
-  //  _transitionImageView.frame = CGRectMake(_finalOrigin.x, _finalOrigin.y, _finalSize.width, _finalSize.height);
-
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
       delay:0
       options:UIViewAnimationOptionBeginFromCurrentState
       animations:^{
         self.backgroundView.alpha = 0.0f;
         self.contentView.alpha = 0.0f;
+        // TODO(clocksmith): Should animates constraints instead of frame.
         _transitionImageView.frame =
             CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
       }
