@@ -32,10 +32,6 @@
   CMKPartModel *_part;
   UIImageView *_anchorImageView;
   UIImageView *_transitionImageView;
-  NSLayoutConstraint *_topTransitionImageConstraint;
-  NSLayoutConstraint *_leftTransitionImageConstraint;
-  NSLayoutConstraint *_widthTransitionImageConstraint;
-  NSLayoutConstraint *_heightTransitionImageConstraint;
   CGPoint _initialOrigin;
   CGSize _initialSize;
   CGPoint _finalOrigin;
@@ -76,8 +72,6 @@
 
   [_tracker set:kGAIScreenName value:PART_POPUP_SCREEN];
   [_tracker send:[[GAIDictionaryBuilder createAppView] build]];
-
-  //  self.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)layoutSubviews {
@@ -85,15 +79,11 @@
   _layoutSubviewsCalled = YES;
 
   // Call super once here so that we can get the coordinates of the target image view.
-
   [super layoutSubviews];
 
   if (_part && _anchorImageView && !_layoutSubviewsCalled) {
     [self transitionIn];
   }
-
-  // Call super again here after the transition.
-  //  [super layoutSubviews];
 }
 
 - (void)updatePart:(CMKPartModel *)part withAnchorImageView:(UIImageView *)imageView {
@@ -111,17 +101,14 @@
   [self.statsView updateStats:[CMKPartData partGroupForPart:_part].stats isAnimated:YES];
   self.statsView.scrollEnabled = NO;
 
-  _initialOrigin = [_anchorImageView.superview convertPoint:_anchorImageView.frame.origin toView:nil];
-  _initialSize = _anchorImageView.frame.size;
-  _finalOrigin = [self.imageView.superview convertPoint:self.imageView.frame.origin toView:nil];
-  _finalSize = self.imageView.frame.size;
-
   _transitionImageView = [[UIImageView alloc] initWithImage:_anchorImageView.image];
   _transitionImageView.contentMode = UIViewContentModeScaleAspectFit;
   _transitionImageView.translatesAutoresizingMaskIntoConstraints = NO;
 
   [self addSubview:_transitionImageView];
 
+  _initialOrigin = [_anchorImageView.superview convertPoint:_anchorImageView.frame.origin toView:nil];
+  _initialSize = _anchorImageView.frame.size;
   NSDictionary *initialMetrics = @{
     @"left" : @(_initialOrigin.x),
     @"top" : @(_initialOrigin.y),
@@ -134,6 +121,8 @@
   [self layoutIfNeeded];
   [self removeConstraints:initialConstraints];
 
+  _finalOrigin = [self.imageView.superview convertPoint:self.imageView.frame.origin toView:nil];
+  _finalSize = self.imageView.frame.size;
   NSDictionary *finalMetrics = @{
     @"left" : @(_finalOrigin.x),
     @"top" : @(_finalOrigin.y),
