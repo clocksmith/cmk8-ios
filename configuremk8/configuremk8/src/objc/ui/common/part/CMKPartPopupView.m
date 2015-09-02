@@ -122,29 +122,17 @@
 
   [self addSubview:_transitionImageView];
 
-  NSDictionary *views = NSDictionaryOfVariableBindings(_transitionImageView);
-
   NSDictionary *initialMetrics = @{
     @"left" : @(_initialOrigin.x),
     @"top" : @(_initialOrigin.y),
     @"width" : @(_initialSize.width),
     @"height" : @(_initialSize.height)
   };
-  NSMutableArray *initialConstraints = [NSMutableArray new];
-  [initialConstraints
-      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[_transitionImageView(width)]|"
-                                                                  options:0
-                                                                  metrics:initialMetrics
-                                                                    views:views]];
-  [initialConstraints
-      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_transitionImageView(height)]|"
-                                                                  options:0
-                                                                  metrics:initialMetrics
-                                                                    views:views]];
+  NSArray *initialConstraints = [self createTransitionConstraintsForMetrics:initialMetrics];
 
   [self addConstraints:initialConstraints];
-
   [self layoutIfNeeded];
+  [self removeConstraints:initialConstraints];
 
   NSDictionary *finalMetrics = @{
     @"left" : @(_finalOrigin.x),
@@ -152,19 +140,8 @@
     @"width" : @(_finalSize.width),
     @"height" : @(_finalSize.height)
   };
-  NSMutableArray *finalConstraints = [NSMutableArray new];
-  [finalConstraints
-      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[_transitionImageView(width)]|"
-                                                                  options:0
-                                                                  metrics:finalMetrics
-                                                                    views:views]];
-  [finalConstraints
-      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_transitionImageView(height)]|"
-                                                                  options:0
-                                                                  metrics:finalMetrics
-                                                                    views:views]];
+  NSArray *finalConstraints = [self createTransitionConstraintsForMetrics:finalMetrics];
 
-  [self removeConstraints:initialConstraints];
   [self addConstraints:finalConstraints];
 
   [UIView animateWithDuration:POPUP_TRANSITION_DURAION_S
@@ -185,7 +162,7 @@
       animations:^{
         self.backgroundView.alpha = 0.0f;
         self.contentView.alpha = 0.0f;
-        // TODO(clocksmith): Should animates constraints instead of frame.
+        // TODO(clocksmith): Should animate constraints instead of frame. (It works for now)
         _transitionImageView.frame =
             CGRectMake(_initialOrigin.x, _initialOrigin.y, _initialSize.width, _initialSize.height);
       }
@@ -193,6 +170,22 @@
       completion:^(BOOL finished) {
         [self removeFromSuperview];
       }];
+}
+
+- (NSArray *)createTransitionConstraintsForMetrics:(NSDictionary *)metrics {
+  NSDictionary *views = NSDictionaryOfVariableBindings(_transitionImageView);
+  NSMutableArray *constraints = [NSMutableArray new];
+  [constraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[_transitionImageView(width)]|"
+                                                                  options:0
+                                                                  metrics:metrics
+                                                                    views:views]];
+  [constraints
+      addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_transitionImageView(height)]|"
+                                                                  options:0
+                                                                  metrics:metrics
+                                                                    views:views]];
+  return constraints;
 }
 
 @end
