@@ -266,8 +266,7 @@ static int const ACTUAL_MAP_DIMEN = 512;
     NSLog(@"%@ loading full map: %d", _TAG, index);
     CGSize actualSize = CGSizeMake(ACTUAL_MAP_DIMEN, ACTUAL_MAP_DIMEN);
     UIImage *fullMapViewImage =
-        [CMKUiUtils imageWithImage:[UIImage imageNamed:[CMKCourseData courseForIndex:index].mapImageName]
-                      scaledToSize:actualSize];
+        [CMKUiUtils imageWithImage:[[CMKCourseData courseForIndex:index] map] scaledToSize:actualSize];
     ((UIImageView *)_mapImageViews[index]).image = fullMapViewImage;
     _fullMapsLoaded[index] = [NSNumber numberWithBool:YES];
   }
