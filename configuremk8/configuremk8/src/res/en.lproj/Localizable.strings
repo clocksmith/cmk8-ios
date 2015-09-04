@@ -245,18 +245,18 @@
 "HYLIAN_KITE" = "Hylian Kite";
 
 // Cups.
-"MUSHROOM_CUP" = "Mushroom Cup";
-"FLOWER_CUP" = "Flower Cup";
-"STAR_CUP" = "Star Cup";
-"SPECIAL_CUP" = "Special Cup";
-"SHELL_CUP" = "Shell Cup";
-"BANANA_CUP" = "Banana Cup";
-"LEAF_CUP" = "Leaf Cup";
-"LIGHTNING_CUP" = "Lightning Cup";
-"EGG_CUP" = "Egg Cup";
-"TRIFORCE_CUP" = "Triforce Cup";
-"CROSSING_CUP" = "Crossing Cup";
-"BELL_CUP" = "Bell Cup";
+"MUSHROOM" = "Mushroom Cup";
+"FLOWER" = "Flower Cup";
+"STAR" = "Star Cup";
+"SPECIAL" = "Special Cup";
+"SHELL" = "Shell Cup";
+"BANANA" = "Banana Cup";
+"LEAF" = "Leaf Cup";
+"LIGHTNING" = "Lightning Cup";
+"EGG" = "Egg Cup";
+"TRIFORCE" = "Triforce Cup";
+"CROSSING" = "Crossing Cup";
+"BELL" = "Bell Cup";
 
 // Courses.
 

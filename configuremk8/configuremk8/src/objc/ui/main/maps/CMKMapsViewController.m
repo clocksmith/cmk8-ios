@@ -53,9 +53,10 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
     _mapPlaceholderImages = [NSMutableArray array];
     _mapImageViews = [NSMutableArray array];
-    _fullMapsLoaded = [NSMutableArray arrayWithCapacity:[[CMKCourseData cups] count] * NUM_COURSES_PER_CUP];
+    long numMaps = [[CMKCourseData cups] count] * NUM_COURSES_PER_CUP;
+    _fullMapsLoaded = [NSMutableArray arrayWithCapacity:numMaps];
 
-    for (int i = 0; i < [_fullMapsLoaded count]; i++) {
+    for (int i = 0; i < numMaps; i++) {
       _fullMapsLoaded[i] = @NO;
     }
   }
@@ -75,9 +76,7 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
   for (CMKCupModel *cup in [CMKCourseData cups]) {
     for (CMKCourseModel *course in [cup courses]) {
-      UIImage *mapViewImage =
-          [CMKUiUtils imageWithImage:[UIImage imageNamed:course.mapImageName] scaledToSize:placeholderSize];
-      NSLog(@"%@ course.mapImageName %@", _TAG, course.mapImageName);
+      UIImage *mapViewImage = [CMKUiUtils imageWithImage:[course map] scaledToSize:placeholderSize];
       [_mapPlaceholderImages addObject:mapViewImage];
     }
   }
@@ -120,22 +119,25 @@ static int const ACTUAL_MAP_DIMEN = 512;
 
     int mapViewIndex = 0;
 
-    for (UIImage *mapImage in _mapPlaceholderImages) {
-      CGRect mapImageViewFrame = CGRectMake(0, 0, scrollViewWidth, scrollViewHeight);
-      UIImageView *mapImageView = [[UIImageView alloc] initWithImage:mapImage];
-      mapImageView.frame = mapImageViewFrame;
-      mapImageView.contentMode = UIViewContentModeScaleAspectFit;
+    //    for (UIImage *mapImage in _mapPlaceholderImages) {
+    for (CMKCupModel *cup in [CMKCourseData cups]) {
+      for (CMKCourseModel *course in [cup courses]) {
+        CGRect mapImageViewFrame = CGRectMake(0, 0, scrollViewWidth, scrollViewHeight);
+        UIImageView *mapImageView = [[UIImageView alloc] initWithImage:[course map]];
+        mapImageView.frame = mapImageViewFrame;
+        mapImageView.contentMode = UIViewContentModeScaleAspectFit;
 
-      CGRect subScrollViewFrame = CGRectMake(0, mapViewIndex * scrollViewHeight, scrollViewWidth, scrollViewHeight);
-      UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:subScrollViewFrame];
-      subScrollView.delegate = self;
-      [subScrollView addSubview:mapImageView];
-      subScrollView.maximumZoomScale = 2.0;
-      subScrollView.minimumZoomScale = 1.0;
+        CGRect subScrollViewFrame = CGRectMake(0, mapViewIndex * scrollViewHeight, scrollViewWidth, scrollViewHeight);
+        UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:subScrollViewFrame];
+        subScrollView.delegate = self;
+        [subScrollView addSubview:mapImageView];
+        subScrollView.maximumZoomScale = 2.0;
+        subScrollView.minimumZoomScale = 1.0;
 
-      [self.mapChooserView addSubview:subScrollView];
-      [_mapImageViews addObject:mapImageView];
-      mapViewIndex++;
+        [self.mapChooserView addSubview:subScrollView];
+        [_mapImageViews addObject:mapImageView];
+        mapViewIndex++;
+      }
     }
 
     _mapChooserViewInitialized = YES;

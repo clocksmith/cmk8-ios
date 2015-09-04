@@ -18,5 +18,7 @@
 @property(nonatomic) int courseIndex;
 
 - (instancetype)initWithName:(NSString *)name withCourseIndex:(int)courseIndex;
+- (UIImage *)icon;
+- (UIImage *)map;
 
 @end

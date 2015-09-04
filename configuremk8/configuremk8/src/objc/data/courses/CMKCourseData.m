@@ -40,7 +40,7 @@ static NSMutableArray *_cups;
 
       NSMutableArray *courses = [NSMutableArray array];
       for (int j = 0; j < [coursesJsonObj count]; j++) {
-        NSDictionary *courseString = coursesJsonObj[j];
+        NSString *courseString = coursesJsonObj[j];
         [courses
             addObject:[[CMKCourseModel alloc] initWithName:courseString withCourseIndex:i * NUM_COURSES_PER_CUP + j]];
       }
@@ -55,7 +55,7 @@ static NSMutableArray *_cups;
 }
 
 + (CMKCourseModel *)courseForIndex:(int)index {
-  return _cups[index / NUM_COURSES_PER_CUP][index % NUM_COURSES_PER_CUP];
+  return [_cups[index / NUM_COURSES_PER_CUP] courses][index % NUM_COURSES_PER_CUP];
 }
 
 @end

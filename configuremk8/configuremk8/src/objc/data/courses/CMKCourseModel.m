@@ -16,7 +16,7 @@
   if (self) {
     self.name = name;
     self.displayName = NSLocalizedString(name, nil);
-    self.iconImageName = [NSString stringWithFormat:@"wiiu_course_%@", [name lowercaseString]];
+    self.iconImageName = [NSString stringWithFormat:@"wiiu_map_icon_%@", [name lowercaseString]];
     // I dont remember why you need .jpg here, but I am pretty sure you do if its not a .png.
     self.mapImageName = [NSString stringWithFormat:@"prima_map_%@.jpg", [name lowercaseString]];
     self.courseIndex = courseIndex;
@@ -33,6 +33,15 @@
 
 - (UIImage *)icon {
   return [UIImage imageNamed:self.iconImageName];
+}
+
+- (UIImage *)map {
+  UIImage *map = [UIImage imageNamed:self.mapImageName];
+  if (!map) {
+    map = [UIImage imageNamed:@"default_map"];
+  }
+
+  return map;
 }
 
 @end
