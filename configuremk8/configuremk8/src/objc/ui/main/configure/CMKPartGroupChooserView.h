@@ -12,18 +12,18 @@
 
 @class CMKPartGroupChooserView;
 
-@protocol CMKPartGroupChooserViewDelegate <NSObject>
+@protocol CMKPartGroupChooserViewDelegate<NSObject>
 
 - (void)partGroupChooserView:(CMKPartGroupChooserView *)partGroupChooserView
           didSelectPartGroup:(CMKPartGroupModel *)partGroup;
 
 @end
 
-@interface CMKPartGroupChooserView : UIView <UIScrollViewDelegate>
+@interface CMKPartGroupChooserView : UIView<UIScrollViewDelegate>
 
-@property (nonatomic, weak) id <CMKPartGroupChooserViewDelegate> delegate;
+@property(nonatomic, weak) id<CMKPartGroupChooserViewDelegate> delegate;
 
-- (void)drawPartGroups:(NSArray *)partGroups;
+- (void)drawPartGroups:(CMKOrderedDictionary *)partGroups;
 
 - (void)selectPartGroup:(CMKPartGroupModel *)partGroup isAnimated:(BOOL)animated;
 
